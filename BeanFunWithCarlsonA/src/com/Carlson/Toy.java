@@ -1,20 +1,33 @@
 package com.Carlson;
 
 public class Toy {
+	
 	//variables
+	//local
 	private String name;
 	private float inches;
 	private String color;
+	private int id;
+	
+	//global
+	private static int nextId=1;
 	
 	//constructor
 	public Toy() {		
+		updateId();
 	}
 	
 	public Toy(String name, float inches, String color) {
+		updateId();
 		this.name=name;
 		this.inches=inches;
 		this.color=color;
 		
+	}
+	
+	private void updateId() {
+		id=nextId;
+		nextId++;
 	}
 	
 	//getters and setters
@@ -48,7 +61,7 @@ public class Toy {
 	
 	@Override
 	public String toString() {
-		return "Toy\nName: "+name+"\nInches: "+inches+"\nColor: "+color+"\n";
+		return "Toy #"+id+"\nName: "+name+"\nInches: "+inches+"\nColor: "+color+"\n";
 		
 	}
 	
