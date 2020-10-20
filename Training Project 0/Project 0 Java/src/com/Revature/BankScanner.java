@@ -1,5 +1,7 @@
 package com.Revature;
 
-public static class BankScanner {
+public class BankScanner {
+	
+	
 
 }
