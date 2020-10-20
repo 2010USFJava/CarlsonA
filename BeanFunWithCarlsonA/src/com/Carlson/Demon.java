@@ -5,7 +5,7 @@ public class Demon {
 	//variables
 	private String name;
 	private int age;
-	private Toy hauntedToy;
+	private Toy hauntedToy=new Toy();
 	
 	
 	//constructors
@@ -28,6 +28,13 @@ public class Demon {
 	
 	public Toy getHauntedToy() {
 		return hauntedToy;
+	}
+	
+	//to string
+	@Override
+	public String toString() {
+		return "Demon\nName: "+name+"\nAge: "+age+"\nHauntedToy: "+hauntedToy.getName()+"\n";
+		
 	}
 
 }
