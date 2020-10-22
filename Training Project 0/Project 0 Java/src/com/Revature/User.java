@@ -113,6 +113,12 @@ public class User {
 				String[]nameParts=name.split(" ");
 				int arraySize=nameParts.length;
 				if (arraySize==1) {
+					if(isMiddleName) {
+						//in case this is overriding, make sure other middle name details are cleared
+						additionalMiddleNames = new ArrayList<>();
+						hasAdditionalMiddleNames=false;
+						
+					}
 					return name;
 				} else {
 					
@@ -132,13 +138,11 @@ public class User {
 							firstMiddleName=workingString;
 							longMiddleNameString=workingString;
 						} else {
-							longMiddleNameString+=middleNameArrayList.get(i);
+							longMiddleNameString+=" "+middleNameArrayList.get(i);
 						}
 						
-					}
-					
-				}
-					
+					}	
+				}	
 					String output="There are extra spaces in the "+partOfName+" \""+name+"\". \nWhat would you like to do?\n"
 							+ "0 : Re-enter Name\n"
 							+ "1 : Use "+dashOption+"\n"
@@ -178,9 +182,7 @@ public class User {
 							System.out.println(responseString+" is not a vailid choice. Please try again.");
 							usableAnswer=false;							
 						}
-
 					}
-					
 				}catch(NumberFormatException e){
 					System.out.println("That was not a number, please try again.");	
 					usableAnswer=false;
@@ -210,7 +212,7 @@ public class User {
 		String dashOption="";
 		
 		for(int i=0;i<arraySize;i++) {
-			System.out.println("Working Part: "+nameParts[i].trim());
+//			System.out.println("Working Part: "+nameParts[i].trim());
 			if(nameParts[i].trim().length()>0) {
 				if (nameParts[i].length()>1){
 					nameParts[i]=capitilizeOnlyFirstLetter(nameParts[i]);
@@ -252,7 +254,10 @@ public class User {
 		int arraySize=nameParts.length;
 		ArrayList <String>outputArrayList= new ArrayList();
 		int maxNum=20;
-		for(int i=0;i<(maxNum-1);i++) {
+		if (nameParts.length<maxNum) {
+			maxNum=nameParts.length;
+		}
+		for(int i=0;i<(maxNum);i++) {
 			if (nameParts[i].trim().length()>0) {
 				outputArrayList.add(capitilizeOnlyFirstLetter(nameParts[i]).trim());
 			}
