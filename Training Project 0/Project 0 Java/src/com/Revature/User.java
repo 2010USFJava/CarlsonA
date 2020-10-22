@@ -42,15 +42,40 @@ public class User {
 		return lastName;
 	}
 	
+	//most of the time I'll need just the first middle name
 	public String getMiddleName() {
+		return getMiddleName(false,1);
+	}
+	
+	public String getMiddleName(int nameCap) {
+		return getMiddleName(true, nameCap);
+	}
+	
+	public String getMiddleName(boolean useMultipleMiddleNames) {
+		return getMiddleName(useMultipleMiddleNames, 20);
+	}
+	
+	public String getMiddleName(boolean useMultipleMiddleNames,int nameCap) {
 		String output=middleName;
 		
-		//if
-		if (hasAdditionalMiddleNames==true) {
-//			Run through each item and add it with a space to the new output
-			 
-			
+//		Run through each item and add it with a space to the new output
+		if (useMultipleMiddleNames==true) {
+			if (hasAdditionalMiddleNames==true) {
+				output="";
+				int returnLimit=nameCap;
+				if (additionalMiddleNames.size()<returnLimit) {
+					returnLimit=additionalMiddleNames.size();
+				}
+				for (int i =0;i<returnLimit;i++) {
+					if(i==0) {
+						output+=additionalMiddleNames.get(i);
+					}else {
+						output+=" "+additionalMiddleNames.get(i);
+					}
+				}	
+			}
 		}
+		
 		return output;
 		
 		
@@ -90,12 +115,17 @@ public class User {
 				if (arraySize==1) {
 					return name;
 				} else {
+					
+					//declare varibles if I need to break down a name
 				String dashOption=dashifyName(nameParts);
 				String removeSpace=removeSpacesFromName(nameParts);
+				ArrayList<String>middleNameArrayList=new ArrayList<>();
+				String longMiddleNameString="";
+				String firstMiddleName="";
+				
+				
 				if(isMiddleName) {
-					ArrayList<String>middleNameArrayList=makeNameArrayList(nameParts);
-					String longMiddleNameString="";
-					String firstMiddleName;
+					middleNameArrayList=makeNameArrayList(nameParts);
 					for (int i=0;i<middleNameArrayList.size();i++) {
 						if(i==0) {
 							String workingString=middleNameArrayList.get(i);
@@ -115,7 +145,7 @@ public class User {
 							+ "2 : Use "+removeSpace+"\n";
 					
 					if(isMiddleName==true) {
-						output+="3 : Please use \""+name+"\" as my middle name\n";
+						output+="3 : Please use \""+longMiddleNameString+"\" as my middle name\n";
 					}
 					System.out.println(output);
 					
@@ -140,7 +170,10 @@ public class User {
 						
 					} else {
 						if (isMiddleName==true && answerNumber==3) {
-							System.out.println(partOfName+" has been set to "+name);
+							System.out.println(partOfName+" has been set to "+longMiddleNameString);
+							hasAdditionalMiddleNames=true;
+							additionalMiddleNames=middleNameArrayList;
+							name=firstMiddleName;
 						}else {
 							System.out.println(responseString+" is not a vailid choice. Please try again.");
 							usableAnswer=false;							
