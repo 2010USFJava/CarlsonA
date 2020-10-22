@@ -8,7 +8,8 @@ public class User {
 	//basic user name information
 	private String firstName;
 	private String lastName;
-	private String middleName;
+	//Some people don't have middle names. Defaulting this to ""
+	private String middleName="";
 	
 	//in the event the user has multiple middle names this can be called
 	private ArrayList<String> additionalMiddleNames = new ArrayList<>();
@@ -17,6 +18,20 @@ public class User {
 	
 	//Scanner
 	private Scanner scan = new Scanner(System.in);
+	
+//	constructors
+	public User() {}
+	public User(String firstName,String middleName, String lastName) {
+		setFirstName(firstName);
+		setMiddleName(middleName);
+		setLastName(lastName);
+	}
+	
+	public User(String firstName,String lastName) {
+		setFirstName(firstName);
+		setLastName(lastName);
+		
+	}
 	
 	//getters and setters
 	public String getFirstName() {
@@ -43,6 +58,16 @@ public class User {
 	
 	public void setFirstName(String firstName) {
 		this.firstName=checkName(firstName, "First Name");
+	}
+	
+	public void setLastName(String lastName){
+		this.lastName=checkName(lastName,"Last Name");
+		
+	}
+	
+	public void setMiddleName(String middleName) {
+		this.middleName=checkName(middleName, "Middle Name");
+		
 	}
 	
 	//checks if the name has spaces between it and breaks it up
@@ -79,8 +104,10 @@ public class User {
 //					Also check if number is in range
 					if(answerNumber==1) {
 						name=dashOption;
+						System.out.println(partOfName+" has been set to "+dashOption);
 					} else if(answerNumber==2) {
 						name=removeSpace;
+						System.out.println(partOfName+" has been set to "+removeSpace);
 					} else if(answerNumber==0) {
 						usableAnswer=false;
 						System.out.println("Please reenter the "+partOfName+":\n");
@@ -122,13 +149,20 @@ public class User {
 		String dashOption="";
 		
 		for(int i=0;i<arraySize;i++) {
-			if(i==0) {
-
+			System.out.println("Working Part: "+nameParts[i].trim());
+			if(nameParts[i].trim().length()>0) {
+				if (nameParts[i].length()>1){
+					nameParts[i]=nameParts[i].substring(0,1).toUpperCase()+nameParts[i].substring(1).toLowerCase();
+				}else {
+					nameParts[i].toUpperCase();
+				}
 				
-				dashOption+=nameParts[i].substring(0,1).toUpperCase()+nameParts[i].substring(1).toLowerCase();
-				
-			}else {
-				dashOption+="-"+nameParts[i].substring(0,1).toUpperCase()+nameParts[i].substring(1).toLowerCase();				
+				if(i==0) {					
+					dashOption+=nameParts[i];
+					
+				}else {
+					dashOption+="-"+nameParts[i];				
+				}
 			}
 		}
 		return dashOption;

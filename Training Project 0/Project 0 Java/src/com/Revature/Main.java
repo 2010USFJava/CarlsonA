@@ -6,9 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		User user = new User();
-		
-		System.out.println("Hello world");
+		Employee user = new Employee();
 		
 		user.setFirstName("Carl");
 		user.setFirstName("ASda asda");
