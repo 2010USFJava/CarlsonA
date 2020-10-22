@@ -66,15 +66,20 @@ public class User {
 	}
 	
 	public void setMiddleName(String middleName) {
-		this.middleName=checkName(middleName, "Middle Name");
+		this.middleName=checkName(middleName, "Middle Name",true);
 		
 	}
 	
-	//checks if the name has spaces between it and breaks it up
 	private String checkName(String name,String partOfName) {
-
-			boolean usableAnswer=false;
-			
+		return checkName(name,partOfName,false);
+	}
+	
+	//checks if the name has spaces between it and breaks it up
+	private String checkName(String name,String partOfName,boolean isMiddleName) {
+		
+		
+		
+		boolean usableAnswer=false;			
 			do {
 				//remove white space on ends
 				name= name.trim();
@@ -87,11 +92,32 @@ public class User {
 				} else {
 				String dashOption=dashifyName(nameParts);
 				String removeSpace=removeSpacesFromName(nameParts);
+				if(isMiddleName) {
+					ArrayList<String>middleNameArrayList=makeNameArrayList(nameParts);
+					String longMiddleNameString="";
+					String firstMiddleName;
+					for (int i=0;i<middleNameArrayList.size();i++) {
+						if(i==0) {
+							String workingString=middleNameArrayList.get(i);
+							firstMiddleName=workingString;
+							longMiddleNameString=workingString;
+						} else {
+							longMiddleNameString+=middleNameArrayList.get(i);
+						}
+						
+					}
 					
-					System.out.println("There are extra spaces in the "+partOfName+" \""+name+"\". \nWhat would you like to do?\n"
+				}
+					
+					String output="There are extra spaces in the "+partOfName+" \""+name+"\". \nWhat would you like to do?\n"
 							+ "0 : Re-enter Name\n"
 							+ "1 : Use "+dashOption+"\n"
-							+ "2 : Use "+removeSpace+"\n");
+							+ "2 : Use "+removeSpace+"\n";
+					
+					if(isMiddleName==true) {
+						output+="3 : Please use \""+name+"\" as my middle name\n";
+					}
+					System.out.println(output);
 					
 				String responseString = scan.nextLine();
 				
@@ -99,8 +125,7 @@ public class User {
 //				If the catch block does not initiate, this will be true and the loop will break
 				usableAnswer=true;
 				try{
-					answerNumber=Integer.parseInt(responseString);
-					
+					answerNumber=Integer.parseInt(responseString);	
 //					Also check if number is in range
 					if(answerNumber==1) {
 						name=dashOption;
@@ -114,17 +139,20 @@ public class User {
 						name = scan.nextLine();
 						
 					} else {
-						System.out.println(responseString+" is not a vailid choice. Please try again.");
-						usableAnswer=false;
+						if (isMiddleName==true && answerNumber==3) {
+							System.out.println(partOfName+" has been set to "+name);
+						}else {
+							System.out.println(responseString+" is not a vailid choice. Please try again.");
+							usableAnswer=false;							
+						}
+
 					}
 					
 				}catch(NumberFormatException e){
 					System.out.println("That was not a number, please try again.");	
 					usableAnswer=false;
 				}
-				
 			} 
-			
 		} while(usableAnswer==false);
 		return name;
 	}
@@ -152,7 +180,7 @@ public class User {
 			System.out.println("Working Part: "+nameParts[i].trim());
 			if(nameParts[i].trim().length()>0) {
 				if (nameParts[i].length()>1){
-					nameParts[i]=nameParts[i].substring(0,1).toUpperCase()+nameParts[i].substring(1).toLowerCase();
+					nameParts[i]=capitilizeOnlyFirstLetter(nameParts[i]);
 				}else {
 					nameParts[i].toUpperCase();
 				}
@@ -178,9 +206,30 @@ public class User {
 		int arraySize=nameParts.length;
 		String removeSpace="";
 		for(int i=0;i<arraySize;i++) {
-			removeSpace+=nameParts[i].trim();
+			if(i==0) {
+				removeSpace+=capitilizeOnlyFirstLetter(nameParts[i]);
+			}else {
+				removeSpace+=nameParts[i].trim().toLowerCase();
+			}
 		}
 		return removeSpace;
+	}
+	
+	private ArrayList<String> makeNameArrayList(String[]nameParts) {
+		int arraySize=nameParts.length;
+		ArrayList <String>outputArrayList= new ArrayList();
+		int maxNum=20;
+		for(int i=0;i<(maxNum-1);i++) {
+			if (nameParts[i].trim().length()>0) {
+				outputArrayList.add(capitilizeOnlyFirstLetter(nameParts[i]).trim());
+			}
+		}
+		return outputArrayList;
+		
+	}
+	
+	private String capitilizeOnlyFirstLetter(String word) {
+		return word.substring(0,1).toUpperCase()+word.substring(1).toLowerCase();
 	}
 	
 	
