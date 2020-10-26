@@ -6,7 +6,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		User user = new User("Adam","Hamste","Savage");
+//		System.out.println("Hello World");
+		
+		User user = new User("Adam","Hamste  Dfds","Savage");
 		
 		
 
