@@ -1,27 +1,28 @@
 package com.Revature;
 
-public class Employee  {
-	//variables
-	private int empId;
+public class Customer {
+	
+	//variable
+	private int custId;
 	private User user;
 	
 	private static int idTracker=0;
 	
-	public Employee(){
+	public Customer(){
 		this(new User());
 	}
 	
-	public Employee(User user) {
+	public Customer(User user) {
 		incrementId();
 	}
 	
-	public Employee(String firstName,String middleName,String lastName) {
+	public Customer(String firstName,String middleName,String lastName) {
 		this(new User(firstName,middleName,lastName));
 		
 	}
 	
 	private void incrementId() {
-		empId=idTracker++;
+		custId=idTracker++;
 	}
 	
 	
