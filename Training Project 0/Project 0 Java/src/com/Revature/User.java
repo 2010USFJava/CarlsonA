@@ -10,7 +10,8 @@ public class User {
 	private String lastName;
 	//Some people don't have middle names. Defaulting this to ""
 	private String middleName="";
-	
+
+
 	//in the event the user has multiple middle names this can be called
 	private ArrayList<String> additionalMiddleNames = new ArrayList<>();
 	//Checks if additional steps should be run for the extra middle names

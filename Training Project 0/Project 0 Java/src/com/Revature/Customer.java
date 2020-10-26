@@ -1,30 +1,33 @@
 package com.Revature;
 
-public class Customer {
+public class Customer extends User {
 	
 	//variable
 	private int custId;
-	private User user;
-	
 	private static int idTracker=0;
 	
+	//constructors
 	public Customer(){
-		this(new User());
+		super();
 	}
 	
-	public Customer(User user) {
-		incrementId();
-	}
 	
 	public Customer(String firstName,String middleName,String lastName) {
-		this(new User(firstName,middleName,lastName));
+		super(firstName,middleName,lastName);
+		incrementId();
 		
 	}
 	
+	//constructor assists
 	private void incrementId() {
 		custId=idTracker++;
 	}
 	
+	//getter and setters
+	public int getId() {
+		return custId;
+		
+	}
 	
 
 }

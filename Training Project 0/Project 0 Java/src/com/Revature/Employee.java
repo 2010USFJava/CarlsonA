@@ -1,29 +1,31 @@
 package com.Revature;
 
-public class Employee  {
+public class Employee extends User {
 	//variables
 	private int empId;
-	private User user;
-	
 	private static int idTracker=0;
 	
 	public Employee(){
-		this(new User());
-	}
-	
-	public Employee(User user) {
+		super();
 		incrementId();
 	}
 	
+
 	public Employee(String firstName,String middleName,String lastName) {
-		this(new User(firstName,middleName,lastName));
-		
+		super(firstName,middleName,lastName);
+		incrementId();
 	}
+
+
 	
 	private void incrementId() {
 		empId=idTracker++;
 	}
 	
-	
+	//getters and setters
+	public int getId() {
+		return empId;
+		
+	}
 
 }
