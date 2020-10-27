@@ -18,6 +18,11 @@ public class Customer extends User {
 		
 	}
 	
+	public Customer(String firstName, String lastName) {
+		super(firstName,lastName);
+		incrementId();
+	}
+	
 	//constructor assists
 	private void incrementId() {
 		custId=idTracker++;

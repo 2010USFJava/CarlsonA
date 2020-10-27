@@ -3,14 +3,24 @@ package com.Revature;
 public class Account {
 	private int accountId;
 	private double balance=0;
-	private AccountStatusEnum accountStatus;
-	
+	private AccountStatusEnum accountStatus=AccountStatusEnum.IN_APPLICATION;
+	private Customer accountHolder;
+	//tracker assist
 	private static int idTracker=0;
 	
 	//constructors
-	public Account() {
+	public Account(Customer accountHolder) {
 		incrementId();
-		accountStatus=AccountStatusEnum.IN_APPLICATION;
+		this.accountHolder=accountHolder;
+
+	}
+	
+	public Account(String firstName, String lastName) {
+		 this(new Customer(firstName,lastName));
+	}
+	
+	public Account(String firstName,  String middleName,String lastName) {
+		 this(new Customer(firstName,middleName,lastName));
 	}
 	
 	
