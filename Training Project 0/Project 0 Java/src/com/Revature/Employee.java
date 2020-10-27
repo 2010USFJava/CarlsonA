@@ -27,5 +27,18 @@ public class Employee extends User {
 		return empId;
 		
 	}
+	
+	//change account status
+	public void changeAccountStatus(Account account, AccountStatusEnum status) {
+		account.changeStatus(status);
+		
+	}
+	
+	public String getAccountInfo(Account account) {
+		String output=account.getCustomerPersonalData();
+		
+		return output;
+		
+	}
 
 }
