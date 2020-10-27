@@ -6,6 +6,7 @@ public class Customer extends User {
 	private int custId;
 	private static int idTracker=0;
 	
+	
 	//constructors
 	public Customer(){
 		super();
@@ -34,5 +35,23 @@ public class Customer extends User {
 		
 	}
 	
+	//account interaction
+	public Account createAccount() {
+		Account acct= new Account(this);
+		return acct;
+		
+	}
+	
+	public Account createAccount(Customer cust) {
+		Account acct;
+		if (cust.equals(this)) {
+			acct=createAccount();
+		} else {
+			acct= new JointAccount(this,cust);
+			
+		}
+		return acct;
+		
+	}
 
 }

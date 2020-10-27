@@ -10,6 +10,7 @@ public class User {
 	private String lastName;
 	//Some people don't have middle names. Defaulting this to ""
 	private String middleName="";
+	private LoginInfo loginInfo;
 
 
 	//in the event the user has multiple middle names this can be called
@@ -271,6 +272,8 @@ public class User {
 		return word.substring(0,1).toUpperCase()+word.substring(1).toLowerCase();
 	}
 	
+	
+
 	
 
 }
