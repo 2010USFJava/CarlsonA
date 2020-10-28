@@ -5,8 +5,8 @@ public class Main {
 	
 
 	public static void main(String[] args) {
-		
-		
+
+
 		Customer [] testCustomers= {new Customer("Jane","Doe"),new Customer("Adam","Hamste","Savage")};
 		
 		Account [] testAccounts = {new Account(testCustomers[1])};

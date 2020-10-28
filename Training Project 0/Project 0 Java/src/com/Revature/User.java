@@ -3,7 +3,12 @@ package com.Revature;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class User {
+public abstract class User {
+	
+	protected enum UserTypeEnum{
+		CUSTOMER,
+		EMPLOYEE;
+	}
 	
 	//basic user name information
 	private String firstName;
@@ -11,6 +16,8 @@ public class User {
 	//Some people don't have middle names. Defaulting this to ""
 	private String middleName="";
 	private LoginInfo loginInfo;
+	private int userId;
+	private UserTypeEnum userType;
 
 
 	//in the event the user has multiple middle names this can be called
@@ -21,8 +28,22 @@ public class User {
 	//Scanner
 	private Scanner scan = new Scanner(System.in);
 	
+	//static
+	public static int idTracker=0;
+	
+	
+	//constructor assists
+	private void generateId() {
+		userId=idTracker++;
+	}
+	
 //	constructors
-	public User() {}
+	
+	{generateId();}
+	
+	
+	public User() {
+	}
 	public User(String firstName,String middleName, String lastName) {
 		setFirstName(firstName);
 		setMiddleName(middleName);
@@ -32,10 +53,9 @@ public class User {
 	public User(String firstName,String lastName) {
 		setFirstName(firstName);
 		setLastName(lastName);
-		
 	}
 	
-	//getters and setters
+	//Name handling: Getters/Setters and Helpers
 	public String getFirstName() {
 		return firstName;
 	}
@@ -270,6 +290,32 @@ public class User {
 	
 	private String capitilizeOnlyFirstLetter(String word) {
 		return word.substring(0,1).toUpperCase()+word.substring(1).toLowerCase();
+	}
+
+
+	//getters and setters
+	public LoginInfo getLoginInfo() {
+		return loginInfo;
+	}
+
+	public void setLoginInfo(LoginInfo loginInfo) {
+		this.loginInfo = loginInfo;
+	}
+	
+	public void setLoginInfo(String username,String password) {
+		this.loginInfo=new LoginInfo(username,password);
+	}
+
+	public UserTypeEnum getUserType() {
+		return userType;
+	}
+
+	protected void setUserType(UserTypeEnum userType) {
+		this.userType = userType;
+	}
+
+	public int getUserId() {
+		return userId;
 	}
 	
 	

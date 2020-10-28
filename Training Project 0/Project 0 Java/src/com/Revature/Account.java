@@ -12,6 +12,13 @@ import com.Revature.Account.AccountTypeEnum;
  */
 public class Account {
 	
+	public enum AccountStatusEnum {
+		OPEN,
+		CLOSED,
+		IN_APPLICATION;
+	}
+
+	
 	protected enum AccountTypeEnum{
 		SINGLE,
 		JOINT;

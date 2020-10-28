@@ -1,42 +1,30 @@
 package com.Revature;
 
-public class Employee extends User {
-	//variables
-	private int empId;
-	private static int idTracker=0;
-	
-	public Employee(){
-		super();
-		incrementId();
-	}
-	
+import com.Revature.User.UserTypeEnum;
 
+public class Employee extends User {
+	
+	{setUserType(UserTypeEnum.EMPLOYEE);}
+
+	//constructor
 	public Employee(String firstName,String middleName,String lastName) {
 		super(firstName,middleName,lastName);
-		incrementId();
-	}
-
-
-	
-	private void incrementId() {
-		empId=idTracker++;
 	}
 	
-	//getters and setters
-	public int getId() {
-		return empId;
-		
+	public Employee(String firstName,String lastName) {
+		super(firstName,lastName);
 	}
+
+	
 	
 	//change account status
-	public void changeAccountStatus(Account account, AccountStatusEnum status) {
+	public void changeAccountStatus(Account account, Account.AccountStatusEnum status) {
 		account.changeStatus(status);
 		
 	}
 	
 	public String getAccountInfo(Account account) {
 		String output=account.getCustomerPersonalData();
-		
 		return output;
 		
 	}

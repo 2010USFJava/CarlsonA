@@ -1,6 +1,8 @@
 package com.Revature;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class LoginInfo {
 	/*note to self: add better security for this
@@ -10,12 +12,11 @@ public class LoginInfo {
 	private String password;
 
 //	Stretch Goal do double checks in the future
-	private static HashMap<String,String> takenUsernames=new HashMap<>();
+	private static List<String> takenUsernames=new ArrayList<>();
 	
 	public LoginInfo(String username, String password) {
 		this.username=checkIfUsernameIsTaken(username);
 		this.password=password;
-		
 	}
 	
 	private String checkIfUsernameIsTaken(String username) {
