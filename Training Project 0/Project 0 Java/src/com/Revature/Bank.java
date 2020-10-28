@@ -71,9 +71,36 @@ public class Bank {
 	}
 	
 	private void login() {
+		boolean loginProblems=false;
 		System.out.println("Please Enter Your Login Credentials\nPress 0 if you do not have Login Credentials, or have forgotten them");
-		
+
+		try {
+			System.out.println("Please enter your username");
+			String username=scan.nextLine().trim();
+			if (username=="0") {
+				loginProblems=true;
+				loginProblems();
+			}
+			
+			System.out.println("Please enter your password");
+			String pass=scan.nextLine().trim();
+			if (username=="0") {
+				loginProblems=true;
+				loginProblems();
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.err.println("Why do you do this to me?");
+		}
 	
+	}
+	
+	private void loginProblems() {
+		System.out.println("You've hit 0. What is your problem?");
+		String [] problemsOptions=new String[4];
+		problemsOptions[0]="I have an account, but forgot my username or password";
+		
 	}
 	
 	
