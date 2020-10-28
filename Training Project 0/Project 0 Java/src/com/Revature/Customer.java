@@ -1,8 +1,10 @@
 package com.Revature;
 
-import com.Revature.User.UserTypeEnum;
+import java.util.ArrayList;
+
 
 public class Customer extends User {
+	private ArrayList<Account> userAccounts=new ArrayList<>();
 	
 	{setUserType(UserTypeEnum.CUSTOMER);}
 	
@@ -16,10 +18,15 @@ public class Customer extends User {
 		super(firstName,lastName);
 	}
 	
+	//getters and setters
+	public ArrayList<Account> getUserAccounts() {
+		return userAccounts;
+	}
 
 	//account interaction
 	public Account createAccount() {
 		Account acct= new Account(this);
+		userAccounts.add(acct);
 		return acct;
 		
 	}
@@ -30,6 +37,7 @@ public class Customer extends User {
 			acct=createAccount();
 		} else {
 			acct= new JointAccount(this,cust);
+			userAccounts.add(acct);
 			
 		}
 		return acct;
