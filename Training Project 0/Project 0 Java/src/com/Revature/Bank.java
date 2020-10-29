@@ -3,6 +3,11 @@ package com.Revature;
 import java.util.Scanner;
 
 public class Bank {
+	enum menuLocation{
+		
+		
+	}
+	
 	private String name="Fancy Bank of Holding";
 	private final int estYear=2020;
 	private Scanner scan=new Scanner(System.in);
@@ -99,7 +104,9 @@ public class Bank {
 	private void loginProblems() {
 		System.out.println("You've hit 0. What is your problem?");
 		String [] problemsOptions=new String[4];
-		problemsOptions[0]="I have an account, but forgot my username or password";
+		problemsOptions[0]="I do not have a username";
+		problemsOptions[1]="I forgot my username or password";
+		problemsOptions[2]="I selected this by accident. Send me back";
 		
 	}
 	
