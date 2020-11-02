@@ -1,6 +1,8 @@
 package com.Revature;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class LoginInfo {
 	/*note to self: add better security for this
@@ -8,34 +10,94 @@ public class LoginInfo {
 	 */
 	private String username;
 	private String password;
+	private User user;
 
 //	Stretch Goal do double checks in the future
-	private static HashMap<String,String> takenUsernames=new HashMap<>();
+	private static Map<String,LoginInfo> loginMap = new HashMap<>();
 	
-	public LoginInfo(String username, String password) {
-		this.username=checkIfUsernameIsTaken(username);
+	
+	//constructor
+	public LoginInfo(String username, String password,User user) {
+		boolean keepGoing=false;
+		do {
+			if (!checkIfUsernameIsTaken(username)) {
+				keepGoing=true;
+			}
+			
+			if(!keepGoing) {
+				System.out.println("Unfortunatly, that username is unavaliable. Please try again.");
+				username=StringCheck.scannerStringCheck("username");
+			}
+			
+		}while(!keepGoing);
+		
+		this.username=username;
 		this.password=password;
+		this.user=user;
+		loginMap.put(username, this);
 		
 	}
 	
-	private String checkIfUsernameIsTaken(String username) {
-		String checkedName=username;
-		return checkedName;
-	}
-
-	private boolean checkIfUsernameExists() {
-		if (username==null) {
-			return false;
-		}
-		return true;
+	
+	//getters and setters
+	public String getUsername() {
+		return username;
 	}
 	
-	private boolean checkIfPasswordExists() {
-		if (password==null) {
-			return false;
+	public static User logIn(String username, String password) {
+//		try retrieving LoginInfo
+		//Should hide a failed log in attempt here in final run to make sure
+//		fishers cannot get in
+		User defaultUser = null;
+		LoginInfo info = loginMap.get(username);
+		System.out.println(info);
+		boolean infoExists = checkIfUsernameIsTaken(username);
+		if(infoExists) {
+			return info.logInMeat(username, password);
+		} else {
+			System.out.println("Login was not successful - No such user");
+			return defaultUser;
 		}
-		return true;
+		
+		
 	}
+	
+	//Try to access user data by logging in
+	private User logInMeat(String username, String password) {
+		User user = null;
+		if ((this.username.equals(username))&&(this.password.equals(password))) {
+			System.out.println("Login successful");
+			return this.user;
+		} else if(this.username.equals(username)) {
+			System.out.println("Login was not successful- No such user");
+		}else {
+			System.out.println("Login was not successful- No such password");
+		}
+
+		return user;
+	}
+	
+	
+	
+	//username checks
+	private static boolean checkIfUsernameIsTaken(String username) {
+			if (loginMap.containsKey(username)) {
+				return true;
+			} else {
+				return false;
+			}	
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "Username: "+username+ " FirstName: "+user.getFirstName(); 
+		
+	}
+
+
+	
+	
 	
 	
 
