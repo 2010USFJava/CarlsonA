@@ -12,7 +12,6 @@ public class Bank {
 	
 	
 	public void startPage() {
-		LogThis.logIt("trace","testing...");
 		System.out.println("Welcome to "+name);
 		System.out.println("Est. "+estYear);
 		selectUserType();
