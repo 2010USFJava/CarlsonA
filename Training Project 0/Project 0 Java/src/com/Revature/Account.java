@@ -12,6 +12,13 @@ import com.Revature.Account.AccountTypeEnum;
  */
 public class Account {
 	
+	public enum AccountStatusEnum {
+		OPEN,
+		CLOSED,
+		IN_APPLICATION;
+	}
+
+	
 	protected enum AccountTypeEnum{
 		SINGLE,
 		JOINT;
@@ -31,12 +38,12 @@ public class Account {
 	protected AccountTypeEnum accountType = AccountTypeEnum.SINGLE;
 	private Customer accountHolder;
 	
+	{	incrementId();
+		accountMap.put(accountId, this);}
 	
 	//constructors
 	public Account(Customer accountHolder) {
-		incrementId();
 		this.accountHolder=accountHolder;
-		accountMap.put(accountId, this);
 
 	}
 	
@@ -101,6 +108,11 @@ public class Account {
 	
 	//balance adjustments
 	public double withdraw(double money) {
+		if(money<0) {
+			System.out.println();
+			money=-money;
+		}
+		
 		if(balance<money) {
 			money=balance;
 			System.out.println("Not enough money in account. Withdrawing maximum amount: "+convertMoney(money));
@@ -121,7 +133,6 @@ public class Account {
 	
 	public void printBalance() {
 		System.out.println("Current avaliable balance: "+convertMoney(balance));
-		
 		
 	}
 	
