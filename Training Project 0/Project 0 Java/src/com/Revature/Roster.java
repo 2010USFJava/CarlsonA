@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Roster {
 	static {
 		loginRoster = new ArrayList<>();
-		LoginInfo testLogin = new LoginInfo("guest","pass");
+		Customer cust = new Customer("Joe","Smith");
+		LoginInfo testLogin = new LoginInfo("guest","pass",cust);
 		addToLoginRoster(testLogin);
 	}
 	

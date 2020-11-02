@@ -56,7 +56,14 @@ public class StringCheck {
 				break;
 			}
 		}
-
+		if(stringAnswer.trim()=="") {
+			if(optional) {
+				runData.setSkipStep(true);
+			} else {
+				stringAnswer=scannerStringOrGoBack(wantedInput,optional);
+			}	
+		}
+		
 		return stringAnswer;
 		
 	} 

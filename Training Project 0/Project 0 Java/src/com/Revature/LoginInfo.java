@@ -17,7 +17,7 @@ public class LoginInfo {
 	
 	
 	//constructor
-	public LoginInfo(String username, String password) {
+	public LoginInfo(String username, String password,User user) {
 		boolean keepGoing=false;
 		do {
 			if (!checkIfUsernameIsTaken(username)) {
@@ -33,6 +33,7 @@ public class LoginInfo {
 		
 		this.username=username;
 		this.password=password;
+		this.user=user;
 		loginMap.put(username, this);
 		
 	}
@@ -47,14 +48,15 @@ public class LoginInfo {
 //		try retrieving LoginInfo
 		//Should hide a failed log in attempt here in final run to make sure
 //		fishers cannot get in
-		User user = null;
+		User defaultUser = null;
 		LoginInfo info = loginMap.get(username);
+		System.out.println(info);
 		boolean infoExists = checkIfUsernameIsTaken(username);
 		if(infoExists) {
 			return info.logInMeat(username, password);
 		} else {
 			System.out.println("Login was not successful - No such user");
-			return user;
+			return defaultUser;
 		}
 		
 		
@@ -63,12 +65,15 @@ public class LoginInfo {
 	//Try to access user data by logging in
 	private User logInMeat(String username, String password) {
 		User user = null;
-		if ((this.username==username)&&(this.password==password)) {
+		if ((this.username.equals(username))&&(this.password.equals(password))) {
 			System.out.println("Login successful");
 			return this.user;
-		} 
+		} else if(this.username.equals(username)) {
+			System.out.println("Login was not successful- No such user");
+		}else {
+			System.out.println("Login was not successful- No such password");
+		}
 
-		System.out.println("Login was not successful- No such password");
 		return user;
 	}
 	
@@ -84,6 +89,11 @@ public class LoginInfo {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Username: "+username+ " FirstName: "+user.getFirstName(); 
+		
+	}
 
 
 	

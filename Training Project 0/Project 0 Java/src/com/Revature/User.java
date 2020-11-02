@@ -303,7 +303,7 @@ public abstract class User {
 	}
 	
 	public void setLoginInfo(String username,String password) {
-		this.loginInfo=new LoginInfo(username,password);
+		this.loginInfo=new LoginInfo(username,password,this);
 	}
 
 	public UserTypeEnum getUserType() {

@@ -27,10 +27,11 @@ public class Bank {
 		System.out.println("What type of user are you?");
 
 		int selection=StringCheck.numberScanner(options);
-		User user;
+		User user=null;
 		switch (selection) {
 		case 0://new customer
 			user=applyForANewAccount();
+			startPage();
 			break;
 		case 1://returning user
 			user = login();
@@ -42,6 +43,12 @@ public class Bank {
 			System.out.println("Unfortunantly that has not been added yet. Please reselect.");
 			selectUserType();
 			break;
+		}
+		
+		if (user!=null) {
+			showCustomerMenu(user);
+		} else {
+			System.out.println("User is null");
 		}
 		
 	}
@@ -145,38 +152,66 @@ public class Bank {
 			break;
 		}
 		
-		
-		
-		
 	}
 	
 	//new customer
 	private Customer applyForANewAccount() {
+		Customer newCustomer=null;
+		String lName="";
+		String mName="";
+		String username="";
+		String password="";
 		
+		//since the user can break out of this at any time, there are multiple if strings
 		String fName=StringCheck.scannerStringOrGoBack("first name");
-		String lName=StringCheck.scannerStringOrGoBack("last name");
-		String mName=StringCheck.scannerStringOrGoBack("middle name",true);
-		System.out.println("Just a moment while we create your application...");
-		Customer newCustomer;
-		if(runData.getSkipStep()) {
-			newCustomer=new Customer(fName,lName);
-		} else {
-			newCustomer=new Customer(fName,mName,lName);
+		if(!checkIfGoBack()) {
+			lName=StringCheck.scannerStringOrGoBack("last name");
 		}
-		System.out.println("Account Application Completed.\nNext please create a username and password");
-		String username=StringCheck.scannerStringOrGoBack("username");
-//		Check username and to see if we will continue to password.
-		String password=StringCheck.scannerStringOrGoBack("password");
-		System.out.println("Creating log in information....");
-		newCustomer.setLoginInfo(username, password);
-		System.out.println("Finished creating log in information.");
-		
-		return newCustomer;
-		
-		
-		
+		if (!checkIfGoBack()) {
+			 mName=StringCheck.scannerStringOrGoBack("middle name",true);
+				
+		}
+		if (!checkIfGoBack()) {
+
+			System.out.println("Just a moment while we create your application...");
+			
+			if(runData.getSkipStep()) {
+				newCustomer=new Customer(fName,lName);
+			} else {
+				newCustomer=new Customer(fName,mName,lName);
+			}
+			System.out.println("Account Application Completed.\nNext please create a username and password");
+			
+		}
+		if (!checkIfGoBack()) {
+			username=StringCheck.scannerStringOrGoBack("username");
+//				
+		}
+		if (!checkIfGoBack()) {
+			//Check username and to see if we will continue to password.
+			password=StringCheck.scannerStringOrGoBack("password");
+				
+		}
+		if (!checkIfGoBack()) {
+			System.out.println("Creating log in information....");
+			newCustomer.setLoginInfo(username, password);
+			System.out.println("Finished creating log in information.");
+			
+		}
+		return newCustomer;	
 		
 	}
+	
+	private boolean checkIfGoBack() {
+		return RuntimeData.data.getGoBack();
+	}
+	
+	private void showCustomerMenu(User user) {
+		System.out.println("Welcome back");
+		System.out.println(user);
+	}
+	
+	
 	
 	
 	
