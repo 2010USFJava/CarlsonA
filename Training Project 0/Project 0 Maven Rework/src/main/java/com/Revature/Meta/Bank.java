@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.Revature.Users.Customer;
 import com.Revature.Users.Employee;
+import com.Revature.Users.LoginInfo;
 import com.Revature.Users.Roster;
 import com.Revature.Users.User;
 
@@ -64,8 +65,11 @@ public class Bank {
 	}
 	
 	public static String scanner0ForMain1ForForgotPassword(String searchItem) {
+		//Option 1 should be a stretchgoal now
+		
+		
 		System.out.println("Press 0 to cancel and go back to the main menu");
-		System.out.println("Press 1 if you do not have Login Credentials, or have forgotten them");
+//		System.out.println("Press 1 if you do not have Login Credentials, or have forgotten them");
 		System.out.println("Please enter your "+searchItem);
 		
 		RuntimeData runData=RuntimeData.data;
@@ -87,9 +91,9 @@ public class Bank {
 						case 0:
 							runData.setGoBack(true);
 							break;
-						case 1:
-							runData.setLoginProblems(true);
-							break;
+//						case 1:
+//							runData.setLoginProblems(true);
+//							break;
 						default:
 							boolean passFobiddenNumbers=StringCheck.passForbbidenNumberCheck(intAnswer);
 //							If fails to pass forbidden number check run again
@@ -119,7 +123,7 @@ public class Bank {
 				loginProblems();
 			} else {
 
-				return Roster.login(userName,password);
+				return LoginInfo.logIn(userName,password);
 				
 			}
 			
@@ -161,7 +165,7 @@ public class Bank {
 	
 	//new customer
 	private Customer applyForANewAccount() {
-		Customer newCustomer=null;
+		Customer tempCustomer=null;
 		String lName="";
 		String mName="";
 		String username="";
@@ -178,14 +182,14 @@ public class Bank {
 		}
 		if (!checkIfGoBack()) {
 
-			System.out.println("Just a moment while we create your application...");
+			System.out.println("Just a moment while we varify your information...");
 			
 			if(runData.getSkipStep()) {
-				newCustomer=new Customer(fName,lName);
+				tempCustomer=new Customer(fName,lName);
 			} else {
-				newCustomer=new Customer(fName,mName,lName);
+				tempCustomer=new Customer(fName,mName,lName);
 			}
-			System.out.println("Account Application Completed.\nNext please create a username and password");
+			System.out.println("User information completed.\nNext please create a username and password");
 			
 		}
 		if (!checkIfGoBack()) {
@@ -199,11 +203,19 @@ public class Bank {
 		}
 		if (!checkIfGoBack()) {
 			System.out.println("Creating log in information....");
-			newCustomer.setLoginInfo(username, password);
+			tempCustomer.setLoginInfo(username, password);
+			
+//			Roster.addToLoginRoster(tempCustomer.getLoginInfo());
 			System.out.println("Finished creating log in information.");
 			
+			
 		}
-		return newCustomer;	
+		
+		if(checkIfGoBack()) {
+			return null;
+		}
+		
+		return tempCustomer;	
 		
 	}
 	

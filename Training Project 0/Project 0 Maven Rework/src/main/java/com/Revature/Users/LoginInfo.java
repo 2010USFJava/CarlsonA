@@ -13,7 +13,6 @@ public class LoginInfo {
 	private String password;
 	private User user;
 
-//	Stretch Goal do double checks in the future
 	private static Map<String,LoginInfo> loginMap = new HashMap<>();
 	
 	
@@ -35,15 +34,33 @@ public class LoginInfo {
 		this.username=username;
 		this.password=password;
 		this.user=user;
-		loginMap.put(username, this);
 		
 	}
+	
+	//constructor plus addToMap
+	public static LoginInfo createLoginInfoAndAddToMap(String username, String password,User user) {
+		LoginInfo loginInfo=new LoginInfo(username,password,user);
+		loginInfo.addToLoginMap();
+		return loginInfo;
+		
+	}
+	
 	
 	
 	//getters and setters
 	public String getUsername() {
 		return username;
 	}
+	
+	//loginMapManipulators
+	public void addToLoginMap() {
+		loginMap.put(username, this);		
+	}
+	
+	public void removeFromLoginMap() {
+		loginMap.remove(username);
+	}
+	
 	
 	public static User logIn(String username, String password) {
 //		try retrieving LoginInfo
@@ -81,7 +98,7 @@ public class LoginInfo {
 	
 	
 	//username checks
-	private static boolean checkIfUsernameIsTaken(String username) {
+	public static boolean checkIfUsernameIsTaken(String username) {
 			if (loginMap.containsKey(username)) {
 				return true;
 			} else {

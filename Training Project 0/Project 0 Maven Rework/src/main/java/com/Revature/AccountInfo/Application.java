@@ -24,22 +24,11 @@ public class Application {
 		applicationQueue.add(application);
 	}
 	
-	public static boolean checkIfEmployeeIsLoggedIn() {
-		if (RuntimeData.data.isLoggedIn()) {
-			//check if user is an employee
-			if(RuntimeData.data.getUser().checkIfEmployee()) {
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			return false;
-		}
-	}
+
 	
 	
 	public static Application getNextApplication() {
-		if (checkIfEmployeeIsLoggedIn()) {
+		if (RuntimeData.checkIfEmployeeIsLoggedIn()) {
 			return applicationQueue.peek();
 		}
 		else {

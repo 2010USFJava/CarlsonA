@@ -14,11 +14,11 @@ public class Main {
 		Bank bank = new Bank();
 //		bank.startPage();
 //		
-		User cust=new Customer("Green","Eggs");
-		Account account = new Account((Customer)cust);
-		System.out.println(account.getAccountStatus());
-		account.deposit(200);
-		System.out.println(account.getBalance());
+//		User cust=new Customer("Green","Eggs");
+//		Account account = new Account((Customer)cust);
+//		System.out.println(account.getAccountStatus());
+//		account.deposit(200);
+//		System.out.println(account.getBalance());
 //		
 //		Customer [] testCustomers= {new Customer("Jane","Doe"),new Customer("Adam","Hamste","Savage")};
 //		

@@ -57,6 +57,19 @@ public class RuntimeData {
 		this.loggedIn = loggedIn;
 	}
 	
+	public static boolean checkIfEmployeeIsLoggedIn() {
+		if (data.isLoggedIn()) {
+			//check if user is an employee
+			if(data.getUser().checkIfEmployee()) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	
 	
 	
 
