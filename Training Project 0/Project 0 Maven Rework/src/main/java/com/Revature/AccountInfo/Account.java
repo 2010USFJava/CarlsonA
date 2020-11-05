@@ -109,18 +109,29 @@ public class Account {
 	
 	//balance adjustments
 	public long withdraw(long money) {
-		if(balance<money) {
-			money=balance;
-			System.out.println("Not enough money in account. Withdrawing maximum amount: "+convertMoney(money));
-		} else if(money<0){
-			System.out.println("Cannot withdraw a negative amount");
-			money=0;
-		}else {
-			System.out.println("Withdrawing: "+convertMoney(money)+".");
-			printBalance();
-		}
-		balance-=money;
-		return money;
+		if(accountStatus.equals(AccountStatusEnum.OPEN)) {
+			if(balance<money) {
+				money=balance;
+				System.out.println("Not enough money in account. Withdrawing maximum amount: "+convertMoney(money));
+			} else if(money<0){
+				System.out.println("Cannot withdraw a negative amount");
+				money=0;
+			}else {
+				System.out.println("Withdrawing: "+convertMoney(money)+".");
+				printBalance();
+			}
+			balance-=money;
+			return money;
+
+			
+			}else {
+			System.out.println("Did not withdraw money. Account not open");
+
+			return 0;
+			}
+		
+		
+
 	}
 	
 	public void deposit(long money) {
@@ -150,10 +161,20 @@ public class Account {
 	
 	
 	public long transferMoneyToAccount(Account account, long money) {
+		
+
+		if(accountStatus.equals(AccountStatusEnum.OPEN)&&account.accountStatus.equals(AccountStatusEnum.OPEN)) {
+			long amountTransfered=withdraw(money);
+			account.deposit(amountTransfered);
+			return amountTransfered;
+			
+			
+		} else {
+			System.out.println("One or both of these accounts are not open");
+			return 0;
+		}
+		
 //may want to add upper limit checker here
-		long amountTransfered=withdraw(money);
-		account.deposit(amountTransfered);
-		return amountTransfered;
 	}
 	
 	public static Map<Integer,Account> getAccountDictionary() {
