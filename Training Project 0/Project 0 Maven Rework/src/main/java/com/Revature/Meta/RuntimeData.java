@@ -1,8 +1,11 @@
-package com.Revature;
+package com.Revature.Meta;
 
 import java.util.Scanner;
 
+import com.Revature.Users.User;
+
 public class RuntimeData {
+	private boolean loggedIn;
 	private User user;
 	private boolean goBack;
 	private boolean skipStep;
@@ -45,6 +48,15 @@ public class RuntimeData {
 	public void setLoginProblems(boolean loginProblems) {
 		this.loginProblems = loginProblems;
 	}
+
+	public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean loggedIn) {
+		this.loggedIn = loggedIn;
+	}
+	
 	
 	
 

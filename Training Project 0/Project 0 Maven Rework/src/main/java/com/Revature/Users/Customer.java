@@ -1,6 +1,10 @@
-package com.Revature;
+
+package com.Revature.Users;
 
 import java.util.ArrayList;
+
+import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.JointAccount;
 
 
 public class Customer extends User {

@@ -1,4 +1,4 @@
-package com.Revature;
+package com.Revature.Users;
 
 import java.util.ArrayList;
 
@@ -11,9 +11,6 @@ public class Roster {
 	}
 	
 	private static ArrayList<LoginInfo> loginRoster;
-	
-	
-	
 	public static void addToLoginRoster(LoginInfo info) {
 		loginRoster.add(info);
 	}

@@ -1,10 +1,11 @@
-package com.Revature;
+package com.Revature.AccountInfo;
 
 import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.Revature.Account.AccountTypeEnum;
+import com.Revature.AccountInfo.Account.AccountTypeEnum;
+import com.Revature.Users.Customer;
 
 /**
  * @author Owner
@@ -33,7 +34,7 @@ public class Account {
 	//primary variables
 	private int accountId;
 //	Remember to format this later
-	private double balance=0;
+	private long balance=0;
 	private AccountStatusEnum accountStatus=AccountStatusEnum.IN_APPLICATION;
 	protected AccountTypeEnum accountType = AccountTypeEnum.SINGLE;
 	private Customer accountHolder;
@@ -107,7 +108,7 @@ public class Account {
 	}
 	
 	//balance adjustments
-	public double withdraw(double money) {
+	public long withdraw(long money) {
 		if(money<0) {
 			System.out.println();
 			money=-money;
@@ -125,7 +126,7 @@ public class Account {
 		return money;
 	}
 	
-	public void deposit(double money) {
+	public void deposit(long money) {
 		balance+=money;
 		System.out.println("Deposited: "+convertMoney(money));
 		printBalance();
@@ -141,9 +142,9 @@ public class Account {
 	}
 	
 	
-	public double transferMoneyToAccount(Account account, double money) {
+	public long transferMoneyToAccount(Account account, long money) {
 //may want to add upper limit checker here
-		double amountTransfered=withdraw(money);
+		long amountTransfered=withdraw(money);
 		account.deposit(amountTransfered);
 		return amountTransfered;
 	}

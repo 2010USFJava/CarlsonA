@@ -1,7 +1,10 @@
-package com.Revature;
+package com.Revature.Users;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.Revature.Meta.LogThis;
 
 public abstract class User {
 	
@@ -38,6 +41,10 @@ public abstract class User {
 	}
 	
 //	constructors
+	private void init(){
+		LogThis.logIt(LogThis.LevelEnum.INFO, "Created new user"+toString());
+	}
+	
 	
 	{generateId();}
 	
@@ -318,6 +325,42 @@ public abstract class User {
 		return userId;
 	}
 	
+	public boolean checkIfEmployee() {
+		if(Employee.class.isInstance(this)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean checkIfCustomer() {
+		if(Customer.class.isInstance(this)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public String userTypeToString() {
+		if(checkIfCustomer()) {
+			return "customer";
+		} else if (checkIfEmployee()) {
+			return "employee";
+		} else {
+			return "unspecified user";
+		}
+	}
+	
+	@Override
+	public String toString() {
+		String output=userTypeToString()+"ID: "+userId;
+		output+= "\n\tFirstName: "+firstName;
+		if (middleName!=null) {
+			output+="\tMiddleName: "+middleName;
+		}
+		output+="\tLastName: "+lastName;
+		return output;
+	}
 	
 
 	

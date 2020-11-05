@@ -1,8 +1,14 @@
-package com.Revature;
+package com.Revature.Meta;
 
 import java.util.Scanner;
 
+import com.Revature.Users.Customer;
+import com.Revature.Users.Employee;
+import com.Revature.Users.Roster;
+import com.Revature.Users.User;
+
 public class Bank {
+
 	
 	private String name="Fancy Bank of Holding";
 	private final int estYear=2020;
@@ -37,6 +43,15 @@ public class Bank {
 			user = login();
 			if (user==null) {
 				startPage();
+			} else {
+				if(user.checkIfCustomer()) {
+					showCustomerMenu((Customer)user);
+				} else if(user.checkIfEmployee()) {
+					showEmployeeMenu((Employee)user);
+				} else {
+					System.err.println("No such user has been acounted for. Please contact support @ 555-555-5555");
+					
+				}
 			}
 			break;
 		default: //Unprogrammed
@@ -45,11 +60,7 @@ public class Bank {
 			break;
 		}
 		
-		if (user!=null) {
-			showCustomerMenu(user);
-		} else {
-			System.out.println("User is null");
-		}
+		
 		
 	}
 	
@@ -206,9 +217,14 @@ public class Bank {
 		return RuntimeData.data.getGoBack();
 	}
 	
-	private void showCustomerMenu(User user) {
-		System.out.println("Welcome back");
-		System.out.println(user);
+	private void showCustomerMenu(Customer cust) {
+		System.out.println("Welcome back, customer.");
+		System.out.println(cust);
+	}
+	
+	private void showEmployeeMenu(Employee emp) {
+		System.out.println("Welcome back, employee.");
+		System.out.println(emp);
 	}
 	
 	

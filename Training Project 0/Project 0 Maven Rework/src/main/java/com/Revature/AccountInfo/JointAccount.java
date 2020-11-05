@@ -1,6 +1,7 @@
-package com.Revature;
+package com.Revature.AccountInfo;
 
-import com.Revature.Account.AccountTypeEnum;
+import com.Revature.AccountInfo.Account.AccountTypeEnum;
+import com.Revature.Users.Customer;
 
 public class JointAccount extends Account {
 	private Customer secondAccountHolder;

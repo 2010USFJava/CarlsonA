@@ -1,29 +1,39 @@
-package com.Revature;
+package com.Revature.Meta;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class LogThis {
+	public enum LevelEnum{
+		DEBUG,
+		WARN,
+		ERROR,
+		FATAL,
+		INFO,
+		TRACE;
+		
+	}
+	
 	static Logger logger= LogManager.getLogger();
 	
-	public static void logIt(String level,String message) {
+	public static void logIt(LevelEnum level,String message) {
 		switch(level) {
-		case "debug":
+		case DEBUG:
 			logger.debug(message);
 			break;
-		case "warn":
+		case WARN:
 			logger.warn(message);
 			break;
-		case "error":
+		case ERROR:
 			logger.error(message);
 			break;	
-		case "fatal":
+		case FATAL:
 			logger.fatal(message);
 			break;
-		case "info":
+		case INFO:
 			logger.info(message);
 			break;
-		case "trace":
+		case TRACE:
 			logger.trace(message);
 			break;
 		default:

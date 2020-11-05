@@ -1,8 +1,9 @@
-package com.Revature;
+package com.Revature.Users;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
+
+import com.Revature.Meta.StringCheck;
 
 public class LoginInfo {
 	/*note to self: add better security for this

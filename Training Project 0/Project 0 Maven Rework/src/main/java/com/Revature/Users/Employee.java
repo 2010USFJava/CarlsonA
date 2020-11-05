@@ -1,6 +1,6 @@
-package com.Revature;
+package com.Revature.Users;
 
-import com.Revature.User.UserTypeEnum;
+import com.Revature.AccountInfo.Account;
 
 public class Employee extends User {
 	

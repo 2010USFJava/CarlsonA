@@ -1,4 +1,4 @@
-package com.Revature;
+package com.Revature.Meta;
 
 import java.util.Scanner;
 
