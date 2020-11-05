@@ -18,8 +18,17 @@ public class Customer extends User {
 		
 	}
 	
+	public Customer(String firstName,String middleName,String lastName,boolean isTest) {
+		super(firstName,middleName,lastName,isTest);
+		
+	}
+	
 	public Customer(String firstName, String lastName) {
 		super(firstName,lastName);
+	}
+	
+	public Customer(String firstName, String lastName,boolean isTest) {
+		super(firstName,lastName,isTest);
 	}
 	
 	//getters and setters

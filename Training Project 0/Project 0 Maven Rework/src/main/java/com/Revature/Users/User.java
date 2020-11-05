@@ -48,19 +48,26 @@ public abstract class User {
 	
 	{generateId();}
 	
-	
-	public User() {
-	}
-	public User(String firstName,String middleName, String lastName) {
+
+	public User(String firstName,String middleName, String lastName,boolean isTestObject) {
 		setFirstName(firstName);
 		setMiddleName(middleName);
 		setLastName(lastName);
 	}
 	
-	public User(String firstName,String lastName) {
-		setFirstName(firstName);
-		setLastName(lastName);
+	public User(String firstName,String middleName, String lastName) {
+		 this(firstName,middleName,lastName,false);
 	}
+
+	
+	public User(String firstName,String lastName) {
+		this(firstName,"",lastName,false);
+	}
+	public User(String firstName,String lastName,boolean isTestObject) {
+		this(firstName,"",lastName,isTestObject);
+	}
+	
+	
 	
 	//Name handling: Getters/Setters and Helpers
 	public String getFirstName() {
@@ -120,7 +127,9 @@ public abstract class User {
 	}
 	
 	public void setMiddleName(String middleName) {
-		this.middleName=checkName(middleName, "Middle Name",true);
+		if(!middleName.trim().equals("")) {
+			this.middleName=checkName(middleName, "Middle Name",true);
+		}
 		
 	}
 	

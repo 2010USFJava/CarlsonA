@@ -13,21 +13,7 @@ public class JointAccount extends Account {
 		setAccountType(AccountTypeEnum.JOINT);
 	}
 	
-	public JointAccount(String account1FirstName,String account1LastName,String account2FirstName,String account2LastName) {
-		super(account1FirstName,account1LastName);
-		setSecondAccountHolder(new Customer(account2FirstName,account2LastName));
-		setAccountType(AccountTypeEnum.JOINT);
-		
-		
-	}
-	
-	public JointAccount(String account1FirstName,String account1MiddleName,String account1LastName,String account2FirstName, String account2MiddleName,String account2LastName) {
-		super(account1FirstName,account1MiddleName,account1LastName);
-		setSecondAccountHolder(new Customer(account2FirstName,account1MiddleName,account2LastName));
-		setAccountType(AccountTypeEnum.JOINT);
-		
-		
-	}
+
 
 	
 	//getter and setter

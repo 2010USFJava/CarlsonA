@@ -16,7 +16,6 @@ public class Bank {
 	private RuntimeData runData= new RuntimeData();
 	
 	
-	
 	public void startPage() {
 		System.out.println("Welcome to "+name);
 		System.out.println("Est. "+estYear);
@@ -73,7 +72,6 @@ public class Bank {
 		runData.setGoBack(false);
 		runData.setLoginProblems(false);
 		String stringAnswer = scan.nextLine().trim();
-		
 		//Opted to try parsing instead of "0" since user could enter 0000000 or the like
 				boolean userEnteredNumber=true;
 				int intAnswer=9000;
@@ -102,11 +100,7 @@ public class Bank {
 						}
 					}
 				}
-
 				return stringAnswer;
-		
-		
-		
 	}
 
 	

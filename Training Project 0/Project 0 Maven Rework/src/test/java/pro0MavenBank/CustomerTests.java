@@ -1,21 +1,18 @@
 package pro0MavenBank;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import com.Revature.Users.Customer;
-import com.Revature.Users.User;
+import com.Revature.Users.Employee;
 
 public class CustomerTests {
-	static Customer custA=new Customer("John","Doe");
-	static Customer custB=new Customer("Apple","Hermin","Pie");
+	public static Customer custA=new Customer("John","Doe",true);
+	public static Customer custB=new Customer("Apple","Hermin","Pie",true);
 
-	@BeforeClass
-	public static void loadCustomers() {
-	}
 	
 	
 	//general User tests
@@ -43,6 +40,19 @@ public class CustomerTests {
 		assertEquals(expected,custB.getMiddleName());
 	}
 	
+	//check that identifiers work
+	@Test
+	public void checkIfCustomerIsCustomer() {
+		assertTrue(custA.checkIfCustomer());
+		
+	}
 	
+	@Test
+	public void checkIfCustomerIsEmployee() {
+		assertFalse(custA.checkIfEmployee());
+		
+		
+	}
+
 
 }

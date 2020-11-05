@@ -15,6 +15,14 @@ public class Employee extends User {
 		super(firstName,lastName);
 	}
 
+	public Employee(String firstName,String middleName,String lastName,boolean isTest) {
+		super(firstName,middleName,lastName,isTest);
+	}
+	
+	public Employee(String firstName,String lastName,boolean isTest) {
+		super(firstName,lastName,isTest);
+	}
+
 	
 	
 	//change account status

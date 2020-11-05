@@ -43,17 +43,13 @@ public class Account {
 		accountMap.put(accountId, this);}
 	
 	//constructors
-	public Account(Customer accountHolder) {
+	public Account(Customer accountHolder,AccountStatusEnum status) {
 		this.accountHolder=accountHolder;
+		this.accountStatus=status;
 
 	}
-	
-	public Account(String firstName, String lastName) {
-		 this(new Customer(firstName,lastName));
-	}
-	
-	public Account(String firstName,  String middleName,String lastName) {
-		 this(new Customer(firstName,middleName,lastName));
+	public Account(Customer accountHolder) {
+		this(accountHolder,AccountStatusEnum.IN_APPLICATION);
 	}
 	
 	
@@ -61,15 +57,13 @@ public class Account {
 		accountId=idTracker++;
 	}
 	
-	
-	
 	public Customer getAccountHolder() {
 		return accountHolder;
 	}
 
 
 	//change account status
-	public String checkAccountStatus() {
+	public String printAccountStatus() {
 		String output="This Account #"+accountId+" is in ";
 
 		switch (accountStatus) {
@@ -103,38 +97,51 @@ public class Account {
 		this.accountStatus=status;
 	}
 	
+	public AccountStatusEnum getAccountStatus() {
+		return accountStatus;
+	}
+	
 	protected void setAccountType(AccountTypeEnum accountType) {
 		this.accountType=accountType;
 	}
 	
+	
+	
 	//balance adjustments
 	public long withdraw(long money) {
-		if(money<0) {
-			System.out.println();
-			money=-money;
-		}
-		
 		if(balance<money) {
 			money=balance;
 			System.out.println("Not enough money in account. Withdrawing maximum amount: "+convertMoney(money));
-		} else {
+		} else if(money<0){
+			System.out.println("Cannot withdraw a negative amount");
+			money=0;
+		}else {
 			System.out.println("Withdrawing: "+convertMoney(money)+".");
 			printBalance();
-			
 		}
 		balance-=money;
 		return money;
 	}
 	
 	public void deposit(long money) {
-		balance+=money;
-		System.out.println("Deposited: "+convertMoney(money));
-		printBalance();
-	}
+		if(accountStatus.equals(AccountStatusEnum.OPEN)) {
+			balance+=money;
+			System.out.println("Deposited: "+convertMoney(money));
+			printBalance();
+
+			
+			}else {
+			System.out.println("Did not deposit money. Account not open");
+			}
+		}
 	
 	public void printBalance() {
 		System.out.println("Current avaliable balance: "+convertMoney(balance));
 		
+	}
+	
+	public long getBalance() {
+		return balance;
 	}
 	
 	private static String convertMoney(double money) {
@@ -181,7 +188,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		String output=checkAccountStatus();
+		String output=printAccountStatus();
 		
 		return output;
 	}
