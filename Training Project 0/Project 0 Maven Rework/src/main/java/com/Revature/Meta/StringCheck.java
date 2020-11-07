@@ -4,8 +4,18 @@ import java.util.Scanner;
 
 public class StringCheck {
 	
-	private int []forbiddenNumbers= {0,1,2,3,4,5,6,7,8,9};
+	private static int []forbiddenNumbers= {0,1,2,3,4,5,6,7,8,9};
+//	I may use these for test purposes
+	private static String[]forbiddenUsernames= {"guest","admin","cust","custA","custB","custC","custD","custE","custF","custG","emp","empA","empB","empC","empD","empE","empF","empG","user","userA","userB","userC","userD","userE","userF","userG"};
+	
 	public static Scanner scan= new Scanner(System.in);
+	
+	public static String scannerUsernameStringOrGoBack() {
+		String output= scannerStringOrGoBack("username");
+		output=scannerUsernameCheck(output);
+		return output;
+		
+	}
 
 	public static String scannerStringOrGoBack(String wantedInput) {
 		return scannerStringOrGoBack(wantedInput,false);
@@ -17,7 +27,8 @@ public class StringCheck {
 		RuntimeData runData=RuntimeData.data;
 		runData.setGoBack(false);
 		runData.setSkipStep(false);
-		System.out.println("Please enter your "+wantedInput+"\nPress 0 to go back");
+		System.out.println("Press 0 if you wish exit");
+		System.out.println("Please enter your "+wantedInput);
 		if(optional) {
 			System.out.println("You may also press 1 to skip this step");
 		}
@@ -93,6 +104,19 @@ public class StringCheck {
 		
 	} 
 	
+	public static String scannerUsernameCheck(String wantedInput) {
+		
+		boolean pass=passFobbidenUsernameCheck(wantedInput);
+		while(pass==false) {
+			wantedInput=scannerStringCheck("username");
+			
+		}
+		return wantedInput;
+	}
+	
+	
+
+	
 	public static int numberScanner(String[] options) {
 		int num=0;
 		for(String i :options) {
@@ -130,10 +154,18 @@ public class StringCheck {
 	}
 
 	
-	
+	public static boolean passFobbidenUsernameCheck(String attemptedUser) {
+		for(String i: forbiddenUsernames) {
+			if(attemptedUser==i) {
+				System.out.println("You cannot use username\""+i+"\". Please try again.");
+				return false;
+			}
+		}
+		return true;
+		
+	}
 	
 	public static boolean passForbbidenNumberCheck(int intAnswer) {
-		int []forbiddenNumbers= {0,1,2,3,4,5,6,7,8,9};
 		for(int i: forbiddenNumbers) {
 			if(intAnswer==i) {
 				System.out.println("You cannot use the numbers 0 through 9 as an input here. Please try again.");

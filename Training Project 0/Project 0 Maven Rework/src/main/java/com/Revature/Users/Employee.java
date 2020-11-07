@@ -1,9 +1,16 @@
 package com.Revature.Users;
 
+import java.io.Serializable;
+
 import com.Revature.AccountInfo.Account;
 
-public class Employee extends User {
+public class Employee extends User implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2947355514565998586L;
+
 	{setUserType(UserTypeEnum.EMPLOYEE);}
 
 	//constructor

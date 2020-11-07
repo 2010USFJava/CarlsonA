@@ -1,13 +1,18 @@
 
 package com.Revature.Users;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.Revature.AccountInfo.Account;
 import com.Revature.AccountInfo.JointAccount;
 
 
-public class Customer extends User {
+public class Customer extends User implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5844012040276987566L;
 	private ArrayList<Account> userAccounts=new ArrayList<>();
 	
 	{setUserType(UserTypeEnum.CUSTOMER);}
@@ -33,28 +38,49 @@ public class Customer extends User {
 	
 	//getters and setters
 	public ArrayList<Account> getUserAccounts() {
+		
+		if(userAccounts.size()==0) {
+			System.out.println("This user has no accounts at this time");
+			
+		}
 		return userAccounts;
 	}
 
 	//account interaction
 	public Account createAccount() {
-		Account acct= new Account(this);
-		userAccounts.add(acct);
-		return acct;
+		return createAccount(this);
 		
 	}
 	
 	public Account createAccount(Customer cust) {
 		Account acct;
 		if (cust.equals(this)) {
-			acct=createAccount();
+			acct=new Account(this);
 		} else {
 			acct= new JointAccount(this,cust);
-			userAccounts.add(acct);
 			
 		}
+		userAccounts.add(acct);
 		return acct;
 		
 	}
+	
+	public Account createJointAccount(Customer cust) {
+		Account acct;
+		if (cust.equals(this)) {
+			acct=new JointAccount(this);
+		} else {
+			acct= new JointAccount(this,cust);
+			
+		}
+		userAccounts.add(acct);
+		return acct;
+		
+	}
+	
+	public Account createJointAccount() {
+		return createJointAccount(this);
+	}
+	
 
 }

@@ -1,5 +1,6 @@
 package com.Revature.AccountInfo;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -7,8 +8,13 @@ import com.Revature.Meta.RuntimeData;
 import com.Revature.Users.Customer;
 import com.Revature.Users.User;
 
-public class Application {
+public class Application implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7427064385572409687L;
+
 	private User user;
 	
 	//Constructor

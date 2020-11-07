@@ -1,11 +1,17 @@
 package com.Revature.Users;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.Revature.Meta.FileHandler;
 import com.Revature.Meta.StringCheck;
 
-public class LoginInfo {
+public class LoginInfo implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2260561606317849663L;
 	/*note to self: add better security for this
 	 * Maybe add a separate class for security
 	 */
@@ -47,14 +53,34 @@ public class LoginInfo {
 	
 	
 	
+	
+	
 	//getters and setters
 	public String getUsername() {
 		return username;
 	}
 	
+	
+	public static void setLoginMap(Map<String,LoginInfo> loadedMap) {
+		loginMap=loadedMap;
+	}
+	
+	public static Map<String,LoginInfo> getLoginMap() {
+		return loginMap;
+	}
+	
+	
+	
 	//loginMapManipulators
 	public void addToLoginMap() {
+		this.user.setLoginInfo(this);
 		loginMap.put(username, this);		
+	}
+	
+	public void addToLoginMapAndSave() {
+		this.user.setLoginInfo(this);
+		loginMap.put(username, this);
+		FileHandler.writeLoginFile(loginMap);
 	}
 	
 	public void removeFromLoginMap() {
@@ -68,7 +94,6 @@ public class LoginInfo {
 //		fishers cannot get in
 		User defaultUser = null;
 		LoginInfo info = loginMap.get(username);
-		System.out.println(info);
 		boolean infoExists = checkIfUsernameIsTaken(username);
 		if(infoExists) {
 			return info.logInMeat(username, password);
@@ -107,11 +132,17 @@ public class LoginInfo {
 		
 	}
 	
+
+	
+
+	
 	@Override
 	public String toString() {
 		return "Username: "+username+ " FirstName: "+user.getFirstName(); 
 		
 	}
+	
+	
 
 
 	

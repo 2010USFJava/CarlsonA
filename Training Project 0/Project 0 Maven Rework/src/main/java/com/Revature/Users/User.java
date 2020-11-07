@@ -1,13 +1,19 @@
 package com.Revature.Users;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.Revature.Meta.LogThis;
 
-public abstract class User {
+public abstract class User implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5050831815034332607L;
+
 	protected enum UserTypeEnum{
 		CUSTOMER,
 		EMPLOYEE;
@@ -29,7 +35,7 @@ public abstract class User {
 	private boolean hasAdditionalMiddleNames=false;
 	
 	//Scanner
-	private Scanner scan = new Scanner(System.in);
+	private transient Scanner scan = new Scanner(System.in);
 	
 	//static
 	public static int idTracker=0;

@@ -2,23 +2,24 @@ package com.Revature.Meta;
 
 import java.util.Scanner;
 
+import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.JointAccount;
 import com.Revature.Users.Customer;
 import com.Revature.Users.Employee;
 import com.Revature.Users.LoginInfo;
-import com.Revature.Users.Roster;
 import com.Revature.Users.User;
 
 public class Bank {
-
 	
-	private String name="Fancy Bank of Holding";
+	//using data throughout
+	private String bankName="Fancy Bank of Holding";
 	private final int estYear=2020;
 	private static Scanner scan=new Scanner(System.in);
 	private RuntimeData runData= new RuntimeData();
 	
 	
 	public void startPage() {
-		System.out.println("Welcome to "+name);
+		System.out.println("Welcome to "+bankName);
 		System.out.println("Est. "+estYear);
 		selectUserType();
 		
@@ -36,7 +37,7 @@ public class Bank {
 		User user=null;
 		switch (selection) {
 		case 0://new customer
-			user=applyForANewAccount();
+			user=makeNewCustomerLogin();
 			startPage();
 			break;
 		case 1://returning user
@@ -49,7 +50,7 @@ public class Bank {
 				} else if(user.checkIfEmployee()) {
 					showEmployeeMenu((Employee)user);
 				} else {
-					System.err.println("No such user has been acounted for. Please contact support @ 555-555-5555");
+					System.err.println("No such user has been acounted for. Please contact support");
 					
 				}
 			}
@@ -164,12 +165,23 @@ public class Bank {
 	}
 	
 	//new customer
-	private Customer applyForANewAccount() {
+	private Customer makeNewCustomerLogin() {
 		Customer tempCustomer=null;
+		Customer tempCustPrimary=null;
 		String lName="";
 		String mName="";
 		String username="";
 		String password="";
+		boolean makeAnotherUser=false;
+		
+		do {
+
+		if(makeAnotherUser) {
+			tempCustPrimary=tempCustomer;
+			
+		}
+		//currently setting this to only run once as only two users can be added. But should be altered in case of 2+ upgrade
+		makeAnotherUser=false;
 		
 		//since the user can break out of this at any time, there are multiple if strings
 		String fName=StringCheck.scannerStringOrGoBack("first name");
@@ -185,6 +197,7 @@ public class Bank {
 			System.out.println("Just a moment while we varify your information...");
 			
 			if(runData.getSkipStep()) {
+				
 				tempCustomer=new Customer(fName,lName);
 			} else {
 				tempCustomer=new Customer(fName,mName,lName);
@@ -193,7 +206,7 @@ public class Bank {
 			
 		}
 		if (!checkIfGoBack()) {
-			username=StringCheck.scannerStringOrGoBack("username");
+			username=StringCheck.scannerUsernameStringOrGoBack();
 //				
 		}
 		if (!checkIfGoBack()) {
@@ -203,17 +216,121 @@ public class Bank {
 		}
 		if (!checkIfGoBack()) {
 			System.out.println("Creating log in information....");
-			tempCustomer.setLoginInfo(username, password);
+			LoginInfo info=new LoginInfo(username, password,tempCustomer);
+			info.addToLoginMapAndSave();
 			
-//			Roster.addToLoginRoster(tempCustomer.getLoginInfo());
 			System.out.println("Finished creating log in information.");
-			
-			
 		}
 		
-		if(checkIfGoBack()) {
-			return null;
+		if(!checkIfGoBack()) {
+			if(!makeAnotherUser) {
+
+				System.out.println("Finally, please select the type of account you would like to create");
+				String[] accountOptions=new String[2];
+				accountOptions[0]="Create Individual Account";
+				accountOptions[1]="Create Joint Account";
+//				accountOption[2]="Join a joint account";
+				int acctType=StringCheck.numberScanner(accountOptions);
+				Account tempAcct;
+				switch (acctType) {
+				case 0:
+					tempAcct=tempCustomer.createAccount();
+					break;
+				case 1:
+					tempAcct=tempCustomer.createJointAccount();
+					System.out.println("Joint account created.\n Would you like to make the user profile for the second user at this time?");
+					String []makeAnotherOptions=new String[3];
+					makeAnotherOptions[0]="Yes, make another user and add him or her to this account.";
+					makeAnotherOptions[1]="No, do not make another user at this time.";
+					makeAnotherOptions[2]="Add an already exising user to this account";
+
+					int makeAnotherUserOption=StringCheck.numberScanner(accountOptions);
+					switch (makeAnotherUserOption) {
+					case 0:
+						makeAnotherUser=true;
+						break;
+					case 1:
+						makeAnotherUser=false;
+						break;
+					case 2:
+
+						boolean repeatUserBLogin;
+						do {
+							repeatUserBLogin=false;
+							
+							System.out.println("Please have the second user log in");
+							String usernameB=StringCheck.scannerStringCheck("username");
+							String passB=StringCheck.scannerStringCheck("password");
+							
+							if(LoginInfo.checkIfUsernameIsTaken(usernameB)){
+								User userB=LoginInfo.logIn(usernameB, passB);
+								if (userB!=null) {
+	
+									if (userB.checkIfCustomer()) {
+									JointAccount tempJoint= (JointAccount)tempAcct;
+									tempJoint.setSecondAccountHolder((Customer)userB);
+										
+									} else if (userB.checkIfEmployee()) {
+										System.out.println("Cannot add employee to account.");
+										repeatUserBLogin=true;
+									}
+								} else {
+									repeatUserBLogin=true;
+								}
+								
+							} else {
+								repeatUserBLogin=true;
+							}
+							
+							if(repeatUserBLogin) {
+								System.out.println("Second User Login Failed.\nWould you like to try again?");
+								String[] yesOrNoChoice=new String[2];
+								yesOrNoChoice[0]="Yes";
+								yesOrNoChoice[1]="No";
+								
+								int yesOrNoInt=StringCheck.numberScanner(yesOrNoChoice);
+								if(yesOrNoInt==1) {
+									repeatUserBLogin=false;
+								}
+								
+							}
+							
+						} while(repeatUserBLogin);
+						break;
+						
+
+					default:
+						break;
+					}
+					
+					
+					break;
+
+				default:
+					break;
+				}
+	
+			}					
 		}
+		
+		if(!makeAnotherUser) {
+
+			if(checkIfGoBack()) {
+				System.out.println("Canceling User & Account information...");
+				System.out.println("Returning to main menu...");
+				return null;
+			} 
+		} else {
+			if(checkIfGoBack()) {
+				System.out.println("Canceling Second User Creation...");
+				System.out.println("Second user can make an account at a later time.");
+			}
+
+			System.out.println("Returning information on primary account holder");
+			tempCustomer=tempCustPrimary;
+		}
+
+		}while(makeAnotherUser);
 		
 		return tempCustomer;	
 		

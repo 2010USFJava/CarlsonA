@@ -1,5 +1,6 @@
 package com.Revature.AccountInfo;
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,8 +12,14 @@ import com.Revature.Users.Customer;
  * @author Owner
  *
  */
-public class Account {
+public class Account implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1422180158411166919L;
+
+
 	public enum AccountStatusEnum {
 		OPEN,
 		CLOSED,
