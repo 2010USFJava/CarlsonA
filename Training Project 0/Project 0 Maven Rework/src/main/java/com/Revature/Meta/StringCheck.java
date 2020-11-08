@@ -114,6 +114,37 @@ public class StringCheck {
 		return wantedInput;
 	}
 	
+	public static long moneyMiddleMan() {
+		boolean keepGoing=true;
+		//initilizeing this so that I don't throw an error, but making it too long to be selected by accident
+		long selection=0;
+		
+		do {
+		
+			try {
+				keepGoing=true;
+				String stringAnswer = scan.nextLine().trim();
+				
+				selection=Long.parseLong(stringAnswer);
+			}catch(ArrayIndexOutOfBoundsException e){
+				keepGoing=false;
+				System.out.println("Unfortunently, that was not a listed choice.\nPlease try again.");
+			}catch(NumberFormatException e){
+				keepGoing=false;
+				System.out.println("Please enter a number and try again.");
+			} 
+			catch (Exception e) {
+				keepGoing=false;
+				e.printStackTrace();
+				System.err.println("Why do you do this to me?");
+			}
+			
+		}while(!keepGoing);
+		
+		return selection;
+		
+	}
+	
 	
 
 	

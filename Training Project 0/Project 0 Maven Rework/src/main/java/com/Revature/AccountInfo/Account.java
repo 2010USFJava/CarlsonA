@@ -2,6 +2,7 @@ package com.Revature.AccountInfo;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
+import java.util.Random;
 import java.util.Set;
 
 import com.Revature.Meta.FileHandler;
@@ -45,12 +46,14 @@ public class Account implements Serializable {
 	protected AccountTypeEnum accountType = AccountTypeEnum.SINGLE;
 	protected Set<Customer> customerSet=CustomerAccountRelationship.getCustomerSetForAccount(this);
 	private Customer accountHolder;
+	private transient Random rand = new Random(543);
 	
-	{	incrementId();}
+	
+	{	randomizeId();}
 //		accountMap.put(accountId, this);}
 	
-	private void incrementId() {
-		accountId=idTracker++;
+	private void randomizeId() {
+		accountId=rand.nextInt(100000);
 	}
 	
 	protected void updateCustAcctMaps(Customer cust) {
@@ -82,8 +85,17 @@ public class Account implements Serializable {
 	public String printAccountStatus() {
 		String output="";
 		
+		switch (accountType) {
+		case SINGLE:
+			output+="Single ";
+			break;
+		case JOINT:
+			output+="Joint ";
+			break;
+		}
 		
-		output+="This Account #"+accountId+" is in ";
+		
+		output+="Account #"+accountId+" is in ";
 
 		switch (accountStatus) {
 		case IN_APPLICATION:

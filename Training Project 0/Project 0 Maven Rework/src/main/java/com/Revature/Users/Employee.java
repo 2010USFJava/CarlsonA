@@ -3,14 +3,23 @@ package com.Revature.Users;
 import java.io.Serializable;
 
 import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.JointAccount;
+import com.Revature.Meta.FileHandler;
 
 public class Employee extends User implements Serializable{
+	private enum EmployeeLevelEnum{
+		STANDARD,
+		ADMIN;
+	}
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -2947355514565998586L;
 
+	private EmployeeLevelEnum empLevel=EmployeeLevelEnum.STANDARD;
+	
+	
 	{setUserType(UserTypeEnum.EMPLOYEE);}
 
 	//constructor
@@ -30,11 +39,27 @@ public class Employee extends User implements Serializable{
 		super(firstName,lastName,isTest);
 	}
 
+	public static Employee createEmployee(Employee emp,LoginInfo login) {
+		emp.setLoginInfo(login);
+		login.addToLoginMap();
+		FileHandler.saveAll();
+		return emp;
+	}
 	
+	public static Employee createAdmin(Employee emp,LoginInfo login) {
+		emp=createEmployee(emp,login);
+		emp.empLevel=EmployeeLevelEnum.ADMIN;
+		FileHandler.saveAll();
+		return emp;
+		
+	}
 	
 	//change account status
 	public void changeAccountStatus(Account account, Account.AccountStatusEnum status) {
 		account.changeStatus(status);
+		
+
+		FileHandler.saveAll();
 		
 	}
 	

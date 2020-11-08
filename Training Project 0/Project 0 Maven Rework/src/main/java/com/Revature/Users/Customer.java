@@ -7,6 +7,7 @@ import java.util.Set;
 import com.Revature.AccountInfo.Account;
 import com.Revature.AccountInfo.CustomerAccountRelationship;
 import com.Revature.AccountInfo.JointAccount;
+import com.Revature.Meta.FileHandler;
 
 
 public class Customer extends User implements Serializable {
@@ -66,15 +67,18 @@ public class Customer extends User implements Serializable {
 		Account acct;
 		if (cust.equals(this)) {
 			acct=new Account(this);
+
+			addToUserAccounts(this,acct);
 		} else {
 			acct= new JointAccount(this,cust);
 
 			addToUserAccounts(cust,acct);
-			
+
+			addToUserAccounts(this,acct);			
 		}
 		
 
-		addToUserAccounts(this,acct);
+		FileHandler.saveAll();
 		
 		
 		return acct;
@@ -94,6 +98,10 @@ public class Customer extends User implements Serializable {
 
 			addToUserAccounts(cust,acct);
 		}
+		
+
+		FileHandler.saveAll();
+		
 		return acct;
 		
 	}

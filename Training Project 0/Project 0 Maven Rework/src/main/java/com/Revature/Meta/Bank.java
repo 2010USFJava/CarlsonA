@@ -1,9 +1,12 @@
 package com.Revature.Meta;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.Application;
 import com.Revature.AccountInfo.JointAccount;
+import com.Revature.Meta.LogThis.LevelEnum;
 import com.Revature.Users.Customer;
 import com.Revature.Users.Employee;
 import com.Revature.Users.LoginInfo;
@@ -367,7 +370,7 @@ public class Bank {
 			startPage();
 			break;
 		case 1:
-			System.out.println("WIP");
+			enterAccount(cust);
 			break;
 		case 2:
 			makeANewAccount(cust);
@@ -379,9 +382,148 @@ public class Bank {
 		}
 	}
 	
+	private void enterAccount(Customer cust) {
+		if (cust.getNumberOfAccounts()==0) {
+			System.out.println("No accounts attached to this user");
+		} else if (cust.getNumberOfAccounts()==1) {
+			Account act=cust.getUserAccounts().iterator().next();
+			modifyAccount(cust,act);
+		}else {
+			System.out.println("Which account would you like to enter?");
+			Account act=getAccountFromSelection(cust);
+			modifyAccount(cust,act);
+		}
+	}
+	
+	private Account getAccountFromSelection(Customer cust) {
+		String [] accountSelection=new String[cust.getNumberOfAccounts()];
+
+		Iterator actIt = cust.getUserAccounts().iterator(); 
+		for(int i=0;i<cust.getNumberOfAccounts();i++) {
+			Object acctHolder=actIt.next();
+			accountSelection[i]=i+"] "+(Account)acctHolder;
+		}
+		int selection=StringCheck.numberScanner(accountSelection);
+		
+		actIt = cust.getUserAccounts().iterator();
+		Account act=null;
+		for (int i=0;i<=selection;i++) {
+			Object acctHolder=actIt.next();
+			act=(Account)acctHolder;
+		}
+		return act;
+	}
+	
+	private void modifyAccount(Customer cust, Account act) {
+		boolean repeat=true;
+		
+		System.out.println(act);
+		System.out.println("What would you like to do?");
+		
+		String[]choices=new String[6];
+		choices[0]="Make a deposit";
+		choices[1]="Make a withdraw";
+		choices[2]="Make a transfer";
+		choices[3]="Return to customer page";
+		choices[4]="Return to main page";
+		choices[5]="Log out";
+		
+		int intChoice=StringCheck.numberScanner(choices);
+		long money=0;
+		switch (intChoice) {
+		case 0:
+			System.out.println("How much would you like to deposit?");
+			money=StringCheck.moneyMiddleMan();
+			act.deposit(money);
+			LogThis.logIt(LevelEnum.INFO, act.getAccountInformation()+" was depositied into");
+			FileHandler.saveAll();
+			
+			modifyAccount(cust,act);
+			
+			break;
+		case 1:
+			System.out.println("How much would you like to withdraw?");
+			money=StringCheck.moneyMiddleMan();
+			act.withdraw(money);
+			LogThis.logIt(LevelEnum.INFO, act.getAccountInformation()+" was withdrawed from");
+			FileHandler.saveAll();
+			
+			modifyAccount(cust,act);
+			break;
+		case 2:
+			if (cust.getNumberOfAccounts()<=1) {
+				System.out.println("Can not tranfer money unless customer has more than 1 account");
+			} else {
+				System.out.println("Which account would you like to transfer to?");
+				Account actB=getAccountFromSelection(cust);
+				System.out.println("How much would you like to transfer?");	
+				money=StringCheck.moneyMiddleMan();
+				act.transferMoneyToAccount(actB, money);
+				LogThis.logIt(LevelEnum.INFO, act.getAccountInformation()+" transfered money to "+actB.getAccountInformation());
+			}
+			FileHandler.saveAll();
+			
+			modifyAccount(cust,act);
+			break;
+		case 3:
+			showCustomerMenu(cust);
+			break;
+		case 4:
+			startPage();
+			break;
+		case 5:
+			break;
+		default:
+			LogThis.logIt(LevelEnum.ERROR, "Account Modification error occured. User selected supposidly unreachable code");
+			break;
+		}
+		
+		
+	}
+
 	private void showEmployeeMenu(Employee emp) {
 		System.out.println("Welcome back, employee.");
 		System.out.println(emp);
+		System.out.println("What would you like to do?");
+		String[]option=new String[2];
+		option[0]="Return to main menu";
+		option[1]="Approve/Reject Applications";
+		
+		int answerInt=StringCheck.numberScanner(option);
+		
+		switch (answerInt) {
+		case 0:
+			startPage();
+			break;
+		case 1:
+			System.out.println("What would you like to do with the following application?");
+			
+			Application app=Application.getNextApplication();
+			System.out.println(app);
+			option=new String [2];
+			option[0]="Accept";
+			option[1]="Reject";
+//			option[2]="Place on Hold";
+			answerInt=StringCheck.numberScanner(option);
+			switch (answerInt) {
+			case 0:
+				app.approveApplication();
+				break;
+			case 1:
+				app.rejectApplication();
+				break;
+//			case 2:
+//				
+//				break;
+			default:
+				break;
+			}
+			
+			break;
+		default:
+			break;
+		}
+		
 	}
 	
 	
