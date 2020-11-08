@@ -26,9 +26,10 @@ public class Bank {
 	}
 	
 	private void selectUserType() {
-		String[] options = new String[2];
+		String[] options = new String[3];
 		options[0] = "I am a new customer";
 		options[1] = "I am a returning user";
+		options[2]="Exit";
 		
 
 		System.out.println("What type of user are you?");
@@ -54,6 +55,9 @@ public class Bank {
 					
 				}
 			}
+			break;
+		case 2://exit
+			System.out.println("Thank you for your business.");
 			break;
 		default: //Unprogrammed
 			System.out.println("Unfortunantly that has not been added yet. Please reselect.");
@@ -223,94 +227,7 @@ public class Bank {
 		}
 		
 		if(!checkIfGoBack()) {
-			if(!makeAnotherUser) {
-
-				System.out.println("Finally, please select the type of account you would like to create");
-				String[] accountOptions=new String[2];
-				accountOptions[0]="Create Individual Account";
-				accountOptions[1]="Create Joint Account";
-//				accountOption[2]="Join a joint account";
-				int acctType=StringCheck.numberScanner(accountOptions);
-				Account tempAcct;
-				switch (acctType) {
-				case 0:
-					tempAcct=tempCustomer.createAccount();
-					break;
-				case 1:
-					tempAcct=tempCustomer.createJointAccount();
-					System.out.println("Joint account created.\n Would you like to make the user profile for the second user at this time?");
-					String []makeAnotherOptions=new String[3];
-					makeAnotherOptions[0]="Yes, make another user and add him or her to this account.";
-					makeAnotherOptions[1]="No, do not make another user at this time.";
-					makeAnotherOptions[2]="Add an already exising user to this account";
-
-					int makeAnotherUserOption=StringCheck.numberScanner(accountOptions);
-					switch (makeAnotherUserOption) {
-					case 0:
-						makeAnotherUser=true;
-						break;
-					case 1:
-						makeAnotherUser=false;
-						break;
-					case 2:
-
-						boolean repeatUserBLogin;
-						do {
-							repeatUserBLogin=false;
-							
-							System.out.println("Please have the second user log in");
-							String usernameB=StringCheck.scannerStringCheck("username");
-							String passB=StringCheck.scannerStringCheck("password");
-							
-							if(LoginInfo.checkIfUsernameIsTaken(usernameB)){
-								User userB=LoginInfo.logIn(usernameB, passB);
-								if (userB!=null) {
-	
-									if (userB.checkIfCustomer()) {
-									JointAccount tempJoint= (JointAccount)tempAcct;
-									tempJoint.setSecondAccountHolder((Customer)userB);
-										
-									} else if (userB.checkIfEmployee()) {
-										System.out.println("Cannot add employee to account.");
-										repeatUserBLogin=true;
-									}
-								} else {
-									repeatUserBLogin=true;
-								}
-								
-							} else {
-								repeatUserBLogin=true;
-							}
-							
-							if(repeatUserBLogin) {
-								System.out.println("Second User Login Failed.\nWould you like to try again?");
-								String[] yesOrNoChoice=new String[2];
-								yesOrNoChoice[0]="Yes";
-								yesOrNoChoice[1]="No";
-								
-								int yesOrNoInt=StringCheck.numberScanner(yesOrNoChoice);
-								if(yesOrNoInt==1) {
-									repeatUserBLogin=false;
-								}
-								
-							}
-							
-						} while(repeatUserBLogin);
-						break;
-						
-
-					default:
-						break;
-					}
-					
-					
-					break;
-
-				default:
-					break;
-				}
-	
-			}					
+			Account act=makeANewAccount(tempCustomer);
 		}
 		
 		if(!makeAnotherUser) {
@@ -336,6 +253,101 @@ public class Bank {
 		
 	}
 	
+	private Account makeANewAccount(Customer tempCustomer) {
+
+		Account tempAcct=null;
+		boolean makeAnotherUser=false;
+		if(!makeAnotherUser) {
+
+			System.out.println("Finally, please select the type of account you would like to create");
+			String[] accountOptions=new String[2];
+			accountOptions[0]="Create Individual Account";
+			accountOptions[1]="Create Joint Account";
+//			accountOptions[2]="Join a joint account";
+			int acctType=StringCheck.numberScanner(accountOptions);
+			switch (acctType) {
+			case 0:
+				tempAcct=tempCustomer.createAccount();
+				break;
+			case 1:
+				tempAcct=tempCustomer.createJointAccount();
+				System.out.println("Joint account created.\n Would you like to make the user profile for the second user at this time?");
+				String []makeAnotherOptions=new String[3];
+				makeAnotherOptions[0]="Yes, make another user and add him or her to this account.";
+				makeAnotherOptions[1]="No, do not make another user at this time.";
+				makeAnotherOptions[2]="Add an already exising user to this account";
+
+				int makeAnotherUserOption=StringCheck.numberScanner(makeAnotherOptions);
+				switch (makeAnotherUserOption) {
+				case 0:
+					makeAnotherUser=true;
+					break;
+				case 1:
+					makeAnotherUser=false;
+					break;
+				case 2:
+
+					boolean repeatUserBLogin;
+					do {
+						repeatUserBLogin=false;
+						
+						System.out.println("Please have the second user log in");
+						String usernameB=StringCheck.scannerStringCheck("username");
+						String passB=StringCheck.scannerStringCheck("password");
+						
+						if(LoginInfo.checkIfUsernameIsTaken(usernameB)){
+							User userB=LoginInfo.logIn(usernameB, passB);
+							if (userB!=null) {
+
+								if (userB.checkIfCustomer()) {
+								JointAccount tempJoint= (JointAccount)tempAcct;
+								tempJoint.setSecondAccountHolder((Customer)userB);
+									
+								} else if (userB.checkIfEmployee()) {
+									System.out.println("Cannot add employee to account.");
+									repeatUserBLogin=true;
+								}
+							} else {
+								repeatUserBLogin=true;
+							}
+							
+						} else {
+							repeatUserBLogin=true;
+						}
+						
+						if(repeatUserBLogin) {
+							System.out.println("Second User Login Failed.\nWould you like to try again?");
+							String[] yesOrNoChoice=new String[2];
+							yesOrNoChoice[0]="Yes";
+							yesOrNoChoice[1]="No";
+							
+							int yesOrNoInt=StringCheck.numberScanner(yesOrNoChoice);
+							if(yesOrNoInt==1) {
+								repeatUserBLogin=false;
+							}
+							
+						}
+						
+					} while(repeatUserBLogin);
+					break;
+					
+
+				default:
+					break;
+				}
+				
+				
+				break;
+
+			default:
+				break;
+			}
+
+		}
+		FileHandler.saveAll();
+		return tempAcct;
+	}
+	
 	private boolean checkIfGoBack() {
 		return RuntimeData.data.getGoBack();
 	}
@@ -343,6 +355,28 @@ public class Bank {
 	private void showCustomerMenu(Customer cust) {
 		System.out.println("Welcome back, customer.");
 		System.out.println(cust);
+		
+		String [] custOption= new String[3];
+		custOption[0]="Logout";
+		custOption[1]="Enter Account";
+		custOption[2]="Create New Account";
+		
+		int answer=StringCheck.numberScanner(custOption);
+		switch (answer) {
+		case 0:
+			startPage();
+			break;
+		case 1:
+			System.out.println("WIP");
+			break;
+		case 2:
+			makeANewAccount(cust);
+			showCustomerMenu(cust);
+			break;
+
+		default:
+			break;
+		}
 	}
 	
 	private void showEmployeeMenu(Employee emp) {

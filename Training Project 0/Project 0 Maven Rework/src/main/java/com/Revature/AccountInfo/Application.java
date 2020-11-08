@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import com.Revature.Meta.FileHandler;
 import com.Revature.Meta.RuntimeData;
 import com.Revature.Users.Customer;
 import com.Revature.Users.User;
@@ -24,10 +25,12 @@ public class Application implements Serializable {
 	
 	public Application(User user) {
 		this.user=user;
+		FileHandler.saveAll();
 	}
 
 	public static void enterApplicationQueue(Application application) {
 		applicationQueue.add(application);
+		FileHandler.saveAll();
 	}
 	
 
@@ -42,15 +45,17 @@ public class Application implements Serializable {
 			System.out.println("You are either not an employee or are not logged in.");
 			return null;
 		} 
+		
 	}
 	
 	public void approveApplication() {
 		Customer cust;
-		
+		FileHandler.saveAll();
 
 	}
 	
 	public void rejectApplication() {
+		FileHandler.saveAll();
 		
 	}
 	

@@ -3,7 +3,9 @@ package com.Revature.Users;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
+import com.Revature.AccountInfo.Account;
 import com.Revature.Meta.FileHandler;
 import com.Revature.Meta.StringCheck;
 
@@ -40,6 +42,7 @@ public class LoginInfo implements Serializable {
 		this.username=username;
 		this.password=password;
 		this.user=user;
+		FileHandler.saveAll();
 		
 	}
 	
@@ -47,6 +50,7 @@ public class LoginInfo implements Serializable {
 	public static LoginInfo createLoginInfoAndAddToMap(String username, String password,User user) {
 		LoginInfo loginInfo=new LoginInfo(username,password,user);
 		loginInfo.addToLoginMap();
+		FileHandler.saveAll();
 		return loginInfo;
 		
 	}
@@ -63,6 +67,7 @@ public class LoginInfo implements Serializable {
 	
 	public static void setLoginMap(Map<String,LoginInfo> loadedMap) {
 		loginMap=loadedMap;
+		FileHandler.saveAll();
 	}
 	
 	public static Map<String,LoginInfo> getLoginMap() {

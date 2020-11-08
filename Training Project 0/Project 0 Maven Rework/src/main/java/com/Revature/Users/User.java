@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.Revature.Meta.FileHandler;
 import com.Revature.Meta.LogThis;
 
 public abstract class User implements Serializable {
@@ -59,6 +60,7 @@ public abstract class User implements Serializable {
 		setFirstName(firstName);
 		setMiddleName(middleName);
 		setLastName(lastName);
+		FileHandler.saveAll();
 	}
 	
 	public User(String firstName,String middleName, String lastName) {
@@ -125,10 +127,12 @@ public abstract class User implements Serializable {
 	
 	public void setFirstName(String firstName) {
 		this.firstName=checkName(firstName, "First Name");
+		FileHandler.saveAll();
 	}
 	
 	public void setLastName(String lastName){
 		this.lastName=checkName(lastName,"Last Name");
+		FileHandler.saveAll();
 		
 	}
 	
@@ -136,7 +140,7 @@ public abstract class User implements Serializable {
 		if(!middleName.trim().equals("")) {
 			this.middleName=checkName(middleName, "Middle Name",true);
 		}
-		
+		FileHandler.saveAll();
 	}
 	
 	private String checkName(String name,String partOfName) {
@@ -322,10 +326,12 @@ public abstract class User implements Serializable {
 
 	public void setLoginInfo(LoginInfo loginInfo) {
 		this.loginInfo = loginInfo;
+		FileHandler.saveAll();
 	}
 	
 	public void setLoginInfo(String username,String password) {
 		this.loginInfo=new LoginInfo(username,password,this);
+		FileHandler.saveAll();
 	}
 
 	public UserTypeEnum getUserType() {
@@ -334,6 +340,7 @@ public abstract class User implements Serializable {
 
 	protected void setUserType(UserTypeEnum userType) {
 		this.userType = userType;
+		FileHandler.saveAll();
 	}
 
 	public int getUserId() {

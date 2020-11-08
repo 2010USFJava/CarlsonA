@@ -8,14 +8,14 @@ public class Main {
 	
 
 	public static void main(String[] args) {
-		FileHandler.readLoginFile();
-		FileHandler.writeLoginFile(LoginInfo.getLoginMap());
+		FileHandler.loadAll();
+		FileHandler.saveAll();
 //		
 		Bank bank = new Bank();
 		
 		
 		bank.startPage();
-		FileHandler.writeLoginFile(LoginInfo.getLoginMap());
+		FileHandler.saveAll();
 
 	}
 

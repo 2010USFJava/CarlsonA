@@ -2,9 +2,10 @@
 package com.Revature.Users;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Set;
 
 import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.CustomerAccountRelationship;
 import com.Revature.AccountInfo.JointAccount;
 
 
@@ -13,7 +14,7 @@ public class Customer extends User implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 5844012040276987566L;
-	private ArrayList<Account> userAccounts=new ArrayList<>();
+	private Set<Account> userAccounts=CustomerAccountRelationship.getAccountSetForCustomer(this);
 	
 	{setUserType(UserTypeEnum.CUSTOMER);}
 	
@@ -37,9 +38,9 @@ public class Customer extends User implements Serializable {
 	}
 	
 	//getters and setters
-	public ArrayList<Account> getUserAccounts() {
+	public Set<Account> getUserAccounts() {
 		
-		if(userAccounts.size()==0) {
+		if(userAccounts.isEmpty()) {
 			System.out.println("This user has no accounts at this time");
 			
 		}
@@ -52,15 +53,30 @@ public class Customer extends User implements Serializable {
 		
 	}
 	
+	private void addToUserAccounts(Customer cust, Account acct) {
+		if (this.userAccounts==null) {
+			CustomerAccountRelationship.updateCustomer(cust, acct);
+		} else {
+
+			userAccounts.add(acct);
+		}
+	}
+	
 	public Account createAccount(Customer cust) {
 		Account acct;
 		if (cust.equals(this)) {
 			acct=new Account(this);
 		} else {
 			acct= new JointAccount(this,cust);
+
+			addToUserAccounts(cust,acct);
 			
 		}
-		userAccounts.add(acct);
+		
+
+		addToUserAccounts(this,acct);
+		
+		
 		return acct;
 		
 	}
@@ -69,17 +85,49 @@ public class Customer extends User implements Serializable {
 		Account acct;
 		if (cust.equals(this)) {
 			acct=new JointAccount(this);
+
+			addToUserAccounts(this,acct);
 		} else {
 			acct= new JointAccount(this,cust);
-			
+
+			addToUserAccounts(this,acct);
+
+			addToUserAccounts(cust,acct);
 		}
-		userAccounts.add(acct);
 		return acct;
 		
 	}
 	
 	public Account createJointAccount() {
 		return createJointAccount(this);
+	}
+	
+	public String printAccounts() {
+		String output="";
+		if (userAccounts==null || userAccounts.isEmpty()) {
+			output+="This user has no accounts at this time.";
+		}else {
+			output+="User Accounts"+"\n";
+			int i=0;
+			for(Account act:userAccounts) {
+				//adding some veriaty for ease of reading 
+				if (i%2==0) {output+="\t";}
+				output+="\t"+act+"\n";
+			}
+		}
+		
+		return output;
+		
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+"\n"+printAccounts();
+	}
+
+	public int getNumberOfAccounts() {
+		
+		return userAccounts.size();
 	}
 	
 

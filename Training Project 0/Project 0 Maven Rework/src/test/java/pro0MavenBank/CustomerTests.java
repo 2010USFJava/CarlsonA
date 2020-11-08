@@ -14,7 +14,6 @@ public class CustomerTests {
 	public static Customer custB=new Customer("Apple","Hermin","Pie",true);
 
 	
-	
 	//general User tests
 	@Test
 	public void firstNameTest() {
@@ -51,6 +50,27 @@ public class CustomerTests {
 	public void checkIfCustomerIsEmployee() {
 		assertFalse(custA.checkIfEmployee());
 		
+		
+	}
+	
+	@Test
+	public void getAccountNumberNum1() {
+		Customer testCust = new Customer("Jane","Austin");
+		testCust.createAccount();
+		int numOfAccounts =testCust.getNumberOfAccounts();
+
+		assertEquals(1,numOfAccounts);
+		
+	}
+	
+	@Test
+	public void getAccountNumberNum2() {
+		Customer testCust = new Customer("Jane","Austin");
+		testCust.createAccount();
+		testCust.createAccount();
+		int numOfAccounts =testCust.getNumberOfAccounts();
+
+		assertEquals(2,numOfAccounts);
 		
 	}
 

@@ -22,10 +22,10 @@ public class LoginInfoTest {
 	private  static LoginInfo logA=new LoginInfo(usernameA,passwordA,custA);
 	
 
-	private static  Customer custB = new Customer("Joe","Smith",true);
-	private static String usernameB="testGuestB";
-	private static String passwordB="pass";
-	private static LoginInfo logB=new LoginInfo(usernameB,passwordB,custB);
+	public static  Customer custB = new Customer("Joe","Smith",true);
+	public static String usernameB="testGuestB";
+	public static String passwordB="pass";
+	public static LoginInfo logB=new LoginInfo(usernameB,passwordB,custB);
 	
 	@BeforeClass
 	public static void init() {

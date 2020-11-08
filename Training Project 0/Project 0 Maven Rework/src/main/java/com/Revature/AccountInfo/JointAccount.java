@@ -2,9 +2,8 @@ package com.Revature.AccountInfo;
 
 import java.io.Serializable;
 
-import com.Revature.AccountInfo.Account.AccountTypeEnum;
+import com.Revature.Meta.FileHandler;
 import com.Revature.Users.Customer;
-import com.Revature.Users.User;
 
 public class JointAccount extends Account implements Serializable {
 	/**
@@ -17,11 +16,14 @@ public class JointAccount extends Account implements Serializable {
 	public JointAccount(Customer accountHolder,Customer secondAccountHolder) {
 		super(accountHolder);
 		this.setSecondAccountHolder(secondAccountHolder);
+		updateCustAcctMaps(accountHolder);
+		updateCustAcctMaps(secondAccountHolder);
 		setAccountType(AccountTypeEnum.JOINT);
 	}
 	
 	public JointAccount(Customer accountHolder) {
 		super(accountHolder);
+		updateCustAcctMaps(accountHolder);
 		setAccountType(AccountTypeEnum.JOINT);
 	}
 
@@ -34,9 +36,22 @@ public class JointAccount extends Account implements Serializable {
 	}
 
 	public void setSecondAccountHolder(Customer secondAccountHolder) {
+		Customer oldSecondAccountHolder=this.secondAccountHolder;
+		
 		this.secondAccountHolder = secondAccountHolder;
+		updateCustAcctMaps(secondAccountHolder);
+		removeAdditionalHolderCustAcctMaps(oldSecondAccountHolder);
+		FileHandler.saveAll();
+		
+		
 	}
 	
+	private void removeAdditionalHolderCustAcctMaps(Customer oldSecondAccountHolder) {
+		CustomerAccountRelationship.removeCustomerFromAccount(oldSecondAccountHolder, this);
+		FileHandler.saveAll();
+		
+	}
+
 	public String getCustomerPersonalData() {
 		String output=getCustomerPersonalData(this.getAccountHolder())+"\n";
 		if (secondAccountHolder.equals(null)) {
