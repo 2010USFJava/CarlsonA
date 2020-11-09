@@ -156,7 +156,6 @@ public class Bank {
 	//new customer
 	private Customer makeNewCustomerLogin(boolean makeAnotherUser) {
 		Customer tempCustomer=null;
-		Customer tempCustPrimary=null;
 		String lName="";
 		String mName="";
 		String username="";
@@ -164,10 +163,6 @@ public class Bank {
 		
 		do {
 
-		if(makeAnotherUser) {
-			tempCustPrimary=tempCustomer;
-			
-		}
 
 		
 		//since the user can break out of this at any time, there are multiple if strings
@@ -228,8 +223,7 @@ public class Bank {
 				
 			}
 
-			System.out.println("Returning information on primary account holder");
-			tempCustomer=tempCustPrimary;
+			System.out.println("Returning information on second account");
 			makeAnotherUser=false;
 		}
 
@@ -380,6 +374,7 @@ public class Bank {
 	private void enterAccount(Customer cust) {
 		if (cust.getNumberOfAccounts()==0) {
 			System.out.println("No accounts attached to this user");
+			showCustomerMenu(cust);
 		} else if (cust.getNumberOfAccounts()==1) {
 			Account act=cust.getUserAccounts().iterator().next();
 			modifyAccount(cust,act);
@@ -575,10 +570,10 @@ public class Bank {
 				answerInt=StringCheck.numberScanner(option);
 				switch (answerInt) {
 				case 0:
-					act.approveAccount();
+					act.changeStatus(AccountStatusEnum.OPEN);
 					break;
 				case 1:
-					act.changeStatus(AccountStatusEnum.REJECTED);;
+					act.changeStatus(AccountStatusEnum.REJECTED);
 				break;
 //					case 2:
 //					
@@ -586,6 +581,7 @@ public class Bank {
 				default:
 					break;
 				}
+				FileHandler.saveAll();
 
 			}
 			showEmployeeMenu(emp);

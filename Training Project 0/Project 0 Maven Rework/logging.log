@@ -994,3 +994,90 @@ Balance: $2.00
 [INFO ] 2020-11-08 20:30:19.168 [main] LogThis - Created new user
 [DEBUG] 2020-11-08 20:30:26.991 [main] LogThis - Saving All Files
 [DEBUG] 2020-11-08 20:30:26.997 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:33:12.393 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:33:22.342 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:33:22.350 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:33:22.357 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:33:22.365 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:33:47.166 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:33:52.967 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:34:20.919 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:34:20.926 [main] LogThis - Account #37377
+Balance: $500,000,000.00
+ was depositied into
+[DEBUG] 2020-11-08 20:34:20.926 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:34:32.302 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:34:32.309 [main] LogThis - Account #37377
+Balance: $499,999,400.00
+ was withdrawed from
+[DEBUG] 2020-11-08 20:34:32.309 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:11.367 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:11.712 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:11.718 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:11.725 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:11.731 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:38:11.736 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 20:38:13.422 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:13.436 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:17.614 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:17.620 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:17.626 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:38:17.631 [main] LogThis - Saving All Files
+[INFO ] 2020-11-09 07:39:30.199 [main] LogThis - Employee pulled info on a
+[INFO ] 2020-11-09 07:40:25.295 [main] LogThis - Employee pulled info on a
+[INFO ] 2020-11-09 07:42:02.305 [main] LogThis - Created new user
+[INFO ] 2020-11-09 07:42:55.711 [main] LogThis - Created new user
+[INFO ] 2020-11-09 07:56:07.129 [main] LogThis - Created new user
+[INFO ] 2020-11-09 07:56:41.713 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:06:05.197 [main] LogThis - Employee pulled info on g
+[INFO ] 2020-11-09 08:07:30.079 [main] LogThis - Deposited $599.00
+[INFO ] 2020-11-09 08:07:30.087 [main] LogThis - Account #97465
+Balance: $599.00
+ was depositied into
+[INFO ] 2020-11-09 08:08:19.780 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:10:57.711 [main] LogThis - Deposited $699.00
+[INFO ] 2020-11-09 08:11:01.374 [main] LogThis - Account #78878
+Balance: $699.00
+ was depositied into
+[INFO ] 2020-11-09 08:11:07.991 [main] LogThis - Deposited $0.00
+[INFO ] 2020-11-09 08:11:07.999 [main] LogThis - Account #78878
+Balance: $699.00
+ was depositied into
+[INFO ] 2020-11-09 08:11:27.159 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 08:11:27.166 [main] LogThis - Account #78878
+Balance: $699.00
+ was withdrawed from
+[INFO ] 2020-11-09 08:11:40.064 [main] LogThis - Withdrew $200.00
+[INFO ] 2020-11-09 08:11:40.071 [main] LogThis - Account #78878
+Balance: $499.00
+ was withdrawed from
+[INFO ] 2020-11-09 08:19:12.359 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:19:12.379 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-09 08:19:12.422 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 08:19:12.463 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 08:19:12.487 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-09 08:19:12.493 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-09 08:19:12.532 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-09 08:19:12.562 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-09 08:19:12.568 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:19:12.581 [main] LogThis - Transfered between accounts $100.00
+[INFO ] 2020-11-09 08:19:12.622 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:19:12.675 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:19:12.731 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:20:20.296 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:20:20.318 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-09 08:20:20.368 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 08:20:20.417 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 08:20:20.444 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-09 08:20:20.449 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-09 08:20:20.494 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-09 08:20:20.521 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-09 08:20:20.527 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:20:20.538 [main] LogThis - Transfered between accounts $100.00
+[INFO ] 2020-11-09 08:20:20.589 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:20:20.655 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:20:20.710 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-09 08:21:04.971 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:28:12.402 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:33:07.455 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:33:58.980 [main] LogThis - Created new user

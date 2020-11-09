@@ -57,13 +57,13 @@ public class Employee extends User implements Serializable{
 	}
 	
 	//change account status
-	public void changeAccountStatus(Account account, Account.AccountStatusEnum status) {
-		account.changeStatus(status);
-		
-
-		FileHandler.saveAll();
-		
-	}
+//	public void changeAccountStatus(Account account, Account.AccountStatusEnum status) {
+//		account.changeStatus(status);
+//		
+//
+//		FileHandler.saveAll();
+//		
+//	}
 	
 	public String getAccountInfo(Account account) {
 		String output=account.getCustomerPersonalData();

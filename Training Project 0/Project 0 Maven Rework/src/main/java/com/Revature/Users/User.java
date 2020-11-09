@@ -391,6 +391,11 @@ public abstract class User implements Serializable {
 			output+="\tMiddleName: "+getMiddleName(true);
 		}
 		output+="\tLastName: "+lastName;
+		if(this.checkIfCustomer()) {
+			Customer cust=(Customer)this;
+			output+="\n"+cust.printAccounts();
+		}
+		
 		return output;
 	}
 	

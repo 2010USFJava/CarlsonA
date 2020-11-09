@@ -14,7 +14,11 @@ public class Main {
 //		Employee emp =new Employee("TESTADMIN","","Armando");
 //		LoginInfo login = new LoginInfo("testadmin","testadmin",emp);
 //		Employee.createAdmin(emp, login);
-//		Employee.createEmployee(emp, login);
+//
+//		
+//		Employee empb =new Employee("TestEmp","","Dr");
+//		LoginInfo loginb = new LoginInfo("testemp","testemp",emp);
+//		Employee.createEmployee(empb, loginb);
 
 //		FileHandler.saveAll();
 		
