@@ -50,7 +50,6 @@ public class CustomerAccountRelationship implements Serializable {
 
 	public static void setCustomerToAccountMap(Map<Customer, Set<Account>> customerToAccountMap) {
 		CustomerAccountRelationship.customerToAccountMap = customerToAccountMap;
-		FileHandler.saveAll();
 	}
 
 	public static Map<Account, Set<Customer>> getAccountToCustomerMap() {
@@ -59,7 +58,6 @@ public class CustomerAccountRelationship implements Serializable {
 
 	public static void setAccountToCustomerMap(Map<Account, Set<Customer>> accountToCustomerMap) {
 		CustomerAccountRelationship.accountToCustomerMap = accountToCustomerMap;
-		FileHandler.saveAll();
 	}
 	
 	public static void updateCustomer(Customer cust, Account act) {

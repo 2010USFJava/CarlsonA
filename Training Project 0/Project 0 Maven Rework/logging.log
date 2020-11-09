@@ -3,3 +3,994 @@
 [INFO ] 2020-11-08 18:55:26.795 [main] LogThis - Employee pulled info on x
 [INFO ] 2020-11-08 19:19:48.040 [main] LogThis - Created new user
 [INFO ] 2020-11-08 19:20:42.801 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 19:28:39.434 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:28:39.470 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:28:39.503 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:28:39.513 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:28:39.535 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:28:39.545 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:28:39.564 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:28:39.566 [main] LogThis - Read ApplicationQueueFile
+[DEBUG] 2020-11-08 19:28:39.575 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:28:39.614 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:28:39.615 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:28:39.654 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:14.048 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:31:14.083 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:14.094 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:14.205 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:14.241 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:14.251 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:14.267 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:14.268 [main] LogThis - Read ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:14.277 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:14.284 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:38.772 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:31:38.817 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:38.828 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:38.847 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:38.858 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:38.870 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:38.878 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:38.879 [main] LogThis - Read ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:38.889 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:38.897 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:58.014 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:31:58.154 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:58.165 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:58.190 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:58.202 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:58.215 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:58.228 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:58.230 [main] LogThis - Read ApplicationQueueFile
+[DEBUG] 2020-11-08 19:31:58.240 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:31:58.247 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:32:01.278 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:32:01.284 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:34:36.928 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:34:36.929 [main] LogThis - Read ApplicationQueueFile
+[DEBUG] 2020-11-08 19:34:36.944 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:34:37.017 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:34:37.126 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:34:37.190 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:34:37.200 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:34:37.203 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:34:37.213 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:34:37.216 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:36:12.306 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:36:12.307 [main] LogThis - Read ApplicationQueueFile
+[DEBUG] 2020-11-08 19:36:12.322 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:36:12.322 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:36:12.325 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:36:12.327 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:36:12.328 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:36:12.328 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:36:12.442 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:36:12.442 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:36:12.457 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:36:12.459 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:36:12.460 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:36:12.460 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:36:12.471 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:36:12.471 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:36:12.488 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:36:12.489 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:36:12.491 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:36:12.491 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:36:12.502 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:36:12.503 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:36:12.504 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:36:12.505 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:36:12.506 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:36:12.506 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:37:55.654 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:37:55.655 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:37:55.670 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:37:55.670 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:37:55.673 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:37:55.675 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:37:55.676 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:37:55.676 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:37:55.678 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:37:55.797 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:37:55.798 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:37:55.799 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:37:55.801 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:37:55.802 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:37:55.802 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:37:55.803 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:37:55.817 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:37:55.817 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:37:55.835 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:37:55.837 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:37:55.838 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:37:55.838 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:37:55.840 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:37:55.852 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:37:55.852 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:37:55.867 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:37:55.881 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:37:55.892 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:37:55.892 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:40:08.235 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:40:08.237 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:40:08.253 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:40:08.253 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:40:08.257 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:40:08.259 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:40:08.260 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:40:08.261 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:40:08.264 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:40:08.367 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:40:08.367 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:40:08.380 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:40:08.381 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:40:08.383 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:40:08.383 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:40:08.384 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:40:08.398 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:40:08.398 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:40:08.408 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:40:08.410 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:40:08.412 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:40:08.412 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:40:08.413 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:40:08.427 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:40:08.427 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:40:08.436 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:40:08.438 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:40:08.439 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:40:08.439 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:43:02.037 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:43:02.038 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:43:02.052 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:43:02.053 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:43:02.053 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:43:02.056 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:43:02.057 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:43:02.059 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:43:02.059 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:43:02.060 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:43:02.069 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:43:02.069 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:43:02.178 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:43:02.180 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:43:02.181 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:43:02.181 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:43:02.182 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:43:02.192 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:43:02.192 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:43:02.204 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:43:02.205 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:43:02.207 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:43:02.207 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:43:58.587 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:43:58.588 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:43:58.602 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:43:58.604 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:43:58.606 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:43:58.606 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:43:58.607 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:43:58.609 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:43:58.610 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:43:58.610 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:43:58.611 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:43:58.620 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:43:58.620 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:43:58.724 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:43:58.726 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:43:58.727 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:43:58.727 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:43:58.728 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:43:58.736 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:43:58.737 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:43:58.738 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:43:58.739 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:43:58.740 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:43:58.740 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:46:08.050 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:46:08.051 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:46:08.066 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:46:08.068 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:46:08.071 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:46:08.073 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:48:45.849 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:48:45.851 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:48:45.873 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:48:45.879 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:48:45.880 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:48:50.317 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:48:50.317 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:48:50.318 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:48:50.320 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:48:50.321 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:48:50.321 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:48:58.308 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:48:58.309 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:48:58.332 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:48:58.345 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:48:58.355 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:49:33.542 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:49:33.542 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:49:33.885 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:49:33.887 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:49:33.889 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:49:33.889 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:49:33.890 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:49:33.890 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:49:33.891 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:49:33.892 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:49:33.893 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:49:33.893 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:49:33.895 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:49:33.895 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:49:33.896 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:49:33.897 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:49:33.898 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:49:33.898 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:49:33.899 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:49:33.899 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:49:33.900 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:49:33.901 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:49:33.903 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:49:33.903 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:49:33.904 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:49:33.904 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:49:33.913 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:49:33.914 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:49:33.915 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:49:33.916 [main] LogThis - Writing ApplicationQueueFile
+[INFO ] 2020-11-08 19:49:33.917 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 19:50:02.229 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:50:02.229 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:50:02.578 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:50:02.580 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:50:02.581 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:50:02.581 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:50:02.582 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:50:02.582 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:50:02.583 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:50:02.584 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:50:02.586 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:50:02.586 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:50:07.271 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:50:07.271 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:50:07.273 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:50:07.274 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:50:07.275 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:50:07.275 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:50:07.277 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:50:07.277 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:50:07.278 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:50:07.279 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:50:07.281 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:50:07.281 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:50:07.282 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:50:07.282 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:50:07.284 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:50:07.285 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:50:07.287 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:50:07.287 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:50:07.289 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:50:07.289 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:50:07.290 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:50:07.291 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:50:07.292 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:50:07.292 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:51:39.749 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:51:39.749 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:51:43.600 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:51:43.601 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:51:43.659 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:51:43.676 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:51:43.686 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:52:00.982 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:00.982 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:00.983 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:00.985 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:00.986 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:00.986 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:00.988 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:00.989 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:00.990 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:00.991 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:00.993 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:00.993 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:00.994 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:00.995 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:00.998 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:00.999 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:01.000 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:01.000 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:01.002 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:01.002 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:01.003 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:01.004 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:01.005 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:01.006 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:07.654 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:07.654 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:07.656 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:07.657 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:07.659 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:07.659 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:07.661 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:07.661 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:07.663 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:07.664 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:07.666 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:07.666 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:07.668 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:07.669 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:07.670 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:07.672 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:07.673 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:07.673 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:07.675 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:07.675 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:07.676 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:07.678 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:07.679 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:07.679 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:07.681 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:07.681 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:07.682 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:07.683 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:07.685 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:07.685 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:15.526 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:15.526 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:15.528 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:15.529 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:15.530 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:15.530 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:15.532 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:15.532 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:15.534 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:15.535 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:15.536 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:15.536 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:15.538 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:15.538 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:15.540 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:15.541 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:15.542 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:15.542 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:15.544 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:15.544 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:15.545 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:15.546 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:15.547 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:15.548 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:15.549 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:15.549 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:15.551 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:15.552 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:15.553 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:15.553 [main] LogThis - Writing ApplicationQueueFile
+[INFO ] 2020-11-08 19:52:15.555 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 19:52:20.790 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:20.790 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:20.792 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:20.793 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:20.794 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:20.794 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:20.796 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:20.796 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:20.797 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:20.798 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:20.799 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:20.799 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.557 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.557 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.559 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.560 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.561 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.561 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.563 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.563 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.565 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.566 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.567 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.567 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.569 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.569 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.570 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.572 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.573 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.573 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.574 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.574 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.576 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.577 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.578 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.578 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.579 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.580 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.581 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.582 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.583 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.583 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.585 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.585 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.587 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.588 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.589 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.589 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.590 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.591 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.592 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.593 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.594 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.594 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.596 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.596 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.597 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.598 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.599 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.599 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:26.601 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:26.601 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:26.603 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:26.604 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:26.605 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:26.605 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:52:55.662 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:52:55.662 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:52:56.007 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:52:56.009 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:52:56.010 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:52:56.010 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.162 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:53:25.163 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.187 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:53:25.195 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:53:25.195 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:53:25.198 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.198 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.297 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.298 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.300 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.300 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.303 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.303 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.305 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.306 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.307 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.307 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.309 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.309 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.311 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.312 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.313 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.314 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.316 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.316 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.318 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.319 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.320 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.320 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.322 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.323 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.324 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.325 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.327 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.327 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.329 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.329 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.331 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.332 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.333 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.333 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.335 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.335 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.336 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.337 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.338 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.338 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.340 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.340 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.342 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.343 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.344 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.344 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:53:25.346 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:53:25.346 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:53:25.349 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:53:25.350 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:53:25.351 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:53:25.351 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:54:31.350 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:54:31.350 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:54:35.010 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:54:35.011 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:54:35.012 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:54:35.013 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:54:41.910 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:54:41.910 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:54:41.912 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:54:41.912 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:54:41.913 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:54:41.914 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:55:01.029 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:55:01.029 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:55:01.031 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:55:01.032 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:55:01.033 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:55:01.033 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:55:13.413 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:55:13.413 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:55:13.415 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:55:13.416 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:55:13.417 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:55:13.418 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:22.350 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:22.350 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:26.004 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:26.005 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:26.007 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:26.007 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:26.008 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:26.008 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:26.010 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:26.011 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:26.012 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:26.012 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:26.013 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:26.013 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:26.014 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:26.016 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:26.017 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:26.017 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:26.018 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:26.018 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:26.020 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:26.021 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:26.022 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:26.022 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:26.023 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:26.023 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:26.025 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:26.027 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:26.028 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:26.029 [main] LogThis - Writing ApplicationQueueFile
+[INFO ] 2020-11-08 19:56:26.029 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 19:56:31.237 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:31.237 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:31.239 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:31.241 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:31.242 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:31.242 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:31.243 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:31.243 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:31.245 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:31.246 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:31.247 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:31.247 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:33.853 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:33.853 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:33.856 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:33.857 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:33.858 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:33.858 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:33.859 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:33.859 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:33.861 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:33.862 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:33.863 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:33.863 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:33.865 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:33.865 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:33.867 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:33.868 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:33.869 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:33.869 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:56:33.871 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:56:33.871 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:56:33.873 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:56:33.874 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:56:33.875 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:56:33.875 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:57:12.198 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:57:12.198 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:57:12.517 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:57:12.518 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:57:12.520 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:57:12.520 [main] LogThis - Writing ApplicationQueueFile
+[INFO ] 2020-11-08 19:57:27.190 [main] LogThis - Employee pulled info on cat
+[DEBUG] 2020-11-08 19:57:56.461 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:57:56.461 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:57:56.790 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:57:56.791 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:57:56.792 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:57:56.792 [main] LogThis - Writing ApplicationQueueFile
+[INFO ] 2020-11-08 19:57:56.793 [main] LogThis - Account #25775
+Balance: $433.00
+ was depositied into
+[DEBUG] 2020-11-08 19:57:56.793 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:57:56.793 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:57:56.795 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:57:56.796 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:57:56.796 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:57:56.796 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:59:27.943 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 19:59:27.945 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 19:59:27.959 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 19:59:27.986 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 19:59:27.987 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 19:59:27.989 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:59:27.989 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:59:27.992 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:59:27.993 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:59:27.995 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:59:27.995 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:59:27.996 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:59:27.997 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:59:27.999 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:59:28.000 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:59:28.001 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:59:28.001 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:59:28.002 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:59:28.003 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:59:28.005 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:59:28.006 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:59:28.007 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:59:28.007 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:59:28.008 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:59:28.009 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:59:28.011 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:59:28.012 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:59:28.013 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:59:28.013 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 19:59:28.014 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 19:59:28.014 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 19:59:28.016 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 19:59:28.018 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 19:59:28.019 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 19:59:28.019 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:00:08.296 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:00:08.297 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 20:00:08.311 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 20:00:08.336 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 20:00:08.336 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 20:00:08.339 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:00:08.339 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:00:08.342 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:00:08.343 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:00:08.345 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:00:08.345 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:00:08.346 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:00:08.346 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:00:08.349 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:00:08.351 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:00:08.352 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:00:08.352 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:00:08.353 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:00:08.353 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:00:08.356 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:00:08.357 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:00:08.358 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:00:08.358 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:00:08.359 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:00:08.359 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:00:08.362 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:00:08.363 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:00:08.364 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:00:08.364 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:00:08.365 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:00:08.365 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:00:08.367 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:00:08.368 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:00:08.370 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:00:08.370 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:04.886 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:01:04.887 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 20:01:04.902 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 20:01:04.918 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 20:01:04.919 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 20:01:04.921 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:04.921 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:04.924 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:04.926 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:04.927 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:04.927 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:04.929 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:04.929 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:04.931 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:04.932 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:04.933 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:04.934 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:04.935 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:04.935 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:04.937 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:04.938 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:04.940 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:04.940 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:04.941 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:04.941 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:04.943 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:04.944 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:04.945 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:04.945 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:04.946 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:04.946 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:04.948 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:04.949 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:04.951 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:04.951 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:58.835 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:01:58.836 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 20:01:58.851 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 20:01:58.868 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 20:01:58.868 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 20:01:58.871 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:58.871 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:58.874 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:58.876 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:58.877 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:58.877 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:58.879 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:58.879 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:58.882 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:58.883 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:58.885 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:58.886 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:58.887 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:58.887 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:58.890 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:58.891 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:58.892 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:58.892 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:58.893 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:58.893 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:58.896 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:58.897 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:58.898 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:58.898 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:01:58.899 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:01:58.900 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:01:58.902 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:01:58.903 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:01:58.904 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:01:58.904 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.523 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:02:21.524 [main] LogThis - BigW ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.539 [main] LogThis - BigW LoginFile
+[DEBUG] 2020-11-08 20:02:21.556 [main] LogThis - BigW CustActFile
+[DEBUG] 2020-11-08 20:02:21.557 [main] LogThis - BigW ActCustFile
+[DEBUG] 2020-11-08 20:02:21.559 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.559 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.562 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.563 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.566 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.566 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.567 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.567 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.570 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.571 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.572 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.572 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.574 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.574 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.576 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.578 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.579 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.579 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.580 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.580 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.582 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.583 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.585 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.585 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.586 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.586 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.588 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.589 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.590 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.590 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.591 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.591 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.594 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.595 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.596 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.596 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.597 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.597 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.599 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.600 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.601 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.601 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.602 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.602 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.604 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.605 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.607 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.607 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.608 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.608 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.610 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.611 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.612 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.612 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:21.613 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:21.613 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:21.615 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:21.616 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:21.617 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:21.618 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:38.525 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:38.526 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:38.528 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:38.529 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:38.531 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:38.531 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:38.532 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:38.532 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:38.534 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:38.535 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:38.536 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:38.537 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:38.537 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:38.537 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:38.540 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:38.541 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:38.542 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:38.542 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:38.543 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:38.544 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:38.546 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:38.547 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:38.548 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:38.548 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:38.549 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:38.549 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:38.551 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:38.552 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:38.553 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:38.554 [main] LogThis - Writing ApplicationQueueFile
+[INFO ] 2020-11-08 20:02:38.554 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 20:02:43.254 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:43.254 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:43.256 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:43.258 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:43.259 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:43.259 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:43.260 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:43.260 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:43.262 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:43.263 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:43.264 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:43.264 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:47.566 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:47.566 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:47.568 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:47.569 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:47.570 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:47.570 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:47.571 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:47.571 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:47.573 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:47.574 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:47.576 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:47.576 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:47.577 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:47.577 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:47.579 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:47.581 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:47.582 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:47.582 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:47.583 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:47.584 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:47.585 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:47.587 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:47.587 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:47.588 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:02:56.382 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:02:56.382 [main] LogThis - BigS: MAP
+[DEBUG] 2020-11-08 20:02:56.384 [main] LogThis - BigS: CustAccount
+[DEBUG] 2020-11-08 20:02:56.386 [main] LogThis - BigS: AccountCust
+[DEBUG] 2020-11-08 20:02:56.387 [main] LogThis - BigS: ApplicationQueue
+[DEBUG] 2020-11-08 20:02:56.387 [main] LogThis - Writing ApplicationQueueFile
+[DEBUG] 2020-11-08 20:04:51.898 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:05:08.358 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:08.366 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:08.372 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:08.378 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:08.384 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:51.566 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:51.888 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:51.894 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:51.900 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:05:51.913 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:05:51.919 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 20:06:00.774 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:06:00.780 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.614 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.620 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.626 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.632 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.638 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.644 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.649 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.654 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:07:41.660 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:09:11.622 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:09:15.470 [main] LogThis - Account #65936
+Balance: $0.00
+ was depositied into
+[DEBUG] 2020-11-08 20:09:15.470 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:09:30.750 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:09:42.065 [main] LogThis - Loading All Files
+[INFO ] 2020-11-08 20:10:12.102 [main] LogThis - Employee pulled info on x
+[DEBUG] 2020-11-08 20:10:52.534 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:11:00.878 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:11:10.046 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:12:56.134 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:13:01.237 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:13:34.606 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:13:34.929 [main] LogThis - Account #65936
+Balance: $0.00
+ was depositied into
+[DEBUG] 2020-11-08 20:13:34.930 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:24:37.372 [main] LogThis - Loading All Files
+[INFO ] 2020-11-08 20:25:04.078 [main] LogThis - Employee pulled info on dog
+[DEBUG] 2020-11-08 20:25:24.439 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:25:24.783 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:25:36.542 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:25:36.549 [main] LogThis - Account #65936
+Balance: $80.00
+ was depositied into
+[DEBUG] 2020-11-08 20:25:36.549 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:26:07.463 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:26:07.804 [main] LogThis - Account #63811
+Balance: $0.00
+ was depositied into
+[DEBUG] 2020-11-08 20:26:07.804 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:26:46.902 [main] LogThis - Account #63811
+Balance: $0.00
+ transfered money to Account #63811
+Balance: $0.00
+
+[DEBUG] 2020-11-08 20:26:46.902 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:23.311 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:23.317 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:23.323 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:23.329 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:27.806 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:27.813 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:27.819 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:27.825 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:47.054 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:27:54.198 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:28:30.590 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:28:30.925 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:28:30.930 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:28:30.935 [main] LogThis - Account #65936
+Balance: $78.00
+ transfered money to Account #79936
+Balance: $2.00
+
+[DEBUG] 2020-11-08 20:28:30.935 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:22.446 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:26.745 [main] LogThis - Loading All Files
+[DEBUG] 2020-11-08 20:29:40.110 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:40.118 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:40.126 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:40.132 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:40.138 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:29:40.144 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 20:29:45.622 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:45.628 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:49.398 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:49.404 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:49.410 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:49.416 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:29:49.422 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:30:14.343 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:30:19.143 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:30:19.149 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:30:19.155 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:30:19.161 [main] LogThis - Saving All Files
+[INFO ] 2020-11-08 20:30:19.168 [main] LogThis - Created new user
+[DEBUG] 2020-11-08 20:30:26.991 [main] LogThis - Saving All Files
+[DEBUG] 2020-11-08 20:30:26.997 [main] LogThis - Saving All Files

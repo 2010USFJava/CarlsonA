@@ -70,7 +70,8 @@ public class LoginInfo implements Serializable {
 	
 	public static void setLoginMap(Map<String,LoginInfo> loadedMap) {
 		loginMap=loadedMap;
-		FileHandler.saveAll();
+//		FileHandler.saveAll();
+		FileHandler.writeLoginFile(loadedMap);
 	}
 	
 	public static Map<String,LoginInfo> getLoginMap() {

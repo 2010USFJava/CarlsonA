@@ -5,6 +5,8 @@ import java.io.Serializable;
 import com.Revature.AccountInfo.Account;
 import com.Revature.AccountInfo.JointAccount;
 import com.Revature.Meta.FileHandler;
+import com.Revature.Meta.LogThis;
+import com.Revature.Meta.LogThis.LevelEnum;
 
 public class Employee extends User implements Serializable{
 	private enum EmployeeLevelEnum{

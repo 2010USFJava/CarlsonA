@@ -384,6 +384,16 @@ public abstract class User implements Serializable {
 		return output;
 	}
 	
+	public String fullNameUserVersion() {
+		String output=userTypeToString()+"ID: "+userId;
+		output+= "\n\tFirstName: "+firstName;
+		if (middleName!=null) {
+			output+="\tMiddleName: "+getMiddleName(true);
+		}
+		output+="\tLastName: "+lastName;
+		return output;
+	}
+	
 
 	
 

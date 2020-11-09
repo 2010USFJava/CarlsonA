@@ -109,7 +109,7 @@ public class Account implements Serializable {
 
 	public static void setApplicationQueue(Queue<Account> newApplicationQueue) {
 		applicationQueue = newApplicationQueue;
-		FileHandler.saveAll();
+
 	}
 
 	//change account status
@@ -156,23 +156,7 @@ public class Account implements Serializable {
 		return output;
 	}
 	
-	public void approveAccount() {
-		changeStatus(AccountStatusEnum.OPEN);
-	}
-	
-	
-	public void closeAccount() {
-		changeStatus(AccountStatusEnum.CLOSED);
-	}
-	
-	public void changeStatus(AccountStatusEnum status) {
-		this.accountStatus=status;
-		FileHandler.saveAll();
-	}
-	
-	public AccountStatusEnum getAccountStatus() {
-		return accountStatus;
-	}
+
 	
 	protected void setAccountType(AccountTypeEnum accountType) {
 		this.accountType=accountType;
@@ -198,6 +182,7 @@ public class Account implements Serializable {
 			balance-=money;
 			printBalance();
 
+			LogThis.logIt(LevelEnum.INFO, "Withdrew "+convertMoney(money));
 			
 			}else {
 			System.out.println("Did not withdraw money. Account not open");
@@ -215,9 +200,17 @@ public class Account implements Serializable {
 	
 	public void deposit(long money) {
 		if(accountStatus.equals(AccountStatusEnum.OPEN)) {
+			
+			if(money<0) {
+				System.out.println("Can not deopsit a negative amount");
+				money=0;
+			}
 			balance+=money;
 			System.out.println("Deposited: "+convertMoney(money));
 			printBalance();
+			
+
+			LogThis.logIt(LevelEnum.INFO, "Deposited "+convertMoney(money));
 
 			
 			}else {
@@ -248,6 +241,8 @@ public class Account implements Serializable {
 			long amountTransfered=withdraw(money);
 			account.deposit(amountTransfered);
 			FileHandler.saveAll();
+
+			LogThis.logIt(LevelEnum.INFO, "Transfered between accounts "+convertMoney(amountTransfered));
 			return amountTransfered;
 			
 			
@@ -255,23 +250,8 @@ public class Account implements Serializable {
 			System.out.println("One or both of these accounts are not open");
 			return 0;
 		}
-		
-
-		
-//may want to add upper limit checker here
 	}
-	
-//	public static Map<Integer,Account> getAccountDictionary() {
-//		//for now anyone can see this. But for security reasons, I'll want to change
-//		//the if condition to other validation conditions later
-//		Map<Integer,Account> map=null;
-//		if (true) {
-//			map=accountMap;
-//		}
-//		return map;
-//
-//		
-//	}
+		
 	
 	public String getAccountInformation() {
 		String output="Account #"+accountId+"\n"
@@ -321,22 +301,41 @@ public class Account implements Serializable {
 		
 	}
 	
-	public void approveApplication() {
-		this.accountStatus=AccountStatusEnum.OPEN;
-		applicationQueue.remove(this);
-		FileHandler.saveAll();
-
+//	public void approveApplication() {
+//		this.accountStatus=AccountStatusEnum.OPEN;
+//		applicationQueue.remove(this);
+//		FileHandler.saveAll();
+//
+//	}
+//	
+//	public void rejectApplication() {
+//
+//		this.accountStatus=AccountStatusEnum.REJECTED;
+//
+//		applicationQueue.remove(this);
+//		//In the future add a function to eventually delete rejected applicatons
+//		FileHandler.saveAll();
+//		
+//	}
+	
+	
+	public void approveAccount() {
+		changeStatus(AccountStatusEnum.OPEN);
 	}
 	
-	public void rejectApplication() {
-
-		this.accountStatus=AccountStatusEnum.REJECTED;
-
-		applicationQueue.remove(this);
-		//In the future add a function to eventually delete rejected applicatons
-		FileHandler.saveAll();
-		
+	
+	public void closeAccount() {
+		changeStatus(AccountStatusEnum.CLOSED);
 	}
 	
+	public void changeStatus(AccountStatusEnum status) {
+		this.accountStatus=status;
+		applicationQueue.remove(this);
+		FileHandler.saveAll();
+	}
+	
+	public AccountStatusEnum getAccountStatus() {
+		return accountStatus;
+	}
 	
 }

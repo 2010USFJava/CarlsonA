@@ -168,8 +168,7 @@ public class Bank {
 			tempCustPrimary=tempCustomer;
 			
 		}
-		//currently setting this to only run once as only two users can be added. But should be altered in case of 2+ upgrade
-		makeAnotherUser=false;
+
 		
 		//since the user can break out of this at any time, there are multiple if strings
 		String fName=StringCheck.scannerStringOrGoBack("first name");
@@ -226,10 +225,12 @@ public class Bank {
 			if(checkIfGoBack()) {
 				System.out.println("Canceling Second User Creation...");
 				System.out.println("Second user can make an account at a later time.");
+				
 			}
 
 			System.out.println("Returning information on primary account holder");
 			tempCustomer=tempCustPrimary;
+			makeAnotherUser=false;
 		}
 
 		}while(makeAnotherUser);
@@ -351,7 +352,7 @@ public class Bank {
 	
 	private void showCustomerMenu(Customer cust) {
 		System.out.println("Welcome back, customer.");
-		System.out.println(cust);
+		System.out.println(cust.fullNameUserVersion());
 		
 		String [] custOption= new String[3];
 		custOption[0]="Logout";
@@ -432,8 +433,8 @@ public class Bank {
 		choices[1]="Make a withdraw";
 		choices[2]="Make a transfer";
 		choices[3]="Return to customer page";
-		choices[4]="Return to main page";
-		choices[5]="Log out";
+		choices[4]="Log out and Return to main page";
+		choices[5]="Exit";
 	
 		adminChoices[0]="Return to employee menu";
 		adminChoices[1]="Change account status";
@@ -574,10 +575,10 @@ public class Bank {
 				answerInt=StringCheck.numberScanner(option);
 				switch (answerInt) {
 				case 0:
-					act.approveApplication();
+					act.approveAccount();
 					break;
 				case 1:
-					act.rejectApplication();
+					act.changeStatus(AccountStatusEnum.REJECTED);;
 				break;
 //					case 2:
 //					

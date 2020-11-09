@@ -11,12 +11,12 @@ public class Main {
 	public static void main(String[] args) {
 		FileHandler.loadAll();
 //		
-//		Employee emp =new Employee("Goerg","Penguine","DSdsds");
-//		LoginInfo login = new LoginInfo("testemp","testemp",emp);
+//		Employee emp =new Employee("TESTADMIN","","Armando");
+//		LoginInfo login = new LoginInfo("testadmin","testadmin",emp);
 //		Employee.createAdmin(emp, login);
 //		Employee.createEmployee(emp, login);
 
-		FileHandler.saveAll();
+//		FileHandler.saveAll();
 		
 		
 		Bank bank = new Bank();

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--The base code here was taken from Jason "Matt" Knighten as part of the Revature Training Program-->
 <Configuration>
 	<Appenders>
 		<Console name="Console" target="System_out">
@@ -20,6 +19,10 @@
 	</Appenders>
 	<Loggers>
 		<Logger name="com.Revature.Meta.LogThis" level = "info" additivity= "false">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref = "File"/>
+		</Logger>
+		<Logger name="com.Revature.Meta.LogThis" level = "trace" additivity= "false">
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref = "File"/>
 		</Logger>

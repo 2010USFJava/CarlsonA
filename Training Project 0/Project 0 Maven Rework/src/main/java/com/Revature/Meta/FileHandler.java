@@ -32,7 +32,7 @@ public class FileHandler {
 	
 	//write method
 	public static void writeApplicationQueueFile(Queue<Account> applicationQueue) {
-		LogThis.logIt(LevelEnum.DEBUG, "Writing ApplicationQueueFile");
+//		LogThis.logIt(LevelEnum.DEBUG, "Writing ApplicationQueueFile");
 		try {
 			ObjectOutputStream objectOut = new ObjectOutputStream(new FileOutputStream(applicationQueueFile));
 			objectOut.writeObject(applicationQueue);
@@ -129,7 +129,7 @@ public class FileHandler {
 	}
 	
 	public static void readApplicationQueueFile() {
-		LogThis.logIt(LevelEnum.DEBUG, "Read ApplicationQueueFile");
+//		LogThis.logIt(LevelEnum.DEBUG, "Read ApplicationQueueFile");
 		
 		try {
 			ObjectInputStream objIn=new ObjectInputStream(new FileInputStream(applicationQueueFile));
@@ -148,20 +148,37 @@ public class FileHandler {
 	
 	public static void saveAll() {
 
-		LogThis.logIt(LevelEnum.DEBUG, "Saving All Files");
+//		LogThis.logIt(LevelEnum.DEBUG, "Saving All Files");
+
+//		LogThis.logIt(LevelEnum.DEBUG, "BigS: MAP");
 		writeLoginFile(LoginInfo.getLoginMap());
+		
+//		LogThis.logIt(LevelEnum.DEBUG, "BigS: CustAccount");
 		writeCustAccountFile();
+		
+//		LogThis.logIt(LevelEnum.DEBUG, "BigS: AccountCust");
 		writeActCustFile();
+		
+//		LogThis.logIt(LevelEnum.DEBUG, "BigS: ApplicationQueue");
 		writeApplicationQueueFile(Account.getApplicationQueue());
 	}
 	
 	public static void loadAll() {
 
-		LogThis.logIt(LevelEnum.DEBUG, "Loading All Files");
-		readLoginFile();
-		readCustActFile();
-		readActCustFile();
+//		LogThis.logIt(LevelEnum.DEBUG, "Loading All Files");
+
+//		LogThis.logIt(LevelEnum.DEBUG, "BigW ApplicationQueue");
 		readApplicationQueueFile();
+		
+//		LogThis.logIt(LevelEnum.DEBUG, "BigW LoginFile");
+		readLoginFile();
+		
+//		LogThis.logIt(LevelEnum.DEBUG, "BigW CustActFile");
+		readCustActFile();
+		
+
+//		LogThis.logIt(LevelEnum.DEBUG, "BigW ActCustFile");
+		readActCustFile();
 
 		//if first time running, make sure to create new items
 		if(customerToAccountMap==null ||accountToCustomerMap==null) {
