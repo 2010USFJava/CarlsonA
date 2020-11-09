@@ -8,6 +8,8 @@ import com.Revature.AccountInfo.Account;
 import com.Revature.AccountInfo.CustomerAccountRelationship;
 import com.Revature.AccountInfo.JointAccount;
 import com.Revature.Meta.FileHandler;
+import com.Revature.Meta.LogThis;
+import com.Revature.Meta.LogThis.LevelEnum;
 
 
 public class Customer extends User implements Serializable {
@@ -17,7 +19,8 @@ public class Customer extends User implements Serializable {
 	private static final long serialVersionUID = 5844012040276987566L;
 	private Set<Account> userAccounts=CustomerAccountRelationship.getAccountSetForCustomer(this);
 	
-	{setUserType(UserTypeEnum.CUSTOMER);}
+	{setUserType(UserTypeEnum.CUSTOMER);
+	LogThis.logIt(LevelEnum.INFO, "Created new user");}
 	
 
 	public Customer(String firstName,String middleName,String lastName) {

@@ -19,7 +19,7 @@
 		</File>
 	</Appenders>
 	<Loggers>
-		<Logger name="com.Revature.LogThis" level = "info" additivity= "false">
+		<Logger name="com.Revature.Meta.LogThis" level = "info" additivity= "false">
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref = "File"/>
 		</Logger>

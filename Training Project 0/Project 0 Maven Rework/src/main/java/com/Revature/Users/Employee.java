@@ -69,4 +69,12 @@ public class Employee extends User implements Serializable{
 		
 	}
 
+	public boolean checkIfAdmin() {
+		if(empLevel.equals(EmployeeLevelEnum.ADMIN)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

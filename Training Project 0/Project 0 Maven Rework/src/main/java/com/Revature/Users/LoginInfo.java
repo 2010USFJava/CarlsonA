@@ -7,6 +7,9 @@ import java.util.Set;
 
 import com.Revature.AccountInfo.Account;
 import com.Revature.Meta.FileHandler;
+import com.Revature.Meta.LogThis;
+import com.Revature.Meta.LogThis.LevelEnum;
+import com.Revature.Meta.RuntimeData;
 import com.Revature.Meta.StringCheck;
 
 public class LoginInfo implements Serializable {
@@ -108,6 +111,26 @@ public class LoginInfo implements Serializable {
 		}
 		
 		
+	}
+	
+	public static User employeeCheckingUserInfo(String username) {
+		if(!RuntimeData.data.getUser().checkIfEmployee()) {
+			System.out.println("Sorry, Only employees can use this search. Please return to the main menu and log in");
+			LogThis.logIt(LevelEnum.ERROR, "Non-Employee somehow called Employee User Check");
+			return null;
+		} else {
+			User defaultUser = null;
+			LoginInfo info = loginMap.get(username);
+			boolean infoExists = checkIfUsernameIsTaken(username);
+			if(infoExists) {
+				LogThis.logIt(LevelEnum.INFO, "Employee pulled info on "+username);	
+				return info.user;
+			} else {
+				System.out.println("Pull was not successful - No such user");
+				return defaultUser;
+			}
+			
+		}
 	}
 	
 	//Try to access user data by logging in

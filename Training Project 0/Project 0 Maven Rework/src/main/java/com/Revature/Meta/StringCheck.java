@@ -145,14 +145,36 @@ public class StringCheck {
 		
 	}
 	
-	
+	public static int numberScanner(String[] choice) {
+		return numberScanner(choice,null,null,false);
+	}
 
 	
-	public static int numberScanner(String[] options) {
+	public static int numberScanner(String[] options,String submenuName, String[] subMenuChoices,boolean runSubmunuCode) {
 		int num=0;
 		for(String i :options) {
 			System.out.println(num+++": "+i);
 		}
+		
+		//run this bit of code If I want to have a submenu
+		if(runSubmunuCode) {
+			System.out.println(submenuName);	
+			for(String i :subMenuChoices) {
+				System.out.println("\t"+num+++": "+i);
+			}
+			
+			//merge menu and sub menu for selection
+			int mainL=options.length;
+			int subL=subMenuChoices.length;
+			String[]newMenu=new String[mainL+subL];
+			System.arraycopy(options,0,newMenu,0,mainL);
+			System.arraycopy(subMenuChoices,0,newMenu,mainL,subL);
+			
+			//replace options for remainder of code
+			options=newMenu;
+		
+		}
+		
 		boolean keepGoing=true;
 		//initilizeing this so that I don't throw an error, but making it too long to be selected by accident
 		int selection=options.length+1;
@@ -186,8 +208,8 @@ public class StringCheck {
 
 	
 	public static boolean passFobbidenUsernameCheck(String attemptedUser) {
-		for(String i: forbiddenUsernames) {
-			if(attemptedUser==i) {
+		for(int i=0;i<forbiddenUsernames.length;i++) {
+			if(attemptedUser==forbiddenUsernames[i]) {
 				System.out.println("You cannot use username\""+i+"\". Please try again.");
 				return false;
 			}
@@ -197,14 +219,16 @@ public class StringCheck {
 	}
 	
 	public static boolean passForbbidenNumberCheck(int intAnswer) {
-		for(int i: forbiddenNumbers) {
-			if(intAnswer==i) {
+		for(int i=0;i<forbiddenNumbers.length;i++) {
+			if(intAnswer==forbiddenNumbers[i]) {
 				System.out.println("You cannot use the numbers 0 through 9 as an input here. Please try again.");
 				return false;
 			}
 		}
 		return true;
 	}
+
+
 	
 	
 }

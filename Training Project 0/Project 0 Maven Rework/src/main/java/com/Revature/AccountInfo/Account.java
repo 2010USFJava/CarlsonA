@@ -2,11 +2,17 @@ package com.Revature.AccountInfo;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 import java.util.Set;
 
 import com.Revature.Meta.FileHandler;
+import com.Revature.Meta.LogThis;
+import com.Revature.Meta.RuntimeData;
+import com.Revature.Meta.LogThis.LevelEnum;
 import com.Revature.Users.Customer;
+import com.Revature.Users.User;
 
 /**
  * @author Owner
@@ -23,7 +29,8 @@ public class Account implements Serializable {
 	public enum AccountStatusEnum {
 		OPEN,
 		CLOSED,
-		IN_APPLICATION;
+		IN_APPLICATION,
+		REJECTED;
 	}
 
 	
@@ -45,8 +52,9 @@ public class Account implements Serializable {
 	private AccountStatusEnum accountStatus=AccountStatusEnum.IN_APPLICATION;
 	protected AccountTypeEnum accountType = AccountTypeEnum.SINGLE;
 	protected Set<Customer> customerSet=CustomerAccountRelationship.getCustomerSetForAccount(this);
+	protected static Queue<Account> applicationQueue=new LinkedList<>();
 	private Customer accountHolder;
-	private transient Random rand = new Random(543);
+	private transient Random rand = new Random();
 	
 	
 	{	randomizeId();}
@@ -65,6 +73,19 @@ public class Account implements Serializable {
 		this.accountHolder=accountHolder;
 		updateCustAcctMaps(accountHolder);
 		this.accountStatus=status;
+		
+		try {
+
+			if(status.equals(AccountStatusEnum.IN_APPLICATION)) {
+				applicationQueue.add(this);
+			}	
+			
+		}catch(NullPointerException e) {
+			applicationQueue=new LinkedList<>();
+			applicationQueue.add(this);
+			LogThis.logIt(LevelEnum.TRACE, "No application queue existed when attempted to add "+this+". Createing a new one now");
+		}
+		
 		FileHandler.saveAll();
 		
 		
@@ -81,16 +102,33 @@ public class Account implements Serializable {
 	}
 
 
+	
+	public static Queue<Account> getApplicationQueue() {
+		return applicationQueue;
+	}
+
+	public static void setApplicationQueue(Queue<Account> newApplicationQueue) {
+		applicationQueue = newApplicationQueue;
+		FileHandler.saveAll();
+	}
+
 	//change account status
 	public String printAccountStatus() {
 		String output="";
 		
 		switch (accountType) {
 		case SINGLE:
-			output+="Single ";
+			output+="Single "+this.getAccountHolder().getLastName()+" ";
 			break;
 		case JOINT:
-			output+="Joint ";
+			JointAccount joint=(JointAccount)this;
+			output+="Joint "+joint.getAccountHolder().getLastName()+", ";
+			
+			if(joint.getSecondAccountHolder()!=null) {
+
+				output+=joint.getSecondAccountHolder().getLastName()+" ";
+					
+			}
 			break;
 		}
 		
@@ -99,13 +137,16 @@ public class Account implements Serializable {
 
 		switch (accountStatus) {
 		case IN_APPLICATION:
-;			output+="Application";
+			output+="Application";
 			break;
 		case OPEN:
-;			output+="Open";
+			output+="Open";
 			break;
 		case CLOSED:
-;			output+="Closed";
+			output+="Closed";
+			break;
+		case REJECTED:
+			output+="Rejected";
 			break;
 		default:
 			break;
@@ -152,10 +193,10 @@ public class Account implements Serializable {
 				money=0;
 			}else {
 				System.out.println("Withdrawing: "+convertMoney(money)+".");
-				printBalance();
+				
 			}
 			balance-=money;
-			
+			printBalance();
 
 			
 			}else {
@@ -252,8 +293,50 @@ public class Account implements Serializable {
 
 	@Override
 	public String toString() {
-		String output=printAccountStatus();
+		String output=printAccountStatus()+" Balance:"+convertMoney(balance);
 		
 		return output;
 	}
+	
+	
+	
+	
+
+	public static void enterApplicationQueue(Account act) {
+		applicationQueue.add(act);
+		FileHandler.saveAll();
+	}
+	
+
+	
+	
+	public static Account getNextApplication() {
+		try {
+			return applicationQueue.peek();
+		} catch(NullPointerException e){
+			LogThis.logIt(LevelEnum.TRACE, "No application Queue existed when Employee tried to pull from it. Creating one now...");
+			applicationQueue=new LinkedList<>();
+			return applicationQueue.peek();
+		}
+		
+	}
+	
+	public void approveApplication() {
+		this.accountStatus=AccountStatusEnum.OPEN;
+		applicationQueue.remove(this);
+		FileHandler.saveAll();
+
+	}
+	
+	public void rejectApplication() {
+
+		this.accountStatus=AccountStatusEnum.REJECTED;
+
+		applicationQueue.remove(this);
+		//In the future add a function to eventually delete rejected applicatons
+		FileHandler.saveAll();
+		
+	}
+	
+	
 }

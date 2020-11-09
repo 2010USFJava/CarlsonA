@@ -15,8 +15,8 @@ public class CustomerAccountRelationship implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 4409635919393685407L;
-	private static Map<Customer,Set<Account>> customerToAccountMap = new HashMap<>();
-	private static Map<Account,Set<Customer>> accountToCustomerMap = new HashMap<>();
+	private static Map<Customer,Set<Account>> customerToAccountMap=new HashMap<>();
+	private static Map<Account,Set<Customer>> accountToCustomerMap=new HashMap<>();
 	
 	
 	

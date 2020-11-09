@@ -4,7 +4,8 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 import com.Revature.AccountInfo.Account;
-import com.Revature.AccountInfo.Application;
+import com.Revature.AccountInfo.Account.AccountStatusEnum;
+//import com.Revature.AccountInfo.Application;
 import com.Revature.AccountInfo.JointAccount;
 import com.Revature.Meta.LogThis.LevelEnum;
 import com.Revature.Users.Customer;
@@ -18,7 +19,7 @@ public class Bank {
 	private String bankName="Fancy Bank of Holding";
 	private final int estYear=2020;
 	private static Scanner scan=new Scanner(System.in);
-	private RuntimeData runData= new RuntimeData();
+	private RuntimeData runData= RuntimeData.data;
 	
 	
 	public void startPage() {
@@ -41,7 +42,7 @@ public class Bank {
 		User user=null;
 		switch (selection) {
 		case 0://new customer
-			user=makeNewCustomerLogin();
+			user=makeNewCustomerLogin(false);
 			startPage();
 			break;
 		case 1://returning user
@@ -123,16 +124,20 @@ public class Bank {
 		String userName=scanner0ForMain1ForForgotPassword("username");
 		if(runData.getGoBack()) {
 			loginProblems();
+			LogThis.logIt(LevelEnum.DEBUG, "Run data go back activated: login()->username");
 			
 		} else {
 
 			String password=scanner0ForMain1ForForgotPassword("password");
 			if(runData.getGoBack()) {
 				loginProblems();
+				LogThis.logIt(LevelEnum.DEBUG, "Run data go back activated: login()->password");
 			} else {
 
-				return LoginInfo.logIn(userName,password);
+				User userHolder= LoginInfo.logIn(userName,password);
+				runData.setUser(userHolder);
 				
+				return userHolder;
 			}
 			
 		}
@@ -142,44 +147,20 @@ public class Bank {
 	
 	//user has lost or is missing log in credentials
 	private void loginProblems() {
-		String [] problemsOptions=new String[3];
-		problemsOptions[0]="I selected this by accident. Send me back";
-		problemsOptions[1]="I never made log-in information.";
-		problemsOptions[2]="I forgot my username or password.";
-		
-		System.out.println("You've hit 0. What is your problem?");
-		int selection=StringCheck.numberScanner(problemsOptions);
-		
-		switch (selection) {
-		case 0:
-			System.out.println("WIP");
-			break;
-		case 1:
+		System.out.println("Unfotunently this feature has not yet been implimented.\nReturning to main menu");
+		startPage();
 
-			System.out.println("WIP");
-			break;
-		case 2:
-
-			System.out.println("WIP");
-			break;
-
-		default:
-			System.out.println("This selection has not been implemented at this time. Please try again");
-			loginProblems();
-			break;
-		}
 		
 	}
 	
 	//new customer
-	private Customer makeNewCustomerLogin() {
+	private Customer makeNewCustomerLogin(boolean makeAnotherUser) {
 		Customer tempCustomer=null;
 		Customer tempCustPrimary=null;
 		String lName="";
 		String mName="";
 		String username="";
 		String password="";
-		boolean makeAnotherUser=false;
 		
 		do {
 
@@ -229,8 +210,9 @@ public class Bank {
 			System.out.println("Finished creating log in information.");
 		}
 		
-		if(!checkIfGoBack()) {
-			Account act=makeANewAccount(tempCustomer);
+		if(!checkIfGoBack()&& !makeAnotherUser) {
+			Account act=makeNewAccount(tempCustomer);
+
 		}
 		
 		if(!makeAnotherUser) {
@@ -256,10 +238,14 @@ public class Bank {
 		
 	}
 	
-	private Account makeANewAccount(Customer tempCustomer) {
+
+	private Account makeNewAccount(Customer tempCustomer) {
+		 return makeNewAccount(tempCustomer,false);
+	}
+	
+	private Account makeNewAccount(Customer tempCustomer,boolean makeAnotherUser) {
 
 		Account tempAcct=null;
-		boolean makeAnotherUser=false;
 		if(!makeAnotherUser) {
 
 			System.out.println("Finally, please select the type of account you would like to create");
@@ -268,12 +254,14 @@ public class Bank {
 			accountOptions[1]="Create Joint Account";
 //			accountOptions[2]="Join a joint account";
 			int acctType=StringCheck.numberScanner(accountOptions);
+			System.out.println("Constructing account...");
 			switch (acctType) {
 			case 0:
 				tempAcct=tempCustomer.createAccount();
 				break;
 			case 1:
 				tempAcct=tempCustomer.createJointAccount();
+				JointAccount jointAct=(JointAccount)tempAcct;
 				System.out.println("Joint account created.\n Would you like to make the user profile for the second user at this time?");
 				String []makeAnotherOptions=new String[3];
 				makeAnotherOptions[0]="Yes, make another user and add him or her to this account.";
@@ -284,6 +272,12 @@ public class Bank {
 				switch (makeAnotherUserOption) {
 				case 0:
 					makeAnotherUser=true;
+					Customer custB=makeNewCustomerLogin(makeAnotherUser);
+					if(custB!=null) {
+						jointAct.setSecondAccountHolder(custB);
+					} else {
+						System.out.println("Second user not created");
+					}
 					break;
 				case 1:
 					makeAnotherUser=false;
@@ -373,7 +367,7 @@ public class Bank {
 			enterAccount(cust);
 			break;
 		case 2:
-			makeANewAccount(cust);
+			makeNewAccount(cust);
 			showCustomerMenu(cust);
 			break;
 
@@ -415,20 +409,44 @@ public class Bank {
 	}
 	
 	private void modifyAccount(Customer cust, Account act) {
+		//check if admin in in the account
+		boolean adminIn=false;
+		Employee emp;
+		if(runData.getUser().checkIfEmployee()) {
+			emp=(Employee)runData.getUser();
+			if(emp.checkIfAdmin()) {
+				adminIn=true;
+			}
+		}
+		
 		boolean repeat=true;
 		
 		System.out.println(act);
 		System.out.println("What would you like to do?");
 		
+		
 		String[]choices=new String[6];
+		String[]adminChoices=new String[2];
+	
 		choices[0]="Make a deposit";
 		choices[1]="Make a withdraw";
 		choices[2]="Make a transfer";
 		choices[3]="Return to customer page";
 		choices[4]="Return to main page";
 		choices[5]="Log out";
+	
+		adminChoices[0]="Return to employee menu";
+		adminChoices[1]="Change account status";
 		
-		int intChoice=StringCheck.numberScanner(choices);
+		int intChoice=9000;
+			if (adminIn) {
+
+				intChoice=StringCheck.numberScanner(choices,"Admin",adminChoices,true);
+						
+			}	else {
+				intChoice=StringCheck.numberScanner(choices);
+				
+			}	
 		long money=0;
 		switch (intChoice) {
 		case 0:
@@ -473,8 +491,50 @@ public class Bank {
 			break;
 		case 5:
 			break;
+		case 6:
+			if(!adminIn) {
+
+				System.out.println(intChoice+"was not an applicable option");
+				modifyAccount(cust,act);
+			} else {
+				showEmployeeMenu((Employee)runData.getUser());
+			}
+			break;
+		case 7://"Change account status";
+			if(!adminIn) {
+
+				System.out.println(intChoice+"was not an applicable option");
+				modifyAccount(cust,act);
+			} else {
+				String[] actStatusOptions=new String[4];
+				actStatusOptions[0]="Change Nothing";
+				actStatusOptions[1]="Set to Open";
+				actStatusOptions[2]="Set to Closed";
+				actStatusOptions[3]="Set to Rejected";
+				int statusOptInt=StringCheck.numberScanner(actStatusOptions);
+				
+				switch (statusOptInt) {
+				case 0:
+					break;
+				case 1:
+					act.changeStatus(AccountStatusEnum.OPEN);
+					break;
+				case 2:
+					act.changeStatus(AccountStatusEnum.CLOSED);
+				case 3:
+					act.changeStatus(AccountStatusEnum.REJECTED);	
+					break;
+				default:
+					break;
+				}
+				
+				FileHandler.saveAll();
+				modifyAccount(cust,act);
+			}
+			break;
 		default:
-			LogThis.logIt(LevelEnum.ERROR, "Account Modification error occured. User selected supposidly unreachable code");
+			System.out.println(intChoice+"was not an applicable option");
+			modifyAccount(cust,act);
 			break;
 		}
 		
@@ -482,12 +542,14 @@ public class Bank {
 	}
 
 	private void showEmployeeMenu(Employee emp) {
-		System.out.println("Welcome back, employee.");
+		System.out.println("Welcome to the employee screen.");
 		System.out.println(emp);
 		System.out.println("What would you like to do?");
-		String[]option=new String[2];
+		String[]option=new String[3];
 		option[0]="Return to main menu";
 		option[1]="Approve/Reject Applications";
+		option[2]="View customer/account information";
+		
 		
 		int answerInt=StringCheck.numberScanner(option);
 		
@@ -496,31 +558,71 @@ public class Bank {
 			startPage();
 			break;
 		case 1:
-			System.out.println("What would you like to do with the following application?");
 			
-			Application app=Application.getNextApplication();
-			System.out.println(app);
-			option=new String [2];
-			option[0]="Accept";
-			option[1]="Reject";
-//			option[2]="Place on Hold";
-			answerInt=StringCheck.numberScanner(option);
-			switch (answerInt) {
+			Account act=Account.getNextApplication();
+			
+			if(act==null) {
+				System.out.println("No applications in the queue at this time.");
+			} else {
+
+				System.out.println("What would you like to do with the following application?");
+				System.out.println(act);
+				option=new String [2];
+				option[0]="Accept";
+				option[1]="Reject";
+	//			option[2]="Place on Hold";
+				answerInt=StringCheck.numberScanner(option);
+				switch (answerInt) {
+				case 0:
+					act.approveApplication();
+					break;
+				case 1:
+					act.rejectApplication();
+				break;
+//					case 2:
+//					
+//					break;
+				default:
+					break;
+				}
+
+			}
+			showEmployeeMenu(emp);
+			break;
+		case 2://"View customer/account information";
+			System.out.println("What would you like to do");
+			String[] options=new String[2];
+			options[0]="Enter username to pull up customer info and account list.";
+			options[1]="Return to Employee Menu";
+//			options[1]="Show list of all customers";
+//			options[2]="Show list of all accounts";
+			int optionNum=StringCheck.numberScanner(options);
+			switch (optionNum) {
 			case 0:
-				app.approveApplication();
+				String username= StringCheck.scannerStringCheck("customer username");
+				User user = LoginInfo.employeeCheckingUserInfo(username);
+				
+				employeeCheckSelectedUserInfo(user);
+				
+
 				break;
 			case 1:
-				app.rejectApplication();
+				showEmployeeMenu(emp);
 				break;
 //			case 2:
 //				
 //				break;
+
 			default:
+				System.out.println("No such option avaliable");
+				showEmployeeMenu(emp);
 				break;
 			}
 			
 			break;
 		default:
+			System.out.println("This option has not yet been programmed. Returning to employee menu.");
+			showEmployeeMenu(emp);
 			break;
 		}
 		
@@ -529,6 +631,62 @@ public class Bank {
 	
 	
 	
+	public void employeeCheckSelectedUserInfo(User user){
+
+		if(user.checkIfCustomer()) {
+			Customer cust=(Customer) user;
+			System.out.println(cust);
+			
+			System.out.println("What would you like to do?");
+			String []options=new String[3];
+			
+			options[0]="View Account Information";
+			options[1]="Go Back To Employee Menu";
+			options[2]="Go To Main Menu";
+			
+			int optionInt=StringCheck.numberScanner(options);
+			
+			switch (optionInt) {
+			case 0:
+				System.out.println("Which account would you like to enter?");
+				Account act=getAccountFromSelection(cust);
+				//check Employee status
+				Employee emp=(Employee)RuntimeData.data.getUser();
+				if(emp.checkIfAdmin()) {
+					modifyAccount(cust,act);
+				}else {
+
+					System.out.println("=============================================");
+					employeeCheckSelectedUserInfo(cust);
+						
+				}
+				break;
+			case 1:
+				
+				if(runData.getUser().checkIfEmployee()) {
+					showEmployeeMenu((Employee)runData.getUser());	
+				} else {
+					System.out.println("An Error has occured. Returning to main menu");
+					LogThis.logIt(LevelEnum.WARN, "Current user data is not an employee, but in employee menu. User was sent to main menu");
+					startPage();
+				}
+				
+				break;
+
+			case 2:
+				startPage();
+				break;
+
+			default:
+				break;
+			}
+			
+			
+			
+		} else {
+			System.out.println("Can not view employee accounts");
+		}	
+	}
 	
 	
 	
