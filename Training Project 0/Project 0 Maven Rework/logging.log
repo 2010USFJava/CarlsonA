@@ -1081,3 +1081,239 @@ Balance: $499.00
 [INFO ] 2020-11-09 08:28:12.402 [main] LogThis - Created new user
 [INFO ] 2020-11-09 08:33:07.455 [main] LogThis - Created new user
 [INFO ] 2020-11-09 08:33:58.980 [main] LogThis - Created new user
+[INFO ] 2020-11-09 08:57:12.976 [main] LogThis - Employee pulled info on a
+[INFO ] 2020-11-09 08:57:30.585 [main] LogThis - Account #34919
+Balance: $0.00
+ was depositied into
+[INFO ] 2020-11-09 09:53:40.291 [main] LogThis - Created new user
+[INFO ] 2020-11-09 09:55:20.238 [main] LogThis - Account #92723
+Balance: $0.00
+ was depositied into
+[INFO ] 2020-11-09 09:56:08.121 [main] LogThis - Employee pulled info on guest
+[INFO ] 2020-11-09 09:57:08.176 [main] LogThis - Deposited $500.00
+[INFO ] 2020-11-09 09:57:08.189 [main] LogThis - Account #92723
+Balance: $500.00
+ was depositied into
+[INFO ] 2020-11-09 09:57:12.485 [main] LogThis - Withdrew $400.00
+[INFO ] 2020-11-09 09:57:12.499 [main] LogThis - Account #92723
+Balance: $100.00
+ was withdrawed from
+[INFO ] 2020-11-09 09:58:16.844 [main] LogThis - Withdrew $20.00
+[INFO ] 2020-11-09 09:58:16.858 [main] LogThis - Deposited $20.00
+[INFO ] 2020-11-09 09:58:16.877 [main] LogThis - Transfered between accounts $20.00
+[INFO ] 2020-11-09 09:58:16.878 [main] LogThis - Account #92723
+Balance: $80.00
+ transfered money to Account #13790
+Balance: $20.00
+
+[INFO ] 2020-11-09 09:59:01.474 [main] LogThis - Created new user
+[INFO ] 2020-11-09 10:00:08.078 [main] LogThis - Withdrew $5.00
+[INFO ] 2020-11-09 10:00:08.425 [main] LogThis - Deposited $5.00
+[INFO ] 2020-11-09 10:00:08.452 [main] LogThis - Transfered between accounts $5.00
+[INFO ] 2020-11-09 10:00:08.452 [main] LogThis - Account #13790
+Balance: $15.00
+ transfered money to Account #93488
+Balance: $5.00
+
+[INFO ] 2020-11-09 10:01:03.897 [main] LogThis - Deposited $40.00
+[INFO ] 2020-11-09 10:01:03.912 [main] LogThis - Account #13790
+Balance: $55.00
+ was depositied into
+[INFO ] 2020-11-09 10:01:13.431 [main] LogThis - Withdrew $55.00
+[INFO ] 2020-11-09 10:01:13.444 [main] LogThis - Account #13790
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:01:26.263 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 10:01:26.277 [main] LogThis - Account #13790
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:02:03.310 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 10:02:03.645 [main] LogThis - Deposited $0.00
+[INFO ] 2020-11-09 10:02:03.668 [main] LogThis - Transfered between accounts $0.00
+[INFO ] 2020-11-09 10:02:03.669 [main] LogThis - Account #13790
+Balance: $0.00
+ transfered money to Account #93488
+Balance: $5.00
+
+[INFO ] 2020-11-09 10:02:19.954 [main] LogThis - Deposited $900.00
+[INFO ] 2020-11-09 10:02:19.967 [main] LogThis - Account #13790
+Balance: $900.00
+ was depositied into
+[INFO ] 2020-11-09 10:04:35.177 [main] LogThis - Employee pulled info on guest2
+[INFO ] 2020-11-09 10:05:58.617 [main] LogThis - Deposited $5,000.00
+[INFO ] 2020-11-09 10:05:58.630 [main] LogThis - Account #14142
+Balance: $5,000.00
+ was depositied into
+[INFO ] 2020-11-09 10:07:35.736 [main] LogThis - Created new user
+[INFO ] 2020-11-09 10:08:43.416 [main] LogThis - Account #13401
+Balance: $0.00
+ was depositied into
+[INFO ] 2020-11-09 10:08:52.225 [main] LogThis - Account #13401
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:09:03.438 [main] LogThis - Account #13401
+Balance: $0.00
+ transfered money to Account #44324
+Balance: $0.00
+
+[INFO ] 2020-11-09 10:09:38.654 [main] LogThis - Employee pulled info on guest3
+[INFO ] 2020-11-09 10:10:41.065 [main] LogThis - Employee pulled info on guest3
+[INFO ] 2020-11-09 10:10:52.174 [main] LogThis - Deposited $400.00
+[INFO ] 2020-11-09 10:10:52.197 [main] LogThis - Account #2444
+Balance: $400.00
+ was depositied into
+[INFO ] 2020-11-09 10:11:00.241 [main] LogThis - Withdrew $300.00
+[INFO ] 2020-11-09 10:11:00.262 [main] LogThis - Account #2444
+Balance: $100.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:11:10.765 [main] LogThis - Deposited $0.00
+[INFO ] 2020-11-09 10:11:10.789 [main] LogThis - Account #2444
+Balance: $100.00
+ was depositied into
+[INFO ] 2020-11-09 10:11:14.389 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 10:11:14.409 [main] LogThis - Account #2444
+Balance: $100.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:11:55.655 [main] LogThis - Withdrew $10.00
+[INFO ] 2020-11-09 10:11:55.675 [main] LogThis - Deposited $10.00
+[INFO ] 2020-11-09 10:11:55.714 [main] LogThis - Transfered between accounts $10.00
+[INFO ] 2020-11-09 10:11:55.715 [main] LogThis - Account #2444
+Balance: $90.00
+ transfered money to Account #44324
+Balance: $10.00
+
+[INFO ] 2020-11-09 10:13:33.538 [main] LogThis - Created new user
+[INFO ] 2020-11-09 10:14:02.338 [main] LogThis - Account #48838
+Balance: $0.00
+ was depositied into
+[INFO ] 2020-11-09 10:14:08.104 [main] LogThis - Account #48838
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:15:06.329 [main] LogThis - Employee pulled info on guest4
+[INFO ] 2020-11-09 10:16:25.162 [main] LogThis - Deposited $400.00
+[INFO ] 2020-11-09 10:16:25.290 [main] LogThis - Account #57134
+Balance: $400.00
+ was depositied into
+[INFO ] 2020-11-09 10:16:29.104 [main] LogThis - Deposited $0.00
+[INFO ] 2020-11-09 10:16:29.230 [main] LogThis - Account #57134
+Balance: $400.00
+ was depositied into
+[INFO ] 2020-11-09 10:16:35.281 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-09 10:16:35.308 [main] LogThis - Account #57134
+Balance: $300.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:16:39.900 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 10:16:40.024 [main] LogThis - Account #57134
+Balance: $300.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:16:45.666 [main] LogThis - Withdrew $300.00
+[INFO ] 2020-11-09 10:16:45.786 [main] LogThis - Account #57134
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:16:55.537 [main] LogThis - Deposited $5,000.00
+[INFO ] 2020-11-09 10:16:55.563 [main] LogThis - Account #57134
+Balance: $5,000.00
+ was depositied into
+[INFO ] 2020-11-09 10:17:05.908 [main] LogThis - Withdrew $300.00
+[INFO ] 2020-11-09 10:17:05.935 [main] LogThis - Deposited $300.00
+[INFO ] 2020-11-09 10:17:05.971 [main] LogThis - Transfered between accounts $300.00
+[INFO ] 2020-11-09 10:17:05.972 [main] LogThis - Account #57134
+Balance: $4,700.00
+ transfered money to Account #66888
+Balance: $300.00
+
+[INFO ] 2020-11-09 10:17:47.497 [main] LogThis - Withdrew $500.00
+[INFO ] 2020-11-09 10:17:47.852 [main] LogThis - Account #57134
+Balance: $4,200.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:35:15.021 [main] LogThis - Created new user
+[INFO ] 2020-11-09 10:35:58.091 [main] LogThis - Account #30005
+Balance: $0.00
+ was depositied into
+[INFO ] 2020-11-09 10:36:08.163 [main] LogThis - Account #30005
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:37:20.749 [main] LogThis - Employee pulled info on guest5
+[INFO ] 2020-11-09 10:37:42.946 [main] LogThis - Deposited $499.00
+[INFO ] 2020-11-09 10:37:42.957 [main] LogThis - Account #81522
+Balance: $499.00
+ was depositied into
+[INFO ] 2020-11-09 10:37:48.729 [main] LogThis - Deposited $0.00
+[INFO ] 2020-11-09 10:37:48.833 [main] LogThis - Account #81522
+Balance: $499.00
+ was depositied into
+[INFO ] 2020-11-09 10:37:56.621 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-09 10:37:56.632 [main] LogThis - Account #81522
+Balance: $399.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:38:03.701 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 10:38:03.711 [main] LogThis - Account #81522
+Balance: $399.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:38:10.324 [main] LogThis - Withdrew $399.00
+[INFO ] 2020-11-09 10:38:10.334 [main] LogThis - Account #81522
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:38:18.722 [main] LogThis - Deposited $50,000.00
+[INFO ] 2020-11-09 10:38:18.737 [main] LogThis - Account #81522
+Balance: $50,000.00
+ was depositied into
+[INFO ] 2020-11-09 10:38:27.956 [main] LogThis - Account #81522
+Balance: $50,000.00
+ transfered money to Account #30005
+Balance: $0.00
+
+[INFO ] 2020-11-09 10:39:04.367 [main] LogThis - Withdrew $300.00
+[INFO ] 2020-11-09 10:39:04.377 [main] LogThis - Deposited $300.00
+[INFO ] 2020-11-09 10:39:04.397 [main] LogThis - Transfered between accounts $300.00
+[INFO ] 2020-11-09 10:39:04.397 [main] LogThis - Account #81522
+Balance: $49,700.00
+ transfered money to Account #25451
+Balance: $300.00
+
+[INFO ] 2020-11-09 10:39:34.479 [main] LogThis - Withdrew $200.00
+[INFO ] 2020-11-09 10:39:34.809 [main] LogThis - Account #81522
+Balance: $49,500.00
+ was withdrawed from
+[INFO ] 2020-11-09 10:42:46.386 [main] LogThis - Created new user
+[INFO ] 2020-11-09 16:04:52.903 [main] LogThis - Created new user
+[INFO ] 2020-11-09 16:05:32.843 [main] LogThis - Account #22083
+Balance: $0.00
+ was depositied into
+[INFO ] 2020-11-09 16:05:37.277 [main] LogThis - Account #22083
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 16:06:13.520 [main] LogThis - Employee pulled info on coolcat
+[INFO ] 2020-11-09 16:06:41.125 [main] LogThis - Deposited $400.00
+[INFO ] 2020-11-09 16:06:41.234 [main] LogThis - Account #22083
+Balance: $400.00
+ was depositied into
+[INFO ] 2020-11-09 16:06:45.167 [main] LogThis - Withdrew $300.00
+[INFO ] 2020-11-09 16:06:45.275 [main] LogThis - Account #22083
+Balance: $100.00
+ was withdrawed from
+[INFO ] 2020-11-09 16:06:53.010 [main] LogThis - Deposited $0.00
+[INFO ] 2020-11-09 16:06:53.115 [main] LogThis - Account #22083
+Balance: $100.00
+ was depositied into
+[INFO ] 2020-11-09 16:06:59.721 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-09 16:06:59.735 [main] LogThis - Account #22083
+Balance: $100.00
+ was withdrawed from
+[INFO ] 2020-11-09 16:07:05.006 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-09 16:07:05.020 [main] LogThis - Account #22083
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-09 16:08:07.378 [main] LogThis - Created new user
+[INFO ] 2020-11-09 16:09:04.923 [main] LogThis - Deposited $5,000.00
+[INFO ] 2020-11-09 16:09:04.936 [main] LogThis - Account #20849
+Balance: $5,000.00
+ was depositied into
+[INFO ] 2020-11-09 16:09:16.904 [main] LogThis - Withdrew $500.00
+[INFO ] 2020-11-09 16:09:16.919 [main] LogThis - Deposited $500.00
+[INFO ] 2020-11-09 16:09:16.949 [main] LogThis - Transfered between accounts $500.00
+[INFO ] 2020-11-09 16:09:16.949 [main] LogThis - Account #20849
+Balance: $4,500.00
+ transfered money to Account #22083
+Balance: $500.00
+
