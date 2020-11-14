@@ -30,9 +30,6 @@ public class ConnFactory {
 	public Connection getConnection() {
 		Connection conn=null;
 		Properties prop=new Properties();
-//		String url="jdbc:postgresql://java2010usf.cfqfijvzidkq.us-east-2.rds.amazonaws.com:5432/postgres";
-//		String username="annacarl";
-//		String password="hrMVnvuh9RETnA6";
 		try {
 			prop.load(new FileReader("database.properties"));
 			
