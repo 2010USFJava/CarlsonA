@@ -1,5 +1,7 @@
 package com.revature.Meta;
 
+import com.revature.Users.LoginInfo;
+
 public class StringCheck {
 	
 	public static String capitilizeOnlyFirstLetter(String word) {
@@ -69,22 +71,10 @@ public class StringCheck {
 		return removeSpace.toString();
 	}
 	
-	public static String checkUsernameAvaliablity(String username) {
-		boolean keepGoing=false;
-		do {
-			username=StringCheck.scannerStringCheck("username");
-			
-			if (!checkIfUsernameIsTaken(username)) {
-				keepGoing=true;
-			}
-			
-			if(!keepGoing) {
-				System.out.println("Unfortunatly, that username is unavaliable. Please try again.");	
-			}
-			
-		}while(!keepGoing);
-		return username;
-	}
+	
+	
+	
+
 
 
 	
