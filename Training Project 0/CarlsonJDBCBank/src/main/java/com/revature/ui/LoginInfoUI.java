@@ -18,7 +18,7 @@ public class LoginInfoUI {
 	private static String createNewUsername(String username) {
 		boolean keepGoing=false;
 		do {
-			username=StringCheck.scannerStringCheck("username");
+			username=StringCheckUI.scannerStringCheck("username");
 			
 			if (!LoginInfo.checkIfUsernameIsTaken(username)) {
 				keepGoing=true;
