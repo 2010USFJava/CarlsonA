@@ -47,7 +47,6 @@ public class Account implements Serializable {
 	
 	//primary variables
 	private int accountId;
-//	Remember to format this later
 	private long balance=0;
 	private AccountStatusEnum accountStatus=AccountStatusEnum.IN_APPLICATION;
 	protected AccountTypeEnum accountType = AccountTypeEnum.SINGLE;

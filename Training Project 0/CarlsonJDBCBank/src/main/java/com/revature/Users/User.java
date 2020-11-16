@@ -1,7 +1,7 @@
 package com.revature.Users;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.Serializable;
+
 
 
 /*Middle name handling has become complex enough despite not being a required feature, 
@@ -12,7 +12,12 @@ import java.util.Scanner;
 
 
 
-public abstract class User {
+public abstract class User implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6686479606343552816L;
 
 	protected enum UserTypeEnum{
 		CUSTOMER,
@@ -24,13 +29,9 @@ public abstract class User {
 	private String firstName;
 	private String lastName;
 	//Some people don't have middle names. Defaulting this to ""
-//	private LoginInfo loginInfo;
+	private LoginInfo loginInfo;
 	private UserTypeEnum userType;
 
-		
-
-
-	
 	
 	//constructors
 	
@@ -52,6 +53,10 @@ public abstract class User {
 		return lastName;
 	}
 	
+	public String getFullName() {
+		return firstName+" "+lastName;
+	}
+	
 
 	
 	public void setFirstName(String firstName) {
@@ -62,10 +67,51 @@ public abstract class User {
 		this.lastName=lastName;
 		
 	}
+	
+	public LoginInfo getLoginInfo() {
+		return loginInfo;
+	}
+	
+	public void setLoginInfo(LoginInfo loginInfo) {
+		this.loginInfo=loginInfo;
+	}
 
 	
 	
 	
+	public boolean checkIfEmployee() {
+		if(Employee.class.isInstance(this)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean checkIfCustomer() {
+		if(Customer.class.isInstance(this)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public String userTypeToString() {
+		if(checkIfCustomer()) {
+			return "customer";
+		} else if (checkIfEmployee()) {
+			return "employee";
+		} else {
+			return "unspecified user";
+		}
+	}
+	
+	@Override
+	public String toString() {
+		String output=userTypeToString()+"\nID: "+userId;
+		output+= "\n\tFirstName: "+firstName;
+		output+="\tLastName: "+lastName;
+		return output;
+	}
 	
 	
 }
@@ -73,6 +119,7 @@ public abstract class User {
 
 
 //middle name variables and function purgatory
+
 //private String middleName="";
 ////in the event the user has multiple middle names this can be called
 //	private ArrayList<String> additionalMiddleNames = new ArrayList<>();

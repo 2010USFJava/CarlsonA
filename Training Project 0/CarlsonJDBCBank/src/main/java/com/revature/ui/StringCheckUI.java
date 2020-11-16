@@ -1,15 +1,17 @@
 package com.revature.ui;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.revature.Meta.RuntimeData;
 import com.revature.Meta.StringCheck;
+
+
 
 public class StringCheckUI {
 	private static int[] forbiddenNumbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	private static Scanner scan = new Scanner(System.in);
 
 	public static String scannerStringCheck(String wantedInput) {
-		Scanner scan = new Scanner(System.in);
 		System.out.println("Please enter your " + wantedInput);
 		String stringAnswer = scan.nextLine().trim();
 
@@ -45,7 +47,6 @@ public class StringCheckUI {
 
 	// checks if the name has spaces between it and breaks it up
 	private String checkName(String name, String partOfName) {
-		Scanner scan = new Scanner(System.in);
 		boolean usableAnswer = false;
 
 		do {
@@ -101,7 +102,6 @@ public class StringCheckUI {
 
 	public static int numberScanner(String[] options, String submenuName, String[] subMenuChoices,
 			boolean runSubmunuCode) {
-		Scanner scan = new Scanner(System.in);
 		int num = 0;
 
 		for (String i : options) {
@@ -142,7 +142,6 @@ public class StringCheckUI {
 
 		} while (!keepGoing);
 
-		scan.close();
 		return selection;
 
 	}
@@ -165,4 +164,78 @@ public class StringCheckUI {
 		return options;
 	}
 
+	public static String scannerStringOrGoBack(String wantedInput) {
+		//If I'm running this test, want to make sure slate is clean
+		
+		RuntimeData runData=RuntimeData.data;
+		runData.setGoBack(false);
+		System.out.println("Press 0 if you wish exit");
+		System.out.println("Please enter your "+wantedInput);
+		
+
+		String stringAnswer = scan.nextLine().trim();
+		
+		//Opted to try parsing instead of "0" since user could enter 0000000 or the like
+		boolean userEnteredNumber=true;
+		int intAnswer=9000;
+		try {
+			intAnswer=Integer.parseInt(stringAnswer);
+			
+		} catch(NumberFormatException e) {
+			userEnteredNumber=false;
+		}
+		
+		if (userEnteredNumber) {
+//			Making this a switch in case of future updates that move beyound the 0 option
+			switch (intAnswer) {
+			case 0:
+				//can test for this later
+				runData.setGoBack(true);
+				break;
+			default:
+				boolean passFobiddenNumbers=passForbbidenNumberCheck(intAnswer);
+//				If fails to pass forbidden number check run again
+				if(!passFobiddenNumbers) {
+					stringAnswer=scannerStringOrGoBack(wantedInput);
+				}
+				break;
+			}
+		}
+		if(stringAnswer.isBlank()) {
+			System.out.println("Can not use a blank anwer, please try again");
+			stringAnswer=scannerStringOrGoBack(wantedInput);		
+			}
+		return stringAnswer;
+		
+	} 
+
+	public static long moneyMiddleMan() {
+		boolean keepGoing=true;
+		long selection=0;
+		
+		do {
+		
+			try {
+				keepGoing=true;
+				String stringAnswer = scan.nextLine().trim();
+				
+				selection=Long.parseLong(stringAnswer);
+			}catch(ArrayIndexOutOfBoundsException e){
+				keepGoing=false;
+				System.out.println("Unfortunently, that was not a listed choice.\nPlease try again.");
+			}catch(NumberFormatException e){
+				keepGoing=false;
+				System.out.println("Please enter a number and try again.");
+			} 
+			catch (Exception e) {
+				keepGoing=false;
+				e.printStackTrace();
+				System.err.println("Why do you do this to me?");
+			}
+			
+		}while(!keepGoing);
+		return selection;
+		
+	}
+	
 }

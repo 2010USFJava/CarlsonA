@@ -1,10 +1,14 @@
 package com.revature.driver;
 
+import com.revature.ui.BankUI;
+
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Hello world");
 
+		BankUI bank=new BankUI();
+
+		bank.startPage();
 	}
 
 }

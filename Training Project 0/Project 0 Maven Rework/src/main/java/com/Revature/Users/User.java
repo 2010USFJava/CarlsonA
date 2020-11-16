@@ -27,7 +27,7 @@ public abstract class User implements Serializable {
 	private String middleName="";
 	private LoginInfo loginInfo;
 	private int userId;
-	private UserTypeEnum userType;
+	protected UserTypeEnum userType;
 
 
 	//in the event the user has multiple middle names this can be called

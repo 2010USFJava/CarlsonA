@@ -3,9 +3,14 @@ package com.revature.Users;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.revature.Users.interfaces.LoginInfoInterface;
+import com.revature.Meta.LogThis;
+import com.revature.Meta.LogThis.LevelEnum;
+import com.revature.Meta.RuntimeData;
 
-public class LoginInfo implements LoginInfoInterface {
+
+
+
+public class LoginInfo  {
 	
 	private String username;
 	private String password;
@@ -17,58 +22,68 @@ public class LoginInfo implements LoginInfoInterface {
 	
 	//constructor
 	public LoginInfo(String username, String password,User user) {
-//		In process of moving this into UI 
-		
-		//		boolean keepGoing=false;
-//		do {
-//			username=StringCheck.scannerStringCheck("username");
-//			
-//			if (!checkIfUsernameIsTaken(username)) {
-//				keepGoing=true;
-//			}
-//			
-//			if(!keepGoing) {
-//				System.out.println("Unfortunatly, that username is unavaliable. Please try again.");	
-//			}
-//			
-//		}while(!keepGoing);
-		
+
 		this.username=username;
 		this.password=password;
 		this.user=user;
 		
 	}
 	
-	
-	
-	@Override
+
+
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.username;
 	}
 
-	@Override
-	public LoginInfo createLoginInfo(String username, String password, User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public static LoginInfo createLoginInfoAndAddToMap(String username, String password, User user) {
+		LoginInfo loginInfo=new LoginInfo(username,password,user);
+		loginInfo.addToLoginMap();
+		return loginInfo;
 	}
 
-	@Override
-	public void addToRecords() {
-		// TODO Auto-generated method stub
+	//loginMapManipulators
+	public void addToLoginMap() {
+		this.user.setLoginInfo(this);
+		Map<String,LoginInfo> lm=getLoginMap();
+		lm.put(username, this);		
+	}
+
+	public void removeFromLoginMap() {
+		loginMap.remove(username);
+	}
+	
+
+//login action
+	public static User logIn(String username, String password) {
+//		try retrieving LoginInfo
+		//Should hide a failed log in attempt here in final run to make sure
+//		fishers cannot get in
+		User defaultUser = null;
+		LoginInfo info = getLoginMap().get(username);
+		boolean infoExists = checkIfUsernameIsTaken(username);
+		if(infoExists) {
+			return info.logInMeat(username, password);
+		} else {
+			System.out.println("Login was not successful - No such user");
+			return defaultUser;
+		}
+		
 		
 	}
+	
+	//Try to access user data by logging in
+	private User logInMeat(String username, String password) {
+		User user = null;
+		if ((this.username.equals(username))&&(this.password.equals(password))) {
+			System.out.println("Login successful");
+			return this.user;
+		} else if(this.username.equals(username)) {
+			System.out.println("Login was not successful- No such user");
+		}else {
+			System.out.println("Login was not successful- No such password");
+		}
 
-	@Override
-	public void removeFromRecords() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public User login(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return user;
 	}
 	
 
@@ -89,6 +104,31 @@ public class LoginInfo implements LoginInfoInterface {
 		}
 		return loginMap;
 	}
+	
+	
+	public static User employeeCheckingUserInfo(String username) {
+		if(!RuntimeData.data.getUser().checkIfEmployee()) {
+			System.out.println("Sorry, Only employees can use this search. Please return to the main menu and log in");
+			LogThis.logIt(LevelEnum.ERROR, "Non-Employee somehow called Employee User Check");
+			return null;
+		} else {
+			User defaultUser = null;
+			LoginInfo info = loginMap.get(username);
+			boolean infoExists = checkIfUsernameIsTaken(username);
+			if(infoExists) {
+				LogThis.logIt(LevelEnum.INFO, "Employee pulled info on "+username);	
+				return info.user;
+			} else {
+				System.out.println("Pull was not successful - No such user");
+				return defaultUser;
+			}
+			
+		}
+	}
+
+
+
+	
 
 
 }

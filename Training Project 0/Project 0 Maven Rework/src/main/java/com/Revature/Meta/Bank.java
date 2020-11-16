@@ -69,8 +69,6 @@ public class Bank {
 			break;
 		}
 		
-		
-		
 	}
 	
 	public static String scanner0ForMain1ForForgotPassword(String searchItem) {
