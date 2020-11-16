@@ -28,12 +28,13 @@ public class LoginInfo  {
 		this.user=user;
 		
 	}
-	
+
 
 
 	public String getUsername() {
 		return this.username;
 	}
+	
 
 	public static LoginInfo createLoginInfoAndAddToMap(String username, String password, User user) {
 		LoginInfo loginInfo=new LoginInfo(username,password,user);
@@ -125,6 +126,10 @@ public class LoginInfo  {
 			
 		}
 	}
+
+
+
+
 
 
 

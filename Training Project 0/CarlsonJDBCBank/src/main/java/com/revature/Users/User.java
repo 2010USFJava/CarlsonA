@@ -88,6 +88,7 @@ public abstract class User implements Serializable {
 	}
 	
 	public boolean checkIfCustomer() {
+		
 		if(Customer.class.isInstance(this)) {
 			return true;
 		} else {

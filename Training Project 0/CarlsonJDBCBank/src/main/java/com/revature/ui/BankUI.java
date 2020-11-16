@@ -24,6 +24,11 @@ public class BankUI {
 	private final int estYear=2020;
 //	private RuntimeData runData= RuntimeData.data;
 	
+	public void addTestData() {
+		Employee.createAdmin("Head","Hancho", "admin","pass");
+		Employee.createEmployee("Joe", "Average", "emp", "pass");
+		
+	}
 	
 	public void startPage() {
 		System.out.println("Welcome to "+bankName);
@@ -570,8 +575,8 @@ public class BankUI {
 		
 
 		public void employeeCheckSelectedUserInfo(User user){
-
-			if(user.checkIfCustomer()) {
+			
+			if(user!=null&&user.checkIfCustomer()) {
 				Customer cust=(Customer) user;
 				System.out.println(cust);
 				
@@ -619,8 +624,12 @@ public class BankUI {
 				
 				
 				
-			} else {
-				System.out.println("Can not view employee accounts");
+			} else if(user==null){
+				System.out.println("No such user exists. Returning to Employee Screen...\n");
+				showEmployeeMenu((Employee)RuntimeData.data.getUser());
+			}else {
+				System.out.println("Can not view employee accounts. Returning to Employee Screen...\n");
+				showEmployeeMenu((Employee)RuntimeData.data.getUser());
 			}	
 		}
 		
