@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.revature.Meta.LogThis;
+import com.revature.Meta.LogThis.LevelEnum;
 import com.revature.Users.Customer;
 import com.revature.Users.Employee;
 import com.revature.Users.Employee.EmployeeLevelEnum;
@@ -31,20 +33,27 @@ public class CustAcctRelDaoImple implements CustomerAccountRelationshipDAO {
 	   
 //this Also loads login info
 	public static  void loadDatabaseInfo() throws SQLException {
+		System.out.println("Loading Employee List...");
 		//employee list is loaded so the log in info is up to date
 		getEmployeeList();
+		System.out.println("25%");
 
 
-		
+		System.out.println("Loading Customer List...");
 		//generate customer list for future iteration
 		getCustomerList();
+		System.out.println("50%");
+		System.out.println("Crossing Account and User calls...");
+	
 		for (Customer cust: customerList) {
+			
 			Set<AbstractAccount> actSet=getAccountSetByCust(cust);
 			for (AbstractAccount act: actSet) {
 
 				CustomerAccountRelationship.updateCustomer(cust, act);
 			}	
 		}
+		System.out.println("75%");
 	}
 
 
@@ -249,5 +258,77 @@ public class CustAcctRelDaoImple implements CustomerAccountRelationshipDAO {
 //	private static int getIdOfLastUserInsert() {
 //		String sql="lastval()";
 //	}
+	
+	public static void insertAccountIntoDatabase(AbstractAccount acct) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql="insert into accounts (accountstatus_id,accounttype_id,balance) "
+				+ "values(?,?,?) RETURNING id";
+		PreparedStatement ps = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+		ps.setInt(1,acct.getStatusAsInt());
+		ps.setInt(2,acct.getTypeAsInt());
+		ps.setLong(3, acct.getBalance());
+		
+		int affectedRows=ps.executeUpdate();
+		ResultSet keys=ps.getGeneratedKeys();
+		int userId=-1;
+		while(keys.next()) {
+			userId=keys.getInt(1);
+		}
+		//in future database downloads this will be automatic, but
+		//for work done before the next update, I'll set the new id here.
+		acct.setId(userId);
+		updateAccountCustomerRelations(acct);
+		
+		
+	}
+	
+	public static void updateAccountCustomerRelations(AbstractAccount acct) throws SQLException {
+		Set<Customer>custSet=acct.getCustomerSet();
+//		int id = acct.getId();
+		LogThis.logIt(LevelEnum.DEBUG, "Save Cust/Account status on acct#"+acct.getId()+". Cust size:"+custSet.size());
+		//update account/user relatinship
+		for(Customer cust: custSet) {
+			insertIntoCustAcctRel(cust,acct);
+		}
+	}
+	
+	public static void updateAccountInfo(AbstractAccount acct) throws SQLException {
+		System.out.println("Saving account info to database");
+		LogThis.logIt(LevelEnum.INFO, "Updating Account info");
+		updateAccountCustomerRelations(acct);
+		updateAccountStatus(acct);
+		updateAccountBalance(acct);
+		System.out.println("Saving complete");
+	}
+	
+	public static void updateAccountStatus(AbstractAccount acct) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql="update accounts set accountstatus_id=? where id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1,acct.getStatusAsInt());
+		ps.setInt(2,acct.getId());
+		ps.executeUpdate();
+	}
+	
+	public static void updateAccountBalance(AbstractAccount acct) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql="update accounts set balance=? where id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setLong(1,acct.getBalance());
+		ps.setInt(2,acct.getId());
+		ps.executeUpdate();
+	}
+	
+	private static void insertIntoCustAcctRel(Customer cust, AbstractAccount acct) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql="insert into customer_account_relationships(customer_id,account_id) values "
+				+ "(?,?) on CONFLICT do nothing";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1,cust.getUserId());
+		ps.setInt(2,acct.getId());
+		ps.executeUpdate();
+	}
+	
+	
 
 }

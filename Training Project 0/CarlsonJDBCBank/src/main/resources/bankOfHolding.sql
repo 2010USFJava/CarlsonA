@@ -88,9 +88,12 @@ create table customer_account_relationships(
 --id serial primary key,
 customer_id int,
 account_id int,
-FOREIGN key (account_id) references accounts(id) on delete cascade,
-FOREIGN key (customer_id) references users(id) on delete cascade
+--FOREIGN key (account_id) references accounts(id) on delete cascade,
+--FOREIGN key (customer_id) references users(id) on delete cascade,
+PRIMARY KEY(customer_id, account_id)
 );
+
+update accounts set accountstatus_id=2 where id=1;
 
 create table employee_level_relationships(
 --id serial primary key,
@@ -106,45 +109,45 @@ customer_id int,
 FOREIGN key (customer_id) references users(id) on delete cascade
 );
 
-insert into users (id,first_name,last_name) values
-(1,'Joe','Smith'),
-(2,'Marth','Maywho'),
-(3,'Eathen','Nestor'),
-(4,'Mark','Fishbach');
-
-insert into accounts (id,accountstatus_id, accounttype_id,balance) values
-(1,2,0,400.00),
-(2,1,0,700.00);
-
-insert into customers values
-(1);
-
-insert into customer_account_relationships values
-(1,1);
 
 
-insert into employee_level_relationships values
-(0,3),
-(1,4);
 
---create table logininfos(
---id serial primary key,
---login_username varchar,
---login_password varchar,
---user_id integer
---);
-insert into logininfos (login_username,login_password,user_id) values
-('user1','pass',1),
-('user2','pass',2),
-('user3','pass',3),
-('user4','pass',4);
+--Test data
+--insert into users (id,first_name,last_name) values
+--(1,'Joe','Smith'),
+--(2,'Marth','Maywho'),
+--(3,'Eathen','Nestor'),
+--(4,'Mark','Fishbach');
+--
+--insert into accounts (id,accountstatus_id, accounttype_id,balance) values
+--(1,2,0,400.00),
+--(2,1,0,700.00);
+--
+--insert into customers values
+--(1);
+--
+--insert into customer_account_relationships values
+--(1,1);
+--
+--insert  into customer_account_relationships  values 
+--(1,1) on CONFLICT do nothing;
+--select * from customer_account_relationships;
+--
+--insert into employee_level_relationships values
+--(0,3),
+--(1,4);
+--
+--
+--insert into logininfos (login_username,login_password,user_id) values
+--('user1','pass',1),
+--('user2','pass',2),
+--('user3','pass',3),
+--('user4','pass',4);
 
 
 
 --These are several calls that I made here from outside programms. They're slated for deletion after updates
 --but will remain here mid code to help with debugging.
-
-SELECT currval(pg_get_serial_sequence('users','id'));
 
 --select users.* from customers inner join users on customers.customer_id=users.id;
 --
@@ -161,11 +164,16 @@ SELECT currval(pg_get_serial_sequence('users','id'));
 --from logininfos;
 --
 --select * from accounts;
-	select * from users;
+--	select * from users;
 --select users.id 
 --from users,customer_account_relationships car
 --where users.id=car.customer_id and car.account_id=1;
 --select accounts.* 
 --from accounts,customer_account_relationships cust 
 --where accounts.id=cust.account_id and cust.customer_id=1;
+
+select * from users;
+select * from accounts;
+select * from customer_account_relationships;
+
 

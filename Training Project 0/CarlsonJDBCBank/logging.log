@@ -1,0 +1,155 @@
+[INFO ] 2020-11-17 10:39:17.293 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 10:39:36.823 [main] LogThis - No application queue existed. Createing a new one now
+[DEBUG] 2020-11-17 10:39:38.275 [main] LogThis - []
+[INFO ] 2020-11-17 10:39:53.912 [main] LogThis - Account #4
+Balance: $0.00
+ was depositied into
+[INFO ] 2020-11-17 10:40:29.912 [main] LogThis - Employee pulled info on anna
+[INFO ] 2020-11-17 10:40:44.640 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-17 10:40:44.640 [main] LogThis - Account #4
+Balance: $0.00
+ was withdrawed from
+[INFO ] 2020-11-17 10:40:49.306 [main] LogThis - Deposited $399.00
+[INFO ] 2020-11-17 10:40:49.307 [main] LogThis - Account #4
+Balance: $399.00
+ was depositied into
+[INFO ] 2020-11-17 10:42:36.981 [main] LogThis - Loaded information from database
+[INFO ] 2020-11-17 10:44:31.992 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 10:44:51.064 [main] LogThis - No application queue existed. Createing a new one now
+[DEBUG] 2020-11-17 10:44:52.486 [main] LogThis - []
+[INFO ] 2020-11-17 10:45:09.362 [main] LogThis - Loaded information from database
+[INFO ] 2020-11-17 11:19:08.672 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:19:11.471 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 11:21:09.505 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:21:56.368 [main] LogThis - No application queue existed. Createing a new one now
+[DEBUG] 2020-11-17 11:21:57.095 [main] LogThis - Customer set on acct#1: [customer
+ID: 3
+	FirstName: anna	LastName: carl
+User Accounts
+		Single Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #1 is in Application status. Balance:$0.00
+]
+[INFO ] 2020-11-17 11:22:53.808 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:23:08.594 [main] LogThis - No application queue existed. Createing a new one now
+[DEBUG] 2020-11-17 11:23:09.683 [main] LogThis - Customer set on acct#2: [customer
+ID: 3
+	FirstName: anna	LastName: carl
+User Accounts
+		Single Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #2 is in Application status. Balance:$0.00
+]
+[DEBUG] 2020-11-17 11:23:38.973 [main] LogThis - Customer set on acct#3: [customer
+ID: 3
+	FirstName: anna	LastName: carl
+User Accounts
+		Joint Account Holder 1:	First Name: anna	Last Name: carl
+Account Holder 1:	First Name: joe	Last Name: shmo
+
+Account #3 is in Application status. Balance:$0.00
+	Single Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #2 is in Application status. Balance:$0.00
+, customer
+ID: 4
+	FirstName: joe	LastName: shmo
+User Accounts
+		Joint Account Holder 1:	First Name: anna	Last Name: carl
+Account Holder 1:	First Name: joe	Last Name: shmo
+
+Account #3 is in Application status. Balance:$0.00
+]
+[INFO ] 2020-11-17 11:24:29.160 [main] LogThis - Updating Account info
+[DEBUG] 2020-11-17 11:24:29.160 [main] LogThis - Customer set on acct#2: [customer
+ID: 3
+	FirstName: anna	LastName: carl
+User Accounts
+		Joint Account Holder 1:	First Name: anna	Last Name: carl
+Account Holder 1:	First Name: joe	Last Name: shmo
+
+Account #3 is in Application status. Balance:$0.00
+	Single Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #2 is in Open status. Balance:$0.00
+]
+[INFO ] 2020-11-17 11:24:57.446 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:25:00.528 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 11:25:45.299 [main] LogThis - Account #3
+Balance: $0.00
+ was depositied into
+[DEBUG] 2020-11-17 11:26:14.299 [main] LogThis - Customer set on acct#3: [customer
+ID: 3
+	FirstName: anna	LastName: carl
+User Accounts
+		Single Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #2 is in Application status. Balance:$0.00
+	Joint Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #3 is in Application status. Balance:$0.00
+]
+[DEBUG] 2020-11-17 11:26:15.064 [main] LogThis - Customer set on acct#3: [customer
+ID: 3
+	FirstName: anna	LastName: carl
+User Accounts
+		Single Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #2 is in Application status. Balance:$0.00
+	Joint Account Holder 1:	First Name: anna	Last Name: carl
+
+Account #3 is in Application status. Balance:$0.00
+]
+[INFO ] 2020-11-17 11:29:07.481 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:29:10.135 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 11:30:08.020 [main] LogThis - Updating Account info
+[DEBUG] 2020-11-17 11:30:08.021 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[INFO ] 2020-11-17 11:30:18.785 [main] LogThis - Updating Account info
+[DEBUG] 2020-11-17 11:30:18.785 [main] LogThis - Save Cust/Account status on acct#3. Cust size:1
+[INFO ] 2020-11-17 11:30:42.636 [main] LogThis - Updating Account info
+[DEBUG] 2020-11-17 11:30:42.636 [main] LogThis - Save Cust/Account status on acct#3. Cust size:1
+[DEBUG] 2020-11-17 11:30:49.175 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[INFO ] 2020-11-17 11:30:56.211 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:30:58.835 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 11:31:53.964 [main] LogThis - Deposited $300.00
+[INFO ] 2020-11-17 11:31:53.964 [main] LogThis - Account #2
+Balance: $300.00
+ was depositied into
+[INFO ] 2020-11-17 11:31:58.660 [main] LogThis - Deposited $0.00
+[INFO ] 2020-11-17 11:31:58.660 [main] LogThis - Account #2
+Balance: $300.00
+ was depositied into
+[DEBUG] 2020-11-17 11:32:02.823 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[DEBUG] 2020-11-17 11:32:05.480 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[DEBUG] 2020-11-17 11:32:06.236 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[INFO ] 2020-11-17 11:32:35.980 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:32:38.608 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 11:37:36.911 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:37:39.481 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 11:44:29.872 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:44:33.951 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 11:45:04.441 [main] LogThis - Deposited $400.00
+[INFO ] 2020-11-17 11:45:04.442 [main] LogThis - Account #2
+Balance: $400.00
+ was depositied into
+[DEBUG] 2020-11-17 11:46:10.076 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[DEBUG] 2020-11-17 11:46:12.161 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[INFO ] 2020-11-17 11:47:06.627 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:47:16.910 [main] LogThis - No application queue existed. Createing a new one now
+[DEBUG] 2020-11-17 11:47:53.799 [main] LogThis - Save Cust/Account status on acct#2. Cust size:1
+[INFO ] 2020-11-17 11:57:31.909 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 11:57:54.706 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 12:02:34.894 [main] LogThis - Deposited $499.00
+[INFO ] 2020-11-17 12:02:34.895 [main] LogThis - Account #2
+Balance: $499.00
+ was depositied into
+[INFO ] 2020-11-17 12:02:54.121 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 12:03:21.477 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 12:09:07.303 [main] LogThis - Loaded information from database
+[INFO ] 2020-11-17 12:09:22.877 [main] LogThis - Loaded information from database
+[TRACE] 2020-11-17 12:09:45.595 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 12:11:14.268 [main] LogThis - Account #2
+Balance: $499.00
+ transfered money to Account #3
+Balance: $0.00
+

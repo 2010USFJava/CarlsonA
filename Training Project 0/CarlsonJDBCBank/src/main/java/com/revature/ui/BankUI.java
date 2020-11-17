@@ -1,5 +1,6 @@
 package com.revature.ui;
 
+import java.sql.SQLException;
 import java.util.Iterator;
 
 import com.revature.Meta.LogThis;
@@ -24,6 +25,7 @@ public class BankUI {
 //	private RuntimeData runData= RuntimeData.data;
 	
 	public void addTestData() {
+		System.out.println("Adding test employees...");
 		Employee emp1 = Employee.createAdmin("Head","Hancho", "admin","pass");
 		Employee emp2 = Employee.createEmployee("Joe", "Average", "emp", "pass");
 		
@@ -264,6 +266,13 @@ public class BankUI {
 				}
 
 			}
+			if(tempAcct!=null) {
+				try {
+					CustAcctRelDaoImple.insertAccountIntoDatabase(tempAcct);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}	
+			}
 			return tempAcct;
 		}
 		
@@ -351,7 +360,7 @@ public class BankUI {
 			Iterator actIt = cust.getUserAccounts().iterator(); 
 			for(int i=0;i<cust.getNumberOfAccounts();i++) {
 				Object acctHolder=actIt.next();
-				accountSelection[i]=i+"] "+(AbstractAccount)acctHolder;
+				accountSelection[i]=((AbstractAccount)acctHolder).toString();
 			}
 			int selection=StringCheckUI.numberScanner(accountSelection);
 			
@@ -411,6 +420,12 @@ public class BankUI {
 				money=StringCheckUI.moneyMiddleMan();
 				act.deposit(money);
 				LogThis.logIt(LevelEnum.INFO, act.getAccountInformation()+" was depositied into");
+				try {
+					CustAcctRelDaoImple.updateAccountBalance(act);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				modifyAccount(cust,act);
 				
 				break;
@@ -419,6 +434,12 @@ public class BankUI {
 				money=StringCheckUI.moneyMiddleMan();
 				act.withdraw(money);
 				LogThis.logIt(LevelEnum.INFO, act.getAccountInformation()+" was withdrawed from");
+				try {
+					CustAcctRelDaoImple.updateAccountBalance(act);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				modifyAccount(cust,act);
 				break;
 			case 2:
@@ -430,6 +451,15 @@ public class BankUI {
 					System.out.println("How much would you like to transfer?");	
 					money=StringCheckUI.moneyMiddleMan();
 					act.transferMoneyToAccount(actB, money);
+					try {
+						CustAcctRelDaoImple.updateAccountBalance(act);
+
+						CustAcctRelDaoImple.updateAccountBalance(actB);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
 					LogThis.logIt(LevelEnum.INFO, act.getAccountInformation()+" transfered money to "+actB.getAccountInformation());
 				}
 				
@@ -458,7 +488,12 @@ public class BankUI {
 					System.out.println(intChoice+"was not an applicable option");
 					modifyAccount(cust,act);
 				} else {
-					adminChangeAccountStatus(act,cust);
+					try {
+						adminChangeAccountStatus(act,cust);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					
 					modifyAccount(cust,act);
 				}
@@ -470,12 +505,14 @@ public class BankUI {
 			}
 			
 			
+			//should always update information here
+			
 		}
 		
 		//employee menus
 		
 		
-		public void adminChangeAccountStatus(AbstractAccount act, Customer cust) {
+		public void adminChangeAccountStatus(AbstractAccount act, Customer cust) throws SQLException {
 			String[] actStatusOptions=new String[4];
 			actStatusOptions[0]="Change Nothing";
 			actStatusOptions[1]="Set to Open";
@@ -498,6 +535,7 @@ public class BankUI {
 			default:
 				break;
 			}
+			CustAcctRelDaoImple.updateAccountInfo(act);
 			
 		}
 		
@@ -523,6 +561,12 @@ public class BankUI {
 					break;
 				default:
 					break;
+				}
+				try {
+					CustAcctRelDaoImple.updateAccountInfo(act);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 		}

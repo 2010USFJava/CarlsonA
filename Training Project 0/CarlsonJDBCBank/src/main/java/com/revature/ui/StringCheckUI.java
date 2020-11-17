@@ -13,13 +13,14 @@ public class StringCheckUI {
 
 	public static String scannerStringCheck(String wantedInput) {
 		System.out.println("Please enter your " + wantedInput);
-		String stringAnswer = scan.nextLine().trim();
+		
 
 		boolean keepGoing = false;
 		// Opted to try parsing instead of "0" since user could enter 0000000 or the
 		// like
+		String stringAnswer;
 		do {
-			boolean userEnteredNumber = true;
+			stringAnswer = scan.nextLine().trim();
 			int intAnswer = 9000;
 			try {
 				intAnswer = Integer.parseInt(stringAnswer);

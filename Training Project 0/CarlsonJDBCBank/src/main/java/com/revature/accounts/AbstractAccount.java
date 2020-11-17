@@ -85,6 +85,14 @@ public abstract class AbstractAccount implements Serializable {
 	public long getBalance() {
 		return balance;
 	}
+	
+	public int getStatusAsInt() {
+		return accountStatus.ordinal();
+	}
+	
+	public int getTypeAsInt() {
+		return accountType.ordinal();
+	}
 
 	//customer set manipulation
 	protected void updateCustAcctMaps(Customer cust) {
@@ -241,7 +249,7 @@ public abstract class AbstractAccount implements Serializable {
 				output.append("Joint ");
 				break;
 			}
-			output.append(getAllCustomerPersonalData()+"\nAccount #"+accountId+" is in ");
+			output.append("Account #"+accountId+" is in ");
 			
 			
 			switch (accountStatus) {
@@ -301,6 +309,11 @@ public abstract class AbstractAccount implements Serializable {
 
 	public static void setApplicationQueue(Queue<AbstractAccount> applicationQueue2) {
 		applicationQueue = applicationQueue2;
+		
+	}
+
+	public void setId(int id) {
+		this.accountId=id;
 		
 	}
 

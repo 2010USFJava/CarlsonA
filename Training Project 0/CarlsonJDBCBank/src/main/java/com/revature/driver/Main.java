@@ -17,6 +17,7 @@ public class Main {
 		DatabaseIO.loadDatabaseInfo();
 //		bank.addTestData();
 		bank.startPage();
+		System.exit(0);
 	}
 
 }
