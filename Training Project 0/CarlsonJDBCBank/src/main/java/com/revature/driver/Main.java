@@ -15,7 +15,7 @@ public class Main {
 
 		BankUI bank=new BankUI();
 		DatabaseIO.loadDatabaseInfo();
-		bank.addTestData();
+//		bank.addTestData();
 		bank.startPage();
 	}
 

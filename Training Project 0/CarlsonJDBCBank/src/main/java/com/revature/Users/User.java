@@ -93,6 +93,10 @@ public abstract class User implements Serializable {
 	public int getUserId() {
 		return userId;
 	}
+	
+	public void setUserId(int id) {
+		this.userId=id;
+	}
 
 	
 	
@@ -131,6 +135,8 @@ public abstract class User implements Serializable {
 		output+="\tLastName: "+lastName;
 		return output;
 	}
+
+
 	
 	
 }

@@ -13,6 +13,13 @@ drop table if exists customer_account_relationships cascade;
 drop table if exists employee_level_relationships cascade;
 drop table if exists customers cascade;
 
+--Sequence
+--create sequence mySeq
+--increment by 1
+--start with 1
+--minvalue 1
+--maxvalue 20000;
+
 create table usertypes(
 id serial primary key,
 user_type varchar(25)
@@ -133,6 +140,12 @@ insert into logininfos (login_username,login_password,user_id) values
 ('user4','pass',4);
 
 
+
+--These are several calls that I made here from outside programms. They're slated for deletion after updates
+--but will remain here mid code to help with debugging.
+
+SELECT currval(pg_get_serial_sequence('users','id'));
+
 --select users.* from customers inner join users on customers.customer_id=users.id;
 --
 --select users.*,logininfos.login_username,logininfos.login_password
@@ -148,9 +161,11 @@ insert into logininfos (login_username,login_password,user_id) values
 --from logininfos;
 --
 --select * from accounts;
---
+	select * from users;
 --select users.id 
 --from users,customer_account_relationships car
 --where users.id=car.customer_id and car.account_id=1;
-select accounts.* from accounts,customer_account_relationships cust where accounts.id=cust.account_id and cust.cust_id=1;
+--select accounts.* 
+--from accounts,customer_account_relationships cust 
+--where accounts.id=cust.account_id and cust.customer_id=1;
 

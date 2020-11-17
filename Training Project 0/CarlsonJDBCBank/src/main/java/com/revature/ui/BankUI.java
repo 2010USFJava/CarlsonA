@@ -1,8 +1,6 @@
 package com.revature.ui;
 
 import java.util.Iterator;
-import java.util.Scanner;
-import java.util.logging.FileHandler;
 
 import com.revature.Meta.LogThis;
 import com.revature.Meta.LogThis.LevelEnum;
@@ -14,6 +12,7 @@ import com.revature.Users.User;
 import com.revature.accounts.AbstractAccount;
 import com.revature.accounts.AbstractAccount.AccountStatusEnum;
 import com.revature.accounts.JointAccount;
+import com.revature.database.daoimple.CustAcctRelDaoImple;
 
 
 
@@ -25,8 +24,15 @@ public class BankUI {
 //	private RuntimeData runData= RuntimeData.data;
 	
 	public void addTestData() {
-		Employee.createAdmin("Head","Hancho", "admin","pass");
-		Employee.createEmployee("Joe", "Average", "emp", "pass");
+		Employee emp1 = Employee.createAdmin("Head","Hancho", "admin","pass");
+		Employee emp2 = Employee.createEmployee("Joe", "Average", "emp", "pass");
+		
+		try {
+			CustAcctRelDaoImple.insertUserIntoDatabase(emp1);
+			CustAcctRelDaoImple.insertUserIntoDatabase(emp2);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -118,6 +124,13 @@ public class BankUI {
 			if (!checkIfGoBack()) {
 				System.out.println("Creating log in information....");
 				LoginInfo info=LoginInfo.createLoginInfoAndAddToMap(username, password,tempCustomer);
+				
+				//writing customer data to database
+				try {
+				CustAcctRelDaoImple.insertUserIntoDatabase(tempCustomer);
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
 				System.out.println("Finished creating log in information.");
 			}
 			

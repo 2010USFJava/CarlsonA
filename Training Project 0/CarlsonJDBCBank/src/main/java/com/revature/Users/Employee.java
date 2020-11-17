@@ -1,6 +1,6 @@
 package com.revature.Users;
 
-
+import com.sun.tools.sjavac.Log.Level;
 
 public class Employee extends User {
 //local enums
@@ -16,6 +16,7 @@ public class Employee extends User {
 	private EmployeeLevelEnum empLevel=EmployeeLevelEnum.STANDARD;
 	
 	{empLevel=EmployeeLevelEnum.STANDARD;}
+
 	
 	//constructor
 	private Employee(String firstName, String lastName) {
@@ -53,8 +54,12 @@ public class Employee extends User {
 		
 	}
 	
+	//getters and setters
+	public int getLevelAsInt() {
+		return empLevel.ordinal();
+	}
 	
-	
+	//checking level
 	public boolean checkIfAdmin() {
 		if(empLevel.equals(EmployeeLevelEnum.ADMIN)) {
 			return true;

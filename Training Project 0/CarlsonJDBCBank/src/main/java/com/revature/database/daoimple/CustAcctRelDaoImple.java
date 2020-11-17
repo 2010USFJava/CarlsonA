@@ -7,13 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Queue;
 import java.util.Set;
 
 import com.revature.Users.Customer;
 import com.revature.Users.Employee;
 import com.revature.Users.Employee.EmployeeLevelEnum;
 import com.revature.Users.LoginInfo;
+import com.revature.Users.User;
 import com.revature.accounts.AbstractAccount;
 import com.revature.accounts.AbstractAccount.AccountStatusEnum;
 import com.revature.accounts.AbstractAccount.AccountTypeEnum;
@@ -175,7 +175,79 @@ public class CustAcctRelDaoImple implements CustomerAccountRelationshipDAO {
 		return custSet;
 		
 	}
+//	
+//	public void catchNewPookimans(Pookiemans p) throws SQLException {
+//		Connection conn = cf.getConnection();
+//
+//        //PreparedStatement way
+//        String sql= "insert into pookiemans values(?,?)";
+//        PreparedStatement ps= conn.prepareStatement(sql);
+//        ps.setInt(1, p.getpId());
+//        ps.setString(2, p.getpName());
+//        ps.executeUpdate();
+//	}
+//	
 	
+	//pulled info on returning keys from here:
+//www.baeldung.com/jdbc-returning-generated-keys
+	public static void insertUserIntoDatabase(User user) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql="insert into users (first_name,last_name) "
+				+ "values(?,?) RETURNING id";
+		PreparedStatement ps = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+		ps.setString(1,user.getFirstName());
+		ps.setString(2,user.getLastName());
+		int affectedRows=ps.executeUpdate();
+		ResultSet keys=ps.getGeneratedKeys();
+		int userId=-1;
+		while(keys.next()) {
+			userId=keys.getInt(1);
+		}
+		//in future database downloads this will be automatic, but
+		//for work done before the next update, I'll set the new id here.
+		user.setUserId(userId);
+		//Do the password protection measures, I can't access it anywhere outside
+		//of the inital class for saving purposes
+		user.getLoginInfo().saveUserInfoToDatabase();
+		
 
+		
+		if (user.checkIfCustomer()) {
+			runCustomerTableUpdates((Customer)user);
+		} else if(user.checkIfEmployee()) {
+			runEmployeeTableUpdates((Employee)user);
+		}
+		
+		
+	}
+	
+	
+	private static void runCustomerTableUpdates (Customer user) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql ="insert into customers values (?);";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1,user.getUserId());
+		ps.executeUpdate();
+		
+	}
+
+
+
+	private static void runEmployeeTableUpdates(Employee user) throws SQLException {
+		Connection conn = cf.getConnection();
+
+		String sql ="insert into employee_level_relationships values (?,?);";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1,user.getLevelAsInt());
+		ps.setInt(2,user.getUserId());
+		ps.executeUpdate();
+		
+	}
+	
+	//pulled info from here:
+	//stackoverflow.com/questions/2944297/postgresql-function-for-last-inserted-id
+//	private static int getIdOfLastUserInsert() {
+//		String sql="lastval()";
+//	}
 
 }

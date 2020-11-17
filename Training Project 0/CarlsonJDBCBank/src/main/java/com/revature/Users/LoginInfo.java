@@ -1,11 +1,15 @@
 package com.revature.Users;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.revature.Meta.LogThis;
 import com.revature.Meta.LogThis.LevelEnum;
 import com.revature.Meta.RuntimeData;
+import com.revature.database.factory.ConnFactory;
 
 
 
@@ -126,6 +130,20 @@ public class LoginInfo  {
 			}
 			
 		}
+	}
+	
+	//do to the fact I'm not allowing direct viewing of password information,
+	//I'm running this particular one through the login class
+	public void saveUserInfoToDatabase() throws SQLException {
+		ConnFactory cf = ConnFactory.getInstance();
+		Connection conn = cf.getConnection();
+		String sql = "insert into logininfos (login_username,login_password,user_id) values"
+				+ "(?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1,username);
+		ps.setString(2,password);
+		ps.setInt(3,user.getUserId());
+		ps.executeUpdate();
 	}
 
 
