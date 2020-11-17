@@ -3,8 +3,8 @@ package com.Revature.Meta;
 import java.util.Iterator;
 import java.util.Scanner;
 
-import com.Revature.AccountInfo.Account;
-import com.Revature.AccountInfo.Account.AccountStatusEnum;
+import com.Revature.AccountInfo.AbstractAccount;
+import com.Revature.AccountInfo.AbstractAccount.AccountStatusEnum;
 //import com.Revature.AccountInfo.Application;
 import com.Revature.AccountInfo.JointAccount;
 import com.Revature.Meta.LogThis.LevelEnum;
@@ -203,7 +203,7 @@ public class Bank {
 		}
 		
 		if(!checkIfGoBack()&& !makeAnotherUser) {
-			Account act=makeNewAccount(tempCustomer);
+			AbstractAccount act=makeNewAccount(tempCustomer);
 
 		}
 		
@@ -232,13 +232,13 @@ public class Bank {
 	}
 	
 
-	private Account makeNewAccount(Customer tempCustomer) {
+	private AbstractAccount makeNewAccount(Customer tempCustomer) {
 		 return makeNewAccount(tempCustomer,false);
 	}
 	
-	private Account makeNewAccount(Customer tempCustomer,boolean makeAnotherUser) {
+	private AbstractAccount makeNewAccount(Customer tempCustomer,boolean makeAnotherUser) {
 
-		Account tempAcct=null;
+		AbstractAccount tempAcct=null;
 		if(!makeAnotherUser) {
 
 			System.out.println("Finally, please select the type of account you would like to create");
@@ -374,35 +374,35 @@ public class Bank {
 			System.out.println("No accounts attached to this user");
 			showCustomerMenu(cust);
 		} else if (cust.getNumberOfAccounts()==1) {
-			Account act=cust.getUserAccounts().iterator().next();
+			AbstractAccount act=cust.getUserAccounts().iterator().next();
 			modifyAccount(cust,act);
 		}else {
 			System.out.println("Which account would you like to enter?");
-			Account act=getAccountFromSelection(cust);
+			AbstractAccount act=getAccountFromSelection(cust);
 			modifyAccount(cust,act);
 		}
 	}
 	
-	private Account getAccountFromSelection(Customer cust) {
+	private AbstractAccount getAccountFromSelection(Customer cust) {
 		String [] accountSelection=new String[cust.getNumberOfAccounts()];
 
 		Iterator actIt = cust.getUserAccounts().iterator(); 
 		for(int i=0;i<cust.getNumberOfAccounts();i++) {
 			Object acctHolder=actIt.next();
-			accountSelection[i]=i+"] "+(Account)acctHolder;
+			accountSelection[i]=i+"] "+(AbstractAccount)acctHolder;
 		}
 		int selection=StringCheck.numberScanner(accountSelection);
 		
 		actIt = cust.getUserAccounts().iterator();
-		Account act=null;
+		AbstractAccount act=null;
 		for (int i=0;i<=selection;i++) {
 			Object acctHolder=actIt.next();
-			act=(Account)acctHolder;
+			act=(AbstractAccount)acctHolder;
 		}
 		return act;
 	}
 	
-	private void modifyAccount(Customer cust, Account act) {
+	private void modifyAccount(Customer cust, AbstractAccount act) {
 		//check if admin in in the account
 		boolean adminIn=false;
 		Employee emp;
@@ -467,7 +467,7 @@ public class Bank {
 				System.out.println("Can not tranfer money unless customer has more than 1 account");
 			} else {
 				System.out.println("Which account would you like to transfer to?");
-				Account actB=getAccountFromSelection(cust);
+				AbstractAccount actB=getAccountFromSelection(cust);
 				System.out.println("How much would you like to transfer?");	
 				money=StringCheck.moneyMiddleMan();
 				act.transferMoneyToAccount(actB, money);
@@ -553,7 +553,7 @@ public class Bank {
 			break;
 		case 1:
 			
-			Account act=Account.getNextApplication();
+			AbstractAccount act=AbstractAccount.getNextApplication();
 			
 			if(act==null) {
 				System.out.println("No applications in the queue at this time.");
@@ -644,7 +644,7 @@ public class Bank {
 			switch (optionInt) {
 			case 0:
 				System.out.println("Which account would you like to enter?");
-				Account act=getAccountFromSelection(cust);
+				AbstractAccount act=getAccountFromSelection(cust);
 				//check Employee status
 				Employee emp=(Employee)RuntimeData.data.getUser();
 				if(emp.checkIfAdmin()) {

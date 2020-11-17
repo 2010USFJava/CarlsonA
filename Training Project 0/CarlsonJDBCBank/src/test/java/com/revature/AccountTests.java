@@ -1,27 +1,29 @@
-package pro0MavenBank;
+package com.revature;
+
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.Revature.AccountInfo.AbstractAccount;
-import com.Revature.Users.Customer;
+import com.revature.Users.Customer;
+import com.revature.accounts.AbstractAccount;
+import com.revature.accounts.SingleAccount;
 
 public class AccountTests {
-	public static Customer custA=new Customer("John","Doe",true);
-
+  
+	Customer custA = new Customer(900,"Joe","Smith","joe","pass");
 	
 	@Test
 	public void checkStatusInApplicationOnCreation() {
 
-		AbstractAccount testAccount=new AbstractAccount(custA);
-		assertEquals(AbstractAccount.AccountStatusEnum.IN_APPLICATION,testAccount.getAccountStatus());
+		SingleAccount testAccount=new SingleAccount(custA);
+		assertEquals(SingleAccount.AccountStatusEnum.IN_APPLICATION,testAccount.getAccountStatus());
 	}
 	
 	@Test
 	public void closeAccount() {
 
-		AbstractAccount testAccount=new AbstractAccount(custA);
+		AbstractAccount testAccount=new SingleAccount(custA);
 		testAccount.closeAccount();
 		assertEquals(AbstractAccount.AccountStatusEnum.CLOSED,testAccount.getAccountStatus());
 	}
@@ -29,7 +31,7 @@ public class AccountTests {
 	@Test
 	public void approveAccount() {
 
-		AbstractAccount testAccount=new AbstractAccount(custA);
+		AbstractAccount testAccount=new SingleAccount(custA);
 		testAccount.approveAccount();
 		assertEquals(AbstractAccount.AccountStatusEnum.OPEN,testAccount.getAccountStatus());
 	}
@@ -37,7 +39,7 @@ public class AccountTests {
 	@Test
 	public void tryToAddMoneyToInApplicationAccount() {
 
-		AbstractAccount testAccount=new AbstractAccount(custA);
+		AbstractAccount testAccount=new SingleAccount(custA);
 		testAccount.changeStatus(AbstractAccount.AccountStatusEnum.IN_APPLICATION);
 		testAccount.deposit(100);
 		assertEquals(0,testAccount.getBalance());
@@ -46,7 +48,7 @@ public class AccountTests {
 	@Test
 	public void tryToAddMoneyToClosedAccount() {
 
-		AbstractAccount testAccount=new AbstractAccount(custA);
+		AbstractAccount testAccount=new SingleAccount(custA);
 		testAccount.changeStatus(AbstractAccount.AccountStatusEnum.CLOSED);
 		testAccount.deposit(100);
 		assertEquals(0,testAccount.getBalance());
@@ -55,7 +57,7 @@ public class AccountTests {
 	@Test
 	public void tryToithdrawMoneyFromInApplicationAccount() {
 
-		AbstractAccount testAccount=new AbstractAccount(custA);
+		AbstractAccount testAccount=new SingleAccount(custA);
 		testAccount.changeStatus(AbstractAccount.AccountStatusEnum.OPEN);
 		testAccount.deposit(100);
 		testAccount.changeStatus(AbstractAccount.AccountStatusEnum.IN_APPLICATION);
@@ -66,7 +68,7 @@ public class AccountTests {
 	@Test
 	public void tryToWithdrawMoneyFromClosedAccount() {
 
-		AbstractAccount testAccount=new AbstractAccount(custA);
+		AbstractAccount testAccount=new SingleAccount (custA);
 
 		testAccount.changeStatus(AbstractAccount.AccountStatusEnum.OPEN);
 		testAccount.deposit(100);
@@ -80,7 +82,7 @@ public class AccountTests {
 	
 	@Test
 	public void tryToAddMoneyToOpenAccount() {
-		AbstractAccount testAccount=new AbstractAccount(custA);
+		AbstractAccount testAccount=new SingleAccount(custA);
 		testAccount.changeStatus(AbstractAccount.AccountStatusEnum.OPEN);
 		testAccount.deposit(100);
 		assertEquals(100,testAccount.getBalance());
@@ -88,7 +90,7 @@ public class AccountTests {
 	
 	@Test
 	public void withdrawMoneyFromOpenAccount() {
-		AbstractAccount act = new AbstractAccount(custA);
+		AbstractAccount act = new SingleAccount(custA);
 		act.approveAccount();
 		act.deposit(200);
 		act.withdraw(100);
@@ -97,7 +99,7 @@ public class AccountTests {
 	
 	@Test
 	public void withdrawTooMuchMoneyFromOpenAccount() {
-		AbstractAccount act = new AbstractAccount(custA);
+		AbstractAccount act = new SingleAccount(custA);
 		act.approveAccount();
 		act.withdraw(100);
 		assertEquals(0,act.getBalance());
@@ -105,7 +107,7 @@ public class AccountTests {
 	
 	@Test
 	public void withdrawNegitiveAmountFromOpenAccount() {
-		AbstractAccount act = new AbstractAccount(custA);
+		AbstractAccount act = new SingleAccount(custA);
 		act.approveAccount();
 		act.withdraw(-100);
 		assertEquals(0,act.getBalance());
@@ -113,10 +115,10 @@ public class AccountTests {
 	
 	@Test
 	public void vaildFundsTransferTest() {
-		AbstractAccount actA = new AbstractAccount(custA);
+		AbstractAccount actA = new SingleAccount(custA);
 		actA.approveAccount();
 		actA.deposit(200);
-		AbstractAccount actB = new AbstractAccount(custA);
+		AbstractAccount actB = new SingleAccount(custA);
 		actB.approveAccount();
 		actA.transferMoneyToAccount(actB,100);
 
@@ -125,11 +127,11 @@ public class AccountTests {
 	
 	@Test
 	public void invalidFundsTransferTest() {
-		AbstractAccount actA = new AbstractAccount(custA);
+		AbstractAccount actA = new SingleAccount(custA);
 		actA.approveAccount();
 		actA.deposit(200);
 		actA.closeAccount();
-		AbstractAccount actB = new AbstractAccount(custA);
+		AbstractAccount actB = new SingleAccount(custA);
 		actB.approveAccount();
 		actA.transferMoneyToAccount(actB,100);
 

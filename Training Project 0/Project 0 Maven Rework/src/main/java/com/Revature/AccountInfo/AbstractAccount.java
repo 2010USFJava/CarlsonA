@@ -18,7 +18,7 @@ import com.Revature.Users.User;
  * @author Owner
  *
  */
-public class Account implements Serializable {
+public class AbstractAccount implements Serializable {
 	
 	/**
 	 * 
@@ -51,7 +51,7 @@ public class Account implements Serializable {
 	private AccountStatusEnum accountStatus=AccountStatusEnum.IN_APPLICATION;
 	protected AccountTypeEnum accountType = AccountTypeEnum.SINGLE;
 	protected Set<Customer> customerSet=CustomerAccountRelationship.getCustomerSetForAccount(this);
-	protected static Queue<Account> applicationQueue=new LinkedList<>();
+	protected static Queue<AbstractAccount> applicationQueue=new LinkedList<>();
 	private Customer accountHolder;
 	private transient Random rand = new Random();
 	
@@ -68,7 +68,7 @@ public class Account implements Serializable {
 	}
 	
 	//constructors
-	public Account(Customer accountHolder,AccountStatusEnum status) {
+	public AbstractAccount(Customer accountHolder,AccountStatusEnum status) {
 		this.accountHolder=accountHolder;
 		updateCustAcctMaps(accountHolder);
 		this.accountStatus=status;
@@ -90,7 +90,7 @@ public class Account implements Serializable {
 		
 
 	}
-	public Account(Customer accountHolder) {
+	public AbstractAccount(Customer accountHolder) {
 		this(accountHolder,AccountStatusEnum.IN_APPLICATION);
 	}
 	
@@ -102,11 +102,11 @@ public class Account implements Serializable {
 
 
 	
-	public static Queue<Account> getApplicationQueue() {
+	public static Queue<AbstractAccount> getApplicationQueue() {
 		return applicationQueue;
 	}
 
-	public static void setApplicationQueue(Queue<Account> newApplicationQueue) {
+	public static void setApplicationQueue(Queue<AbstractAccount> newApplicationQueue) {
 		applicationQueue = newApplicationQueue;
 
 	}
@@ -233,7 +233,7 @@ public class Account implements Serializable {
 	}
 	
 	
-	public long transferMoneyToAccount(Account account, long money) {
+	public long transferMoneyToAccount(AbstractAccount account, long money) {
 		
 
 		if(accountStatus.equals(AccountStatusEnum.OPEN)&&account.accountStatus.equals(AccountStatusEnum.OPEN)) {
@@ -281,7 +281,7 @@ public class Account implements Serializable {
 	
 	
 
-	public static void enterApplicationQueue(Account act) {
+	public static void enterApplicationQueue(AbstractAccount act) {
 		applicationQueue.add(act);
 		FileHandler.saveAll();
 	}
@@ -289,7 +289,7 @@ public class Account implements Serializable {
 
 	
 	
-	public static Account getNextApplication() {
+	public static AbstractAccount getNextApplication() {
 		try {
 			return applicationQueue.peek();
 		} catch(NullPointerException e){

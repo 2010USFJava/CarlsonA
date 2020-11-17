@@ -5,7 +5,7 @@ import java.io.Serializable;
 import com.Revature.Meta.FileHandler;
 import com.Revature.Users.Customer;
 
-public class JointAccount extends Account implements Serializable {
+public class JointAccount extends AbstractAccount implements Serializable {
 	/**
 	 * 
 	 */

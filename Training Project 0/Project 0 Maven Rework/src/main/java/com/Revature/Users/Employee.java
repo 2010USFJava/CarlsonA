@@ -2,7 +2,7 @@ package com.Revature.Users;
 
 import java.io.Serializable;
 
-import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.AbstractAccount;
 import com.Revature.AccountInfo.JointAccount;
 import com.Revature.Meta.FileHandler;
 import com.Revature.Meta.LogThis;
@@ -65,7 +65,7 @@ public class Employee extends User implements Serializable{
 //		
 //	}
 	
-	public String getAccountInfo(Account account) {
+	public String getAccountInfo(AbstractAccount account) {
 		String output=account.getCustomerPersonalData();
 		return output;
 		

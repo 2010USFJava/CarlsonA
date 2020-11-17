@@ -15,15 +15,15 @@ public class CustomerAccountRelationship implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 4409635919393685407L;
-	private static Map<Customer,Set<Account>> customerToAccountMap=new HashMap<>();
-	private static Map<Account,Set<Customer>> accountToCustomerMap=new HashMap<>();
+	private static Map<Customer,Set<AbstractAccount>> customerToAccountMap=new HashMap<>();
+	private static Map<AbstractAccount,Set<Customer>> accountToCustomerMap=new HashMap<>();
 	
 	
 	
 	
 //	Getters and setters
 	
-	public static Set<Customer> getCustomerSetForAccount(Account act){
+	public static Set<Customer> getCustomerSetForAccount(AbstractAccount act){
 		if(!checkIfAccountKeyExists(act)) {
 			Set<Customer> newCustomerSet=new HashSet<>();
 			accountToCustomerMap.put(act, newCustomerSet);
@@ -31,9 +31,9 @@ public class CustomerAccountRelationship implements Serializable {
 		return accountToCustomerMap.get(act);
 	}
 	
-	public static Set<Account> getAccountSetForCustomer(Customer cust) {
+	public static Set<AbstractAccount> getAccountSetForCustomer(Customer cust) {
 		if(!checkIfCustomerKeyExists(cust)) {
-			Set<Account> newAccountSet=new HashSet<>();
+			Set<AbstractAccount> newAccountSet=new HashSet<>();
 			customerToAccountMap.put(cust, newAccountSet);
 		}
 
@@ -44,31 +44,31 @@ public class CustomerAccountRelationship implements Serializable {
 	
 	
 
-	public static Map<Customer, Set<Account>> getCustomerToAccountMap() {
+	public static Map<Customer, Set<AbstractAccount>> getCustomerToAccountMap() {
 		return customerToAccountMap;
 	}
 
-	public static void setCustomerToAccountMap(Map<Customer, Set<Account>> customerToAccountMap) {
+	public static void setCustomerToAccountMap(Map<Customer, Set<AbstractAccount>> customerToAccountMap) {
 		CustomerAccountRelationship.customerToAccountMap = customerToAccountMap;
 	}
 
-	public static Map<Account, Set<Customer>> getAccountToCustomerMap() {
+	public static Map<AbstractAccount, Set<Customer>> getAccountToCustomerMap() {
 		return accountToCustomerMap;
 	}
 
-	public static void setAccountToCustomerMap(Map<Account, Set<Customer>> accountToCustomerMap) {
+	public static void setAccountToCustomerMap(Map<AbstractAccount, Set<Customer>> accountToCustomerMap) {
 		CustomerAccountRelationship.accountToCustomerMap = accountToCustomerMap;
 	}
 	
-	public static void updateCustomer(Customer cust, Account act) {
-		Set<Account> workingAccountSet;
+	public static void updateCustomer(Customer cust, AbstractAccount act) {
+		Set<AbstractAccount> workingAccountSet;
 		Set<Customer> workingCustomerSet;
 		//update customer to account map
 		if (checkIfCustomerKeyExists(cust)) {
 			workingAccountSet=getAccountSetForCustomer(cust);
 			workingAccountSet.add(act);
 		} else {
-			Set<Account> newAccountSet=new HashSet<>();
+			Set<AbstractAccount> newAccountSet=new HashSet<>();
 			newAccountSet.add(act);
 			customerToAccountMap.put(cust, newAccountSet);
 		}
@@ -85,7 +85,7 @@ public class CustomerAccountRelationship implements Serializable {
 		FileHandler.saveAll();
 	}
 	
-	public static void removeCustomerFromAccount(Customer cust, Account act) {
+	public static void removeCustomerFromAccount(Customer cust, AbstractAccount act) {
 		if(checkIfAccountKeyExists(act)) {
 			Set workingSet=getCustomerSetForAccount(act);
 			workingSet.remove(cust);
@@ -106,7 +106,7 @@ public class CustomerAccountRelationship implements Serializable {
 	
 
 
-	private static boolean checkIfAccountKeyExists(Account act) {
+	private static boolean checkIfAccountKeyExists(AbstractAccount act) {
 		
 		if(accountToCustomerMap.get(act)==null) {
 			return false;

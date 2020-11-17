@@ -153,3 +153,16 @@ Balance: $499.00
  transfered money to Account #3
 Balance: $0.00
 
+[TRACE] 2020-11-17 13:05:49.179 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 13:05:49.182 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:05:49.182 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-17 13:05:49.183 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-17 13:05:49.183 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:05:49.183 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-17 13:05:49.184 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:05:49.184 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-17 13:05:49.184 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:05:49.184 [main] LogThis - Transfered between accounts $100.00
+[INFO ] 2020-11-17 13:05:49.185 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:05:49.185 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:05:49.185 [main] LogThis - Deposited $100.00

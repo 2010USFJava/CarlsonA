@@ -4,7 +4,7 @@ package com.Revature.Users;
 import java.io.Serializable;
 import java.util.Set;
 
-import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.AbstractAccount;
 import com.Revature.AccountInfo.CustomerAccountRelationship;
 import com.Revature.AccountInfo.JointAccount;
 import com.Revature.Meta.FileHandler;
@@ -17,7 +17,7 @@ public class Customer extends User implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 5844012040276987566L;
-	private Set<Account> userAccounts=CustomerAccountRelationship.getAccountSetForCustomer(this);
+	private Set<AbstractAccount> userAccounts=CustomerAccountRelationship.getAccountSetForCustomer(this);
 	
 	{setUserType(UserTypeEnum.CUSTOMER);
 	LogThis.logIt(LevelEnum.INFO, "Created new user");}
@@ -42,7 +42,7 @@ public class Customer extends User implements Serializable {
 	}
 	
 	//getters and setters
-	public Set<Account> getUserAccounts() {
+	public Set<AbstractAccount> getUserAccounts() {
 		
 		if(userAccounts.isEmpty()) {
 			System.out.println("This user has no accounts at this time");
@@ -52,12 +52,12 @@ public class Customer extends User implements Serializable {
 	}
 
 	//account interaction
-	public Account createAccount() {
+	public AbstractAccount createAccount() {
 		return createAccount(this);
 		
 	}
 	
-	private void addToUserAccounts(Customer cust, Account acct) {
+	private void addToUserAccounts(Customer cust, AbstractAccount acct) {
 		if (this.userAccounts==null) {
 			CustomerAccountRelationship.updateCustomer(cust, acct);
 		} else {
@@ -66,10 +66,10 @@ public class Customer extends User implements Serializable {
 		}
 	}
 	
-	public Account createAccount(Customer cust) {
-		Account acct;
+	public AbstractAccount createAccount(Customer cust) {
+		AbstractAccount acct;
 		if (cust.equals(this)) {
-			acct=new Account(this);
+			acct=new AbstractAccount(this);
 
 			addToUserAccounts(this,acct);
 		} else {
@@ -88,8 +88,8 @@ public class Customer extends User implements Serializable {
 		
 	}
 	
-	public Account createJointAccount(Customer cust) {
-		Account acct;
+	public AbstractAccount createJointAccount(Customer cust) {
+		AbstractAccount acct;
 		if (cust.equals(this)) {
 			acct=new JointAccount(this);
 
@@ -109,7 +109,7 @@ public class Customer extends User implements Serializable {
 		
 	}
 	
-	public Account createJointAccount() {
+	public AbstractAccount createJointAccount() {
 		return createJointAccount(this);
 	}
 	
@@ -120,7 +120,7 @@ public class Customer extends User implements Serializable {
 		}else {
 			output+="User Accounts"+"\n";
 			int i=0;
-			for(Account act:userAccounts) {
+			for(AbstractAccount act:userAccounts) {
 				//adding some veriaty for ease of reading 
 				if (i%2==0) {output+="\t";}
 				output+="\t"+act+"\n";

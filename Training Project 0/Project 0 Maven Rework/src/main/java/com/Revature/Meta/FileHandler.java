@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.AbstractAccount;
 import com.Revature.AccountInfo.CustomerAccountRelationship;
 import com.Revature.Meta.LogThis.LevelEnum;
 import com.Revature.Users.Customer;
@@ -25,13 +25,13 @@ public class FileHandler {
 	public static final String applicationQueueFile="applicationQueueFile.txt";
 	
 
-	private static Map<Customer,Set<Account>> customerToAccountMap = CustomerAccountRelationship.getCustomerToAccountMap();
-	private static Map<Account,Set<Customer>> accountToCustomerMap = CustomerAccountRelationship.getAccountToCustomerMap();
+	private static Map<Customer,Set<AbstractAccount>> customerToAccountMap = CustomerAccountRelationship.getCustomerToAccountMap();
+	private static Map<AbstractAccount,Set<Customer>> accountToCustomerMap = CustomerAccountRelationship.getAccountToCustomerMap();
 //	private static Queue<Account> applicationQueue=Account.getApplicationQueue();
 	
 	
 	//write method
-	public static void writeApplicationQueueFile(Queue<Account> applicationQueue) {
+	public static void writeApplicationQueueFile(Queue<AbstractAccount> applicationQueue) {
 //		LogThis.logIt(LevelEnum.DEBUG, "Writing ApplicationQueueFile");
 		try {
 			ObjectOutputStream objectOut = new ObjectOutputStream(new FileOutputStream(applicationQueueFile));
@@ -102,7 +102,7 @@ public class FileHandler {
 	public static void readCustActFile() {
 		try {
 			ObjectInputStream objIn=new ObjectInputStream(new FileInputStream(custAccountFile));
-			CustomerAccountRelationship.setCustomerToAccountMap((Map<Customer,Set<Account>>)objIn.readObject());
+			CustomerAccountRelationship.setCustomerToAccountMap((Map<Customer,Set<AbstractAccount>>)objIn.readObject());
 			
 		}catch (FileNotFoundException e) {
 			System.err.println("Customer->Account file does not exist. Creating it now...");
@@ -116,7 +116,7 @@ public class FileHandler {
 	public static void readActCustFile() {
 		try {
 			ObjectInputStream objIn=new ObjectInputStream(new FileInputStream(actCustFile));
-			CustomerAccountRelationship.setAccountToCustomerMap((Map<Account,Set<Customer>>)objIn.readObject());
+			CustomerAccountRelationship.setAccountToCustomerMap((Map<AbstractAccount,Set<Customer>>)objIn.readObject());
 //			LoginInfo.setLoginMap((Map<String,LoginInfo>)objIn.readObject());
 		}catch (FileNotFoundException e) {
 			System.err.println("Accont->Customer file does not exist. Creating it now...");
@@ -133,7 +133,7 @@ public class FileHandler {
 		
 		try {
 			ObjectInputStream objIn=new ObjectInputStream(new FileInputStream(applicationQueueFile));
-			Account.setApplicationQueue((Queue<Account>)objIn.readObject());
+			AbstractAccount.setApplicationQueue((Queue<AbstractAccount>)objIn.readObject());
 			
 		}catch (FileNotFoundException e) {
 			System.err.println("Application file does not exist. Creating it now...");
@@ -160,7 +160,7 @@ public class FileHandler {
 		writeActCustFile();
 		
 //		LogThis.logIt(LevelEnum.DEBUG, "BigS: ApplicationQueue");
-		writeApplicationQueueFile(Account.getApplicationQueue());
+		writeApplicationQueueFile(AbstractAccount.getApplicationQueue());
 	}
 	
 	public static void loadAll() {

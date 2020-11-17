@@ -301,6 +301,9 @@ public abstract class AbstractAccount implements Serializable {
 		}
 			
 		
+ public AccountStatusEnum getAccountStatus() {
+	 return this.accountStatus;
+ }
 		
 	@Override
 	public String toString() {

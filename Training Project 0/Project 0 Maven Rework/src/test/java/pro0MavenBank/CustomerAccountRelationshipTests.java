@@ -6,7 +6,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.Revature.AccountInfo.Account;
+import com.Revature.AccountInfo.AbstractAccount;
 import com.Revature.Users.Customer;
 import com.Revature.Users.LoginInfo;
 
