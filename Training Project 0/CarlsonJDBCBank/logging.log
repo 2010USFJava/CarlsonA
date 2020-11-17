@@ -166,3 +166,29 @@ Balance: $0.00
 [INFO ] 2020-11-17 13:05:49.185 [main] LogThis - Deposited $100.00
 [INFO ] 2020-11-17 13:05:49.185 [main] LogThis - Deposited $100.00
 [INFO ] 2020-11-17 13:05:49.185 [main] LogThis - Deposited $100.00
+[TRACE] 2020-11-17 13:18:13.812 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 13:18:13.815 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:18:13.816 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-17 13:18:13.817 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-17 13:18:13.817 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:18:13.817 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-17 13:18:13.817 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:18:13.818 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-17 13:18:13.818 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:18:13.818 [main] LogThis - Transfered between accounts $100.00
+[INFO ] 2020-11-17 13:18:13.818 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:18:13.819 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:18:13.819 [main] LogThis - Deposited $100.00
+[TRACE] 2020-11-17 13:30:57.557 [main] LogThis - No application queue existed. Createing a new one now
+[INFO ] 2020-11-17 13:30:57.560 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:30:57.560 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-17 13:30:57.561 [main] LogThis - Withdrew $0.00
+[INFO ] 2020-11-17 13:30:57.561 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:30:57.561 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-17 13:30:57.561 [main] LogThis - Deposited $200.00
+[INFO ] 2020-11-17 13:30:57.562 [main] LogThis - Withdrew $100.00
+[INFO ] 2020-11-17 13:30:57.562 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:30:57.562 [main] LogThis - Transfered between accounts $100.00
+[INFO ] 2020-11-17 13:30:57.562 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:30:57.563 [main] LogThis - Deposited $100.00
+[INFO ] 2020-11-17 13:30:57.563 [main] LogThis - Deposited $100.00
