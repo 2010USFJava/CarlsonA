@@ -15,6 +15,14 @@ public class Customer extends User {
 	public Customer(String firstname,String lastname) {
 		super(firstname,lastname,UserTypeEnum.CUSTOMER);
 	}
+	
+	public Customer(int id,String firstname,String lastname) {
+		super(id,firstname,lastname,UserTypeEnum.CUSTOMER);
+	}
+	
+	public Customer(int id, String firstname,String lastname,String username, String password) {
+		super(id,firstname,lastname,username,password,UserTypeEnum.CUSTOMER);
+	}
 
 
 
@@ -114,5 +122,6 @@ public class Customer extends User {
 		
 		return userAccounts.size();
 	}
+
 
 }

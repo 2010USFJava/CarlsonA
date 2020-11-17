@@ -19,7 +19,7 @@ public abstract class User implements Serializable {
 	 */
 	private static final long serialVersionUID = -6686479606343552816L;
 
-	protected enum UserTypeEnum{
+	public enum UserTypeEnum{
 		CUSTOMER,
 		EMPLOYEE;
 	}
@@ -41,6 +41,20 @@ public abstract class User implements Serializable {
 		this.userType=userType;
 		
 		
+	}
+	
+	public User(int id, String firstName, String lastName, UserTypeEnum userType) {
+		this.userId=id;
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.userType=userType;
+	}
+	
+	public User(int id, String firstName, String lastName,String username,String password, UserTypeEnum userType) {
+		this.userId=id;
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.userType=userType;
 	}
 	
 	
@@ -74,6 +88,10 @@ public abstract class User implements Serializable {
 	
 	public void setLoginInfo(LoginInfo loginInfo) {
 		this.loginInfo=loginInfo;
+	}
+	
+	public int getUserId() {
+		return userId;
 	}
 
 	

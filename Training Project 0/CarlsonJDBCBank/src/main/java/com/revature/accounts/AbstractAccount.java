@@ -23,7 +23,7 @@ public abstract class AbstractAccount implements Serializable {
 	}
 
 	
-	protected enum AccountTypeEnum{
+	public enum AccountTypeEnum{
 		SINGLE,
 		JOINT;
 		
@@ -53,6 +53,12 @@ public abstract class AbstractAccount implements Serializable {
 		changeStatus(status);
 		}
 	
+	public AbstractAccount(int id, long balance, Customer accountHolder,AccountStatusEnum status) {
+		this(accountHolder,status);
+		this.accountId=id;
+		this.balance=balance;
+	}
+	
 	//getters and setters
 	
 	public Set<Customer> getCustomerSet(){
@@ -66,8 +72,16 @@ public abstract class AbstractAccount implements Serializable {
 			
 	}
 	
+	public void setCustomerSet(Set<Customer> customerSetByAccount) {
+		this.customerSet=customerSetByAccount;
+		
+	}
+	
 
-
+	public int getId() {
+		return accountId;
+	}
+	
 	public long getBalance() {
 		return balance;
 	}
@@ -270,6 +284,8 @@ public abstract class AbstractAccount implements Serializable {
 		public void changeStatus(AccountStatusEnum status) {
 			this.accountStatus=status;
 			if(accountStatus.equals(AccountStatusEnum.IN_APPLICATION)){
+				//runnint the get statment ensures that a queue is built
+				getApplicationQueue();
 				applicationQueue.add(this);
 			} else {
 				applicationQueue.remove(this);	
@@ -282,5 +298,12 @@ public abstract class AbstractAccount implements Serializable {
 	public String toString() {
 		return printAccountStatus()+" Balance:"+convertMoney(balance);
 	}
+
+	public static void setApplicationQueue(Queue<AbstractAccount> applicationQueue2) {
+		applicationQueue = applicationQueue2;
+		
+	}
+
+
 
 }

@@ -6,7 +6,7 @@ public class Employee extends User {
 //local enums
 
 
-	private enum EmployeeLevelEnum{
+	public enum EmployeeLevelEnum{
 		STANDARD,
 		ADMIN;
 	}
@@ -22,10 +22,19 @@ public class Employee extends User {
 		super(firstName, lastName, UserTypeEnum.EMPLOYEE);
 		// TODO Auto-generated constructor stub
 	}
+	private Employee(int id, String firstName, String lastName) {
+		super(id, firstName,lastName, UserTypeEnum.EMPLOYEE);
+	}
 	
 	//helper construcot
 	public static Employee createEmployee(String firstName,String lastName,String username, String password) {
 		Employee emp = new Employee(firstName,lastName);
+		LoginInfo.createLoginInfoAndAddToMap(username, password, emp);
+		return emp;
+	}
+	
+	public static Employee createEmployee(int id, String firstName,String lastName,String username, String password) {
+		Employee emp = new Employee(id,firstName,lastName);
 		LoginInfo.createLoginInfoAndAddToMap(username, password, emp);
 		return emp;
 	}
@@ -36,6 +45,15 @@ public class Employee extends User {
 		return emp;
 		
 	}
+	
+	public static Employee createAdmin(int id, String firstName,String lastName,String username, String password) {
+		Employee emp=createEmployee(id,firstName,lastName,username,password);
+		emp.empLevel=EmployeeLevelEnum.ADMIN;
+		return emp;
+		
+	}
+	
+	
 	
 	public boolean checkIfAdmin() {
 		if(empLevel.equals(EmployeeLevelEnum.ADMIN)) {

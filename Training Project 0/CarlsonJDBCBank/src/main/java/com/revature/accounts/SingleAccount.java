@@ -18,5 +18,12 @@ public class SingleAccount extends AbstractAccount {
 		this.accountHolder=accountHolder;
 	}
 	
+	public SingleAccount(int id, long balance, Customer accountHolder,AccountStatusEnum status) {
+		super(id, balance,accountHolder,status);
+		this.accountHolder=accountHolder;
+	}
+	
+	
+	
 	
 }

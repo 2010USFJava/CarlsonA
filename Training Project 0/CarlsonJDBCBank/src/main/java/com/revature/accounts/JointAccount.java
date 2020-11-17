@@ -1,6 +1,7 @@
 package com.revature.accounts;
 
 import com.revature.Users.Customer;
+import com.revature.accounts.AbstractAccount.AccountStatusEnum;
 
 public class JointAccount extends AbstractAccount {
 	/**
@@ -18,6 +19,10 @@ public class JointAccount extends AbstractAccount {
 
 	public JointAccount(Customer customer) {
 		super(customer);
+	}
+	
+	public JointAccount(int id, long balance, Customer accountHolder,AccountStatusEnum status) {
+		super(id, balance,accountHolder,status);
 	}
 
 }

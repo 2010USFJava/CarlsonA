@@ -42,6 +42,7 @@ public class LoginInfo  {
 		return loginInfo;
 	}
 
+
 	//loginMapManipulators
 	public void addToLoginMap() {
 		this.user.setLoginInfo(this);
@@ -126,6 +127,10 @@ public class LoginInfo  {
 			
 		}
 	}
+
+
+
+
 
 
 
